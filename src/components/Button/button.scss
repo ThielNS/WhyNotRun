@@ -37,6 +37,16 @@
     }
   }
 
+  &.-danger {
+    background-color: $danger-color;
+    color: $white-color;
+
+    &.-no-bg {
+      background-color: $transparent;
+      color: $danger-color;
+    }
+  }
+
   &.-default {
     background-color: $white-color;
     color: $grey-dark;
@@ -45,5 +55,12 @@
       background-color: $transparent;
       color: $white-color;
     }
+  }
+
+  &.-circle {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    padding: 0;
   }
 }
