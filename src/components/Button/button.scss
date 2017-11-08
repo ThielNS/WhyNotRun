@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: $transparent;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+
+  .fa {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &.-primare {
+    background-color: $primare-color;
+    color: $white-color;
+
+    &.-no-bg {
+      background-color: $transparent;
+      color: $primare-color;
+    }
+  }
+
+  &.-third {
+    background-color: $third-color;
+    color: $white-color;
+
+    &.-no-bg {
+      background-color: $transparent;
+      color: $third-color;
+    }
+  }
+
+  &.-default {
+    background-color: $white-color;
+    color: $grey-dark;
+
+    &.-no-bg {
+      background-color: $transparent;
+      color: $white-color;
+    }
+  }
+}

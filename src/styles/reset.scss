@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $grey-dark;
+}
+
+p, ul, ol, span, a {
+  font-weight: thin;
+}
+
+label {
+  display: inline-block;
+}
+input, select, textarea, button {
+  outline: none;
+}
+input, select, textarea {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+
+  &::-webkit-input-placeholder {
+    color: $grey-light;
+  }
+}
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}

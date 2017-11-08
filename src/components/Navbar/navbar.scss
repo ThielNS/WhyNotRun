@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.nav-menu {
+  padding: 20px;
+  background-color: $primare-color;
+  flex-shrink: 0;
+
+  a {
+    text-decoration: none;
+
+    h1 {
+      color: $white-color;
+    }
+  }
+
+  .notification {
+    padding-left: 20px;
+
+    button {
+      padding: 0;
+      position: relative;
+
+      .fa {
+        font-size: 20px;
+        color: $white-color;
+      }
+
+      .alert {
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        width: 10px;
+        height:10px;
+        border-radius: 50%;
+        background-color: $second-color;
+      }
+    }
+  }
+}

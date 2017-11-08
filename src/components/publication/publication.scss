@@ -1,0 +1,15 @@
+$margin: 20px;
+
+.publication {
+
+  h2 {
+    color: #fff;
+  }
+
+  form {
+
+    input, textarea, button {
+      margin-top: $margin;
+    }
+  }
+}
