@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: $grey-light;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+}
