@@ -11,13 +11,19 @@ const CardPost = (props) => {
 
   const point = -10;
 
+  const user = {
+    name: props.UserName,
+    avatar: props.UserPictures,
+    work: props.USerProfession,
+  };
+
   return (
     <div className="">
       <div className="post-card">
-        <PostHeader user={props.user} date={props.datePost}/>
-        <PostContent title={props.title} text={props.text}/>
-        <TagTech tags={props.techs}/>
-        <PostFooter points={props.points}/>
+        <PostHeader user={user} date={props.dateCreation}/>
+        <PostContent title={props.Title} text={props.Description}/>
+        <TagTech tags={props.Techies}/>
+        <PostFooter points={props.Points}/>
       </div>
     </div>
   );
