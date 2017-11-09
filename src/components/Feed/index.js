@@ -14,11 +14,18 @@ class Feed extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getAPI();
+  }
 
   render() {
+    const { state } = this.props;
+
     return (
       <div className="container">
-        <CardPost tags={this.state.tags}/>
+        {state.map((s, i) => (
+          <CardPost {...s} key={i}/>
+        ))}
       </div>
     );
   }

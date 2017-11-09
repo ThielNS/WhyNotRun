@@ -23,20 +23,33 @@ p, ul, ol, span, a {
 }
 
 label {
-  display: inline-block;
+  display: block;
+
+  &.-title {
+    font-size: 14px;
+    color: $white-color;
+    margin-bottom: 5px;
+  }
 }
 input, select, textarea, button {
   outline: none;
+  -webkit-appearance:none;
 }
 input, select, textarea {
   border: 1px solid #eee;
   padding: 10px;
   border-radius: 5px;
   font-size: 14px;
+  background-color: $white-color;
 
   &::-webkit-input-placeholder {
     color: $grey-light;
   }
+}
+
+select {
+  padding: 10px;
+  -webkit-appearance:none;
 }
 textarea {
   min-height: 100px;

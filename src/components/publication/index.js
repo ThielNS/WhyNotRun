@@ -11,6 +11,12 @@ class Publication extends Component {
           <form action="">
             <input type="text" name="title" placeholder="Titulo" className="col-sm-12"/>
             <textarea name="text" placeholder="Texto da discussão" className="col-sm-12"/>
+            <div className="select-tech">
+              <div className="option-tech -header">
+                <span>Tecnologias</span>
+                <i className="fa fa-angle-down"></i>
+              </div>
+            </div>
             <Button style="-default" title="Postar" icon="send"/>
           </form>
         </div>

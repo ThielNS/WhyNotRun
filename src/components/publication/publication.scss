@@ -11,5 +11,18 @@ $margin: 20px;
     input, textarea, button {
       margin-top: $margin;
     }
+
+    .select-tech {
+      position: relative;
+
+      .option-tech {
+        padding: 10px 20px;
+        background-color: #fff;
+
+        .fa {
+          margin: 0;
+        }
+      }
+    }
   }
 }

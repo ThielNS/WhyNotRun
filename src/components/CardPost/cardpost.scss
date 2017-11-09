@@ -1,7 +1,5 @@
 @import "../../styles/variables";
 
-$space: 20px;
-
 .post-card {
   display: flex;
   flex-direction: column;
@@ -21,6 +19,13 @@ $space: 20px;
         width: 30px;
         height: 30px;
       }
+      .name-user {
+        padding-right: 10px;
+        border-right: 1px solid #ddd;
+      }
+      .work-user {
+        padding-left: 10px;
+      }
     }
   }
 
@@ -32,27 +37,14 @@ $space: 20px;
     }
   }
 
-  .tags {
-    padding: 0 $space $space $space;
-
-    .tag {
-      padding: 5px;
-      background-color: $second-color;
-      font-size: 12px;
-      color: $white-color;
-      margin-right: 10px;
-      border-radius: 5px;
-    }
-  }
-
   .post-footer {
     background-color: #f8f8f8;
 
-    .post-data {
+    .post-react {
       padding: $space;
       background-color: rgba(0,0,0,.03);
 
-      .post-react {
+      .react-buttons {
 
         button {
           padding: 0;

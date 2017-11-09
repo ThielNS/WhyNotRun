@@ -1,0 +1,57 @@
+@import "variables";
+
+.access {
+  background-color: $primare-color;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .access-box {
+    width: 400px;
+    display: block;
+
+    .access-header {
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+
+      a {
+        text-decoration: none;
+
+        h1 {
+          color: $white-color;
+          text-align: center;
+        }
+      }
+    }
+
+    .access-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      input {
+        padding: 10px;
+        color: $grey-dark;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        font-size: 13px;
+      }
+    }
+
+    .access-footer {
+      p {
+        text-align: center;
+
+        a {
+          color: $white-color;
+        }
+      }
+    }
+  }
+}

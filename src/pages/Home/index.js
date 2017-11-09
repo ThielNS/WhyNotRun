@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from "../../components/Navbar";
 import Publication from "../../components/publication";
-import Feed from "../../components/Feed/index";
+import Feed from "../../containers/FeedContainer";
 
 const Home = () => (
   <main>
