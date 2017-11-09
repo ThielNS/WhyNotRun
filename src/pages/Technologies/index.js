@@ -1,11 +1,12 @@
 import React from 'react';
-import CardTech from '../../components/CardTech';
 import TabFilter from '../../components/CardTech/TabFilter';
+import VisibleTechs from '../../containers/VisibleTechs'
+
 
 const Technologies = () => (
-    <div>
+    <div className="content-techs">
         <TabFilter />
-        <CardTech />
+        <VisibleTechs />
     </div>
 );
 

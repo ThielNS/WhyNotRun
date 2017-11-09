@@ -5,34 +5,25 @@ import './style.css';
 
 class CardTech extends Component {
     constructor(props) {
-        super(props);
-
+        super(props);   
+        
         this.state = {
-            items: [
-                {
-                    technology: 'React.js',
-                    points: '123',
-                    posts: '12'
-                },
-                {
-                    technology: 'Ember.js',
-                    points: '123',
-                    posts: '12'
-                },
-                {
-                    technology: 'Vue.js',
-                    points: '123',
-                    posts: '12'
-                }
-            ]
+            items:[]
         }
     }
+    componentDidMount() {
+        console.log(this.props);
+        this.props.getApi();
+    }
+
     render() {
-        const { items } = this.state;
+        console.log(this.props)
+        const { items } = this.props;
+
         return (
             <ul className='techs'>
                 {items.map((item, index) => (
-                    <ItemTech key={index} technology={item.technology} points={item.points} posts={item.posts} />
+                    <ItemTech key={index} {...item} title={item.title}  />
                 ))}
             </ul>
         );
