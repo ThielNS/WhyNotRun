@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Technologies from "./pages/Technologies";
 import Home from "./pages/Home";
 
 import './styles/reset.css';
@@ -13,7 +14,8 @@ class App extends Component {
       <Provider>
         <Router>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route path="/technologies" component={Technologies}/>
           </Switch>
         </Router>
       </Provider>

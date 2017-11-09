@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ItemMenu = ({ to, title }) => (
   <li>
-    <Link to={to} >{title}</Link>
+    <Link to={to}>{title}</Link>
   </li>
 );
 
