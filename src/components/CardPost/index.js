@@ -14,7 +14,7 @@ const CardPost = (props) => {
   const user = {
     name: props.UserName,
     avatar: props.UserPictures,
-    work: props.USerProfession,
+    work: props.UserProfession,
   };
 
   return (
@@ -23,7 +23,7 @@ const CardPost = (props) => {
         <PostHeader user={user} date={props.dateCreation}/>
         <PostContent title={props.Title} text={props.Description}/>
         <TagTech tags={props.Techies}/>
-        <PostFooter points={props.Points}/>
+        <PostFooter points={props.Points} comments={props.Comments}/>
       </div>
     </div>
   );

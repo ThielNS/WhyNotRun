@@ -4,11 +4,11 @@ import PostReact from "./PostReact";
 import PostComments from "./PostComments";
 import AddComment from "./AddComment";
 
-const PostFooter = ({ points }) => {
+const PostFooter = ({ points, comments }) => {
   return (
     <footer className="post-footer">
       <PostReact points={points}/>
-      <PostComments/>
+      <PostComments comments={comments}/>
       <AddComment/>
     </footer>
   );

@@ -5,13 +5,15 @@ const PostComments = ({ comments }) => {
   return (
     <div className="post-comments">
       <ul className="row -direct-column">
-        <li className="col-sm-12">
-          <Avatar/>
-          <div className="comment">
-            <span>{'Gabriel Souza'}</span>
-            <p>Lorem Ispsum dolos sit amet</p>
-          </div>
-        </li>
+        {comments.map((c, i) => (
+          <li className="col-sm-12" key={i}>
+            <Avatar/>
+            <div className="comment">
+              <span>{c.UserName}</span>
+              <p>{c.Description}</p>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   );

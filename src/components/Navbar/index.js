@@ -6,7 +6,7 @@ import './navbar.css';
 import Search from "../Search";
 
 
-const NavBar = () => (
+const NavBar = ({ token }) => (
   <nav className="nav-menu row -space-between">
     <div className="row -flex-start -align-center">
       <Link to="/feed">
@@ -17,7 +17,7 @@ const NavBar = () => (
 
     <div className="row -flex-end -align-center">
       <NavMenu/>
-      <Avatar/>
+      {token ? (<Avatar/>) : null}
     </div>
   </nav>
 );

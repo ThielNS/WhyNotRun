@@ -19,6 +19,7 @@ class Feed extends Component {
   }
 
   render() {
+
     const { state } = this.props;
 
     return (

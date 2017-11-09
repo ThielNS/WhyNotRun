@@ -27,12 +27,19 @@ class NavMenu extends Component {
   render() {
 
     const { items } = this.state;
+    const token = false;
 
     return (
       <ul>
-        {items.map((item, index) => (
-          <Item key={index} to={item.to} title={item.title}/>
-        ))}
+        {items.map((item, index) => {
+          if (token) {
+            if (item.to == '/technologys') {
+              return (<Item key={index} to={item.to} title={item.title}/>);
+            }
+          } else {
+            return (<Item key={index} to={item.to} title={item.title}/>);
+          }
+        })}
       </ul>
     )
   }
