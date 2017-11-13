@@ -1,7 +1,7 @@
 export const getAPI = () => dispatch => {
   const urlAPIAry = "https://private-93e4a-whynotrun1.apiary-mock.com/feed";
   const urlLocal = "http://localhost:55816/publication/publications";
-  fetch(urlLocal)
+  return fetch(urlLocal)
     .then(response => response.json())
     .then(data => {
       dispatch({
@@ -9,7 +9,9 @@ export const getAPI = () => dispatch => {
         data
       })
     })
-    .catch(erro => { type: 'API_ERRO', erro });
+    .catch(erro => {
+        throw new Error("RequestError",{ type: 'API_ERRO', message: erro.message });
+    });
 };
 
 export const addPost = (title, text, idTech, idUser) => dispatch => {

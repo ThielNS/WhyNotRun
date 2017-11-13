@@ -18,15 +18,17 @@ class Feed extends Component {
     this.props.getAPI();
   }
 
+  renderPosts(){
+    const { posts } = this.props;
+    return this.props.posts.map((post, i) => (
+      <CardPost {...post} key={i}/>
+    ));
+  }
+
   render() {
-
-    const { state } = this.props;
-
     return (
       <div className="container">
-        {state.map((s, i) => (
-          <CardPost {...s} key={i}/>
-        ))}
+        { this.renderPosts() }
       </div>
     );
   }

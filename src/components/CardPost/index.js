@@ -5,28 +5,33 @@ import PostContent from "./PostContent";
 import TagTech from "../TagTech";
 import PostFooter from "./PostFooter";
 import './cardpost.css';
+// import PropTypes from "prop-types";
 
 
-const CardPost = (props) => {
+const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Description,Techies,Points,Comments}) => {
 
   const point = -10;
 
   const user = {
-    name: props.UserName,
-    avatar: props.UserPictures,
-    work: props.UserProfession,
+    name: UserName,
+    avatar: UserPictures,
+    work: UserProfession,
   };
 
   return (
     <div className="">
       <div className="post-card">
-        <PostHeader user={user} date={props.dateCreation}/>
-        <PostContent title={props.Title} text={props.Description}/>
-        <TagTech tags={props.Techies}/>
-        <PostFooter points={props.Points} comments={props.Comments}/>
+        <PostHeader user={user} date={DateCreation}/>
+        <PostContent title={Title} text={Description}/>
+        <TagTech tags={Techies}/>
+        <PostFooter points={Points} comments={Comments}/>
       </div>
     </div>
   );
 }
+
+// CardPost.propTypes = {
+//   name: PropTypes.string.isRequired
+// }
 
 export default CardPost;

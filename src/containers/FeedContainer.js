@@ -5,12 +5,12 @@ import { getAPI } from "../actions/postAction";
 import { validLogin } from "../actions/loginAction";
 
 const mapStateToProps = state => {
-  return { state: state.post };
+  return { posts: state.post };
 }
 
 const mapDispatchToProps = dispatch => ({
   getAPI: () => {
-    dispatch(getAPI());
+    return dispatch(getAPI());
   },
   validLogin: () => {
     dispatch(validLogin());
