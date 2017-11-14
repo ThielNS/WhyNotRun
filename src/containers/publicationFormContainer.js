@@ -1,11 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Post from '../components/publication';
+import PublicationForm from '../components/PublicationForm';
 import { addPost } from "../actions/postAction";
-
-const mapStateToProps = state => {
-  return { state };
-}
 
 const mapDispatchToProps = dispatch => ({
   addPost: (title, text, idTech, idUser) => {
@@ -13,4 +9,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post);
+export default connect(mapDispatchToProps)(PublicationForm);

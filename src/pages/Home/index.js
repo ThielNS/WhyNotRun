@@ -1,12 +1,10 @@
 import React from 'react';
-import Navbar from "../../components/Navbar";
-import Publication from "../../containers/postContainer";
+import PublicationFormContainer from "../../containers/publicationFormContainer";
 import Feed from "../../containers/FeedContainer";
 
 const Home = () => (
   <main>
-    <Navbar token=""/>
-    <Publication/>
+    <PublicationFormContainer/>
     <Feed/>
   </main>
 );

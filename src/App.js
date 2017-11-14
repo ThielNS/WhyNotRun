@@ -3,9 +3,15 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
-import Home from "./pages/Home";
-import Access from "./pages/Access";
+
 import reducers from './reducers';
+
+import DefaultLayout from "./layouts/Default";
+import AccountLayout from "./layouts/Account";
+
+import HomePage from "./pages/Home";
+import LoginContainer from "./containers/loginContainer";
+import RegisterContainer from "./containers/registerContainer";
 
 import './styles/reset.css';
 import './styles/layout.css';
@@ -17,7 +23,7 @@ const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk),
-)
+);
 
 class App extends Component {
   render() {
@@ -25,9 +31,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Access} />
-            <Route path="/register" component={Access} />
+            <DefaultLayout exact path="/" component={HomePage} />
+            <AccountLayout path="/login" component={LoginContainer} />
+            <AccountLayout path="/register" component={RegisterContainer} />
           </Switch>
         </Router>
       </Provider>

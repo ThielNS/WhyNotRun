@@ -1,5 +1,6 @@
 import React from 'react';
 import * as moment from 'moment';
+import PropTypes from 'prop-types';
 import Avatar from '../../Avatar';
 
 const PostHeader = ({user, date}) => {
@@ -18,7 +19,17 @@ const PostHeader = ({user, date}) => {
       </div>
     </div>
   );
-}
+};
+//
+// PostHeader.propType = {
+//   user: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       avatar: PropTypes.string.isRequired,
+//       work: PropTypes.string.isRequired
+//     })
+//   )
+// };
 
 export default PostHeader;
 

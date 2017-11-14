@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const Logo = () => (
-    <Link to="/feed">
+    <Link to="/">
       <h1>WhyNotRun</h1>
     </Link>
 );

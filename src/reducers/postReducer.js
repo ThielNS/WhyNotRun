@@ -14,7 +14,7 @@ const post = (state = [], action) => {
 
       return state.concat(newPost);
 
-    case 'API_LIST':
+    case 'LIST_POSTS':
       return state.concat(action.data);
     case 'API_ERRO':
     default:

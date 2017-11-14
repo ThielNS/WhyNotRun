@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Feed from '../components/Feed';
-import { getAPI } from "../actions/postAction";
-import { validLogin } from "../actions/loginAction";
+import { listPosts } from "../actions/postAction";
 
 const mapStateToProps = state => {
   return { posts: state.post };
@@ -10,10 +9,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getAPI: () => {
-    return dispatch(getAPI());
-  },
-  validLogin: () => {
-    dispatch(validLogin());
+    return dispatch(listPosts());
   }
 });
 

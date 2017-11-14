@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PostContent = ({title, text}) => {
   return (
@@ -7,6 +8,11 @@ const PostContent = ({title, text}) => {
       <p>{text}</p>
     </div>
   );
+};
+
+PostContent.propTypes = {
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 }
 
 export default PostContent;

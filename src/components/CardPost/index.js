@@ -1,16 +1,13 @@
 import React from 'react';
-import moment from 'moment';
 import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
 import TagTech from "../TagTech";
 import PostFooter from "./PostFooter";
 import './cardpost.css';
-// import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 
 const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Description,Techies,Points,Comments}) => {
-
-  const point = -10;
 
   const user = {
     name: UserName,
@@ -30,8 +27,25 @@ const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Descr
   );
 }
 
-// CardPost.propTypes = {
-//   name: PropTypes.string.isRequired
-// }
+CardPost.propTypes = {
+  UserName: PropTypes.string.isRequired,
+  UserPictures: PropTypes.string.isRequired,
+  UserProfession: PropTypes.string.isRequired,
+  DateCreation: PropTypes.instanceOf(Date).isRequired,
+  Title: PropTypes.string.isRequired,
+  Description: PropTypes.string.isRequired,
+  Techies: PropTypes.arrayOf(
+    PropTypes.shape({
+      NameTechie: PropTypes.string.isRequired
+    }).isRequired
+  ),
+  Points: PropTypes.number.isRequired,
+  Comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      UserName: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired
+    })
+  )
+}
 
 export default CardPost;

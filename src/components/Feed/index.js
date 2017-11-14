@@ -20,8 +20,8 @@ class Feed extends Component {
 
   renderPosts(){
     const { posts } = this.props;
-    return this.props.posts.map((post, i) => (
-      <CardPost {...post} key={i}/>
+    return posts.map((post, index) => (
+      <CardPost {...post} key={index}/>
     ));
   }
 

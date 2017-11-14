@@ -1,11 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Login from '../components/Access';
+import FormLogin from '../components/FormLogin';
 import { validLogin } from "../actions/loginAction";
-
-const mapStateToProps = state => {
-  return { state };
-}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -15,4 +11,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapDispatchToProps)(FormLogin);
