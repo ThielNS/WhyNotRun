@@ -15,6 +15,7 @@ const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Descr
     work: UserProfession,
   };
 
+
   return (
     <div className="">
       <div className="post-card">

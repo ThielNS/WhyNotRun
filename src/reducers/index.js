@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
-import post from './postReducer';
+import publicationsReducer from './publicationsReducer';
+import loginReducer from "./loginReducer";
 
-const reducerApp = combineReducers({post});
+const reducerApp = combineReducers({publicationsReducer, loginReducer});
 
 export default reducerApp

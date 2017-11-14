@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import FormLogin from '../components/FormLogin';
-import { validLogin } from "../actions/loginAction";
+import { loginAuthentication } from "../actions/loginAction";
+
+const mapStateToProps = state => {
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    validLogin: (token) => {
-      dispatch(validLogin());
+    loginAuthentication: (email, password) => {
+      return dispatch(loginAuthentication(email, password));
     }
   };
 };
 
-export default connect(mapDispatchToProps)(FormLogin);
+export default connect(mapStateToProps, mapDispatchToProps)(FormLogin);

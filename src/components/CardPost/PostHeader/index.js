@@ -20,16 +20,16 @@ const PostHeader = ({user, date}) => {
     </div>
   );
 };
-//
-// PostHeader.propType = {
-//   user: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       name: PropTypes.string.isRequired,
-//       avatar: PropTypes.string.isRequired,
-//       work: PropTypes.string.isRequired
-//     })
-//   )
-// };
+
+PostHeader.propType = {
+  user: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      work: PropTypes.string.isRequired
+    })
+  )
+};
 
 export default PostHeader;
 

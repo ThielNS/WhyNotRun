@@ -3,9 +3,11 @@ import { Route } from "react-router-dom";
 import Logo from "../../components/Logo/index";
 import FooterLogin from "../../components/FooterLogin/index";
 import '../../styles/access.css';
+import PublicationForm from "../../components/PublicationForm/index";
 
+//TODO: Decidir nome do AuthenticationLayout
+class AuthenticationLayout extends Component {
 
-class AccountLayout extends Component {
   componentDidUpdate() {
     window.scrollTo(0,0);
   }
@@ -27,4 +29,4 @@ class AccountLayout extends Component {
   }
 }
 
-export default AccountLayout;
+export default AuthenticationLayout;

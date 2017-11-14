@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardPost from "../CardPost/index";
 
 class Feed extends Component {
@@ -15,7 +16,7 @@ class Feed extends Component {
   }
 
   componentDidMount() {
-    this.props.getAPI();
+    this.props.listPosts();
   }
 
   renderPosts(){
@@ -33,5 +34,9 @@ class Feed extends Component {
     );
   }
 }
+
+Feed.propTypes = {
+  listPosts: PropTypes.func.isRequired
+};
 
 export default Feed;

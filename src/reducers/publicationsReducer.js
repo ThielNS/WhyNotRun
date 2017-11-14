@@ -1,7 +1,8 @@
+import { ADD_POST, LIST_POSTS, ERRO_POST } from '../constants/actionTypes';
 
-const post = (state = [], action) => {
+const publicationsReducer = (state = [], action) => {
   switch(action.type) {
-    case 'ADD_POST':
+    case ADD_POST:
 
       const newPost = {
         id: state.length + 1,
@@ -22,4 +23,4 @@ const post = (state = [], action) => {
   }
 };
 
-export default post;
+export default publicationsReducer;

@@ -6,8 +6,8 @@ import thunk from "redux-thunk";
 
 import reducers from './reducers';
 
-import DefaultLayout from "./layouts/Default";
-import AccountLayout from "./layouts/Account";
+import MainLayout from "./layouts/Main";
+import AuthenticationLayout from "./layouts/Authentication";
 
 import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
@@ -17,8 +17,6 @@ import './styles/reset.css';
 import './styles/layout.css';
 import './styles/colors.css';
 
-
-// Error in
 const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
@@ -31,9 +29,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
-            <DefaultLayout exact path="/" component={HomePage} />
-            <AccountLayout path="/login" component={LoginContainer} />
-            <AccountLayout path="/register" component={RegisterContainer} />
+            <MainLayout exact path="/" component={HomePage} />
+            <AuthenticationLayout path="/login" component={LoginContainer} />
+            <AuthenticationLayout path="/register" component={RegisterContainer} />
           </Switch>
         </Router>
       </Provider>

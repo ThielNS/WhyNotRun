@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Feed from '../components/Feed';
-import { listPosts } from "../actions/postAction";
+import { listPosts } from "../actions/publicationsAction";
 
 const mapStateToProps = state => {
-  return { posts: state.post };
+  return { posts: state.publicationsReducer };
 }
 
 const mapDispatchToProps = dispatch => ({
-  getAPI: () => {
+  listPosts: () => {
     return dispatch(listPosts());
   }
 });

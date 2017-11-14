@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './publication.css';
 import Button from "../Button";
 
@@ -74,6 +75,10 @@ class PublicationForm extends Component {
       </div>
     );
   }
+}
+
+PublicationForm.propTypes = {
+  addPost: PropTypes.func.isRequired
 }
 
 export default PublicationForm;
