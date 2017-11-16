@@ -5,7 +5,7 @@ import { listPosts } from "../actions/publicationsAction";
 
 const mapStateToProps = state => {
   return { posts: state.publicationsReducer };
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   listPosts: () => {

@@ -16,7 +16,11 @@ class Feed extends Component {
   }
 
   componentDidMount() {
-    this.props.listPosts();
+    this.props
+      .listPosts()
+      .catch( e =>{
+        console.log("DEU ERRO AMIGUINHO :(");
+      });
   }
 
   renderPosts(){

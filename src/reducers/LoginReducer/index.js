@@ -1,7 +1,4 @@
-// import { AUTH_LOGIN } from '../constants/actionTypes';
-
-export const AUTH_LOGIN = 'AUTH_LOGIN';
-export const VALID_LOGIN = 'VALID_LOGIN';
+import { AUTH_LOGIN } from './constants';
 
 const login = (state = [], action) => {
   switch (action.type) {

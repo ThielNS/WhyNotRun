@@ -24,6 +24,7 @@ class PublicationForm extends Component {
   };
 
   submitPost = e => {
+    e.preventDefault();
     const { title, text, idTechies, idUser } = this.props;
     this.props.addPost(title,text,idTechies,idUser);
   };

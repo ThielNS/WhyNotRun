@@ -1,4 +1,4 @@
-import { VALID_LOGIN } from '../constants/actionTypes';
+import { VALID_LOGIN } from '../reducers/LoginReducer/constants';
 import { urlLogin } from '../constants/routesApi';
 
 

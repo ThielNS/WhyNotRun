@@ -15,7 +15,6 @@ const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Descr
     work: UserProfession,
   };
 
-
   return (
     <div className="">
       <div className="post-card">
@@ -30,14 +29,14 @@ const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Descr
 
 CardPost.propTypes = {
   UserName: PropTypes.string.isRequired,
-  UserPictures: PropTypes.string.isRequired,
+  UserPicture: PropTypes.string.isRequired,
   UserProfession: PropTypes.string.isRequired,
-  DateCreation: PropTypes.instanceOf(Date).isRequired,
+  DateCreation: PropTypes.string.isRequired,
   Title: PropTypes.string.isRequired,
   Description: PropTypes.string.isRequired,
   Techies: PropTypes.arrayOf(
     PropTypes.shape({
-      NameTechie: PropTypes.string.isRequired
+      Name: PropTypes.string.isRequired
     }).isRequired
   ),
   Points: PropTypes.number.isRequired,

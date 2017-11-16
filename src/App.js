@@ -16,6 +16,8 @@ import RegisterContainer from "./containers/registerContainer";
 import './styles/reset.css';
 import './styles/layout.css';
 import './styles/colors.css';
+import ErrorPage from "./pages/Error/index";
+import ErrorLayout from "./layouts/ErrorLayout/index";
 
 const store = createStore(
   reducers,
@@ -30,8 +32,9 @@ class App extends Component {
         <Router>
           <Switch>
             <MainLayout exact path="/" component={HomePage} />
-            <AuthenticationLayout path="/login" component={LoginContainer} />
-            <AuthenticationLayout path="/register" component={RegisterContainer} />
+            <AuthenticationLayout exact path="/login" component={LoginContainer} />
+            <AuthenticationLayout exact path="/register" component={RegisterContainer} />
+            <ErrorLayout path="*" component={ErrorPage} />
           </Switch>
         </Router>
       </Provider>

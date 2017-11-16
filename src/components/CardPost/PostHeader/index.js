@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Avatar from '../../Avatar';
 
 const PostHeader = ({user, date}) => {
-  console.log(date);
+
   const datePost = moment(date).fromNow();
 
   return (

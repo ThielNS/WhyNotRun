@@ -1,34 +1,31 @@
-import { LIST_POSTS, ERRO_POSTS } from '../constants/actionTypes';
-import { urlPublications } from '../constants/routesApi';
+import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
+import { get, post } from '../modules/request';
 
 export const listPosts = () => dispatch => {
-  return fetch(urlPublications)
-    .then(response => response.json())
+  return get('publications?page=1')
     .then(data => {
-      dispatch({
-        type: LIST_POSTS,
+      return dispatch({
+        type: LIST_PUBLICATIONS,
         data
-      })
+      });
     })
     .catch(erro => {
-        // throw new Error("RequestError",{ type: ERRO_POSTS, message: erro.message });
+      throw new Error("RequestError",{ type: ERROR_PUBLICATION, message: erro.message });
     });
 };
 
 export const addPost = (title, text, idTech, idUser) => dispatch => {
 
-  const bodyParameters= {
+  const bodyParameters = {
     title: title,
     description: text,
     techies: idTech,
     user: idUser
   };
 
-  fetch(urlPublications, {
-    method: 'post',
-    body: JSON.stringify(bodyParameters),
-    headers: { 'Content-type': 'application/json' }
-  })
-  .then(response => response.json())
-  .catch(erro => { type: ERRO_POSTS, erro });
+  return post('publications', bodyParameters)
+    .then ()
+    .catch (error => {
+      throw new Error ('RequestError', {type: ERROR_PUBLICATION, message: error.message});
+    });
 }

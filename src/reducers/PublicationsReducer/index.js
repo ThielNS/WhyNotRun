@@ -1,8 +1,8 @@
-import { ADD_POST, LIST_POSTS, ERRO_POST } from '../constants/actionTypes';
+import { ADD_PUBLICATION, LIST_PUBLICATIONS, ERROR_PUBLICATION } from './constants';
 
 const publicationsReducer = (state = [], action) => {
   switch(action.type) {
-    case ADD_POST:
+    case ADD_PUBLICATION:
 
       const newPost = {
         id: state.length + 1,
@@ -15,9 +15,10 @@ const publicationsReducer = (state = [], action) => {
 
       return state.concat(newPost);
 
-    case 'LIST_POSTS':
+    case LIST_PUBLICATIONS:
       return state.concat(action.data);
-    case 'API_ERRO':
+    case ERROR_PUBLICATION:
+      return action.message;
     default:
       return state;
   }
