@@ -1,6 +1,8 @@
 ul {
   list-style: none;
   display: flex;
+  align-items: center;
+  flex-shrink: 0;
 
   li {
     margin-right: 20px;
@@ -8,6 +10,10 @@ ul {
     a {
       display: block;
       color: #fff;
+
+      .fa {
+        margin-right: 5px;
+      }
     }
   }
 }

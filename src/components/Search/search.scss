@@ -1,32 +1,35 @@
 @import "../../styles/variables";
 
 .form-search {
-  margin-left: 20px;
+  margin: 0 auto;
   position: relative;
   display: flex;
-  background-color: $white-color;
+  background-color: #a8abb9;
   border-radius: 20px;
   align-items: center;
   overflow: hidden;
 
   .fa {
-    color: $grey-light;
+    color: #ddd;
     padding: 0 10px;
     position: absolute;
   }
 
   input {
     border: none;
-    width: 150px;
+    width: 100%;
     height: 100%;
     background-color: $transparent;
     position: relative;
     z-index: 1;
     padding: 10px 10px 10px 30px;
-    transition: .3s;
+    color: $white-color;
 
-    &:focus {
-      width: 250px;
+    &::-webkit-input-placeholder {
+      color: #ddd;
+    }
+    &:-ms-input-placeholder {
+      color: $white-color;
     }
   }
 }

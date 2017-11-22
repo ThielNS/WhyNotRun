@@ -13,9 +13,9 @@ import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
 
-import './styles/reset.css';
-import './styles/layout.css';
-import './styles/colors.css';
+import './styles/reset.scss';
+import './styles/layout.scss';
+import './styles/colors.scss';
 import ErrorPage from "./pages/Error/index";
 import ErrorLayout from "./layouts/ErrorLayout/index";
 
