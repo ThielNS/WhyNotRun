@@ -20,3 +20,24 @@
     margin-left: $space;
   }
 }
+
+// PADDINGS
+._padding {
+  padding: $space;
+
+  &-top {
+    padding-top: $space;
+  }
+
+  &-right {
+    padding-right: $space;
+  }
+
+  &-bottom {
+    padding-bottom: $space;
+  }
+
+  &-left {
+    padding-left: $space;
+  }
+}
