@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import TagTech from "../TagTech/index";
 import ResultSearch from "./ResultSearch/index";
 
-class Search extends Component {
+class SearchForm extends Component {
 
   constructor(props) {
     super(props);
@@ -93,4 +93,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default SearchForm;

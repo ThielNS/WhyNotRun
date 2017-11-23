@@ -2,7 +2,7 @@ import React from 'react';
 import Avatar from '../Avatar';
 import NavMenu from '../Navmenu';
 import './navbar.scss';
-import Search from "../Search";
+import SearchForm from "../SearchForm";
 import Logo from "../Logo/index";
 
 
@@ -13,7 +13,7 @@ const NavBar = ({ token }) => (
     </div>
 
     <div className="col-sm-12 row -space-between -flex-end -align-center">
-      <Search/>
+      <SearchForm/>
       <NavMenu/>
       {token ? (<Avatar/>) : null}
     </div>
