@@ -1,17 +1,15 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import Avatar from '../Avatar';
 import NavMenu from '../Navmenu';
 import './navbar.scss';
 import Search from "../Search";
+import Logo from "../Logo/index";
 
 
 const NavBar = ({ token }) => (
   <nav className="nav-menu row -space-between">
     <div className="col-sm-12 row -space-between -flex-start -align-center">
-      <Link to="/feed">
-        <h1>WhyNotRun</h1>
-      </Link>
+      <Logo/>
       <Search/>
     </div>
 
