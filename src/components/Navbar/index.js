@@ -7,13 +7,13 @@ import Logo from "../Logo/index";
 
 
 const NavBar = ({ token }) => (
-  <nav className="nav-menu row -space-between">
-    <div className="col-sm-12 row -space-between -flex-start -align-center">
+  <nav className="nav-menu row -space-between -align-center">
+    <div className="row -flex-start">
       <Logo/>
-      <Search/>
     </div>
 
-    <div className="row -flex-end -align-center">
+    <div className="col-sm-12 row -space-between -flex-end -align-center">
+      <Search/>
       <NavMenu/>
       {token ? (<Avatar/>) : null}
     </div>
