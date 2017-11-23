@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ac0b381-2fb9-40cc-b804-863963c6a91f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PublicationForm/form-publication.scss" afterPath="$PROJECT_DIR$/src/components/PublicationForm/form-publication.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PublicationForm/index.js" afterPath="$PROJECT_DIR$/src/components/PublicationForm/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/_helpers.scss" afterPath="$PROJECT_DIR$/src/styles/_helpers.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/reset.scss" afterPath="$PROJECT_DIR$/src/styles/reset.scss" />
-    </list>
+    <list default="true" id="3ac0b381-2fb9-40cc-b804-863963c6a91f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,20 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/PublicationForm/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="63" column="16" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -285,12 +266,12 @@
       <workItem from="1510665490447" duration="18177000" />
       <workItem from="1510837461109" duration="1411000" />
       <workItem from="1511376683364" duration="5282000" />
-      <workItem from="1511441417593" duration="19684000" />
+      <workItem from="1511441417593" duration="19766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107809000" />
+    <option name="totallyTimeSpent" value="107891000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -303,9 +284,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1200" height="1412" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23494487" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23494487" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1901082" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -727,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PublicationForm/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="63" column="16" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+        <state relative-caret-position="321">
+          <caret line="61" column="12" lean-forward="true" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
