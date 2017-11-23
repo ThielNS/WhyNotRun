@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import TabRanking from '../tabRanking';
 
+import './style.scss'
+
 class Navbar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             tabs: [
+                {
+                    title:'#'
+                },
                 {
                     title: 'Tecnologia'
                 },
@@ -22,7 +27,7 @@ class Navbar extends Component {
     render() {
         const { tabs } = this.state;
         return (
-            <ul>
+            <ul className="navbar-technologies">
                 {tabs.map((tab, index) => (
                     <TabRanking key={index} {...tab} />
                 ))}

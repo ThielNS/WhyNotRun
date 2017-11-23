@@ -1,15 +1,14 @@
 import React from 'react';
 
+import './style.scss';
+
 const BottomTechnologies = ({ position, title, points, posts }) => {
     return (
-        <li>
-            <h3>{title}</h3>
+        <li className="list-technologies">
             <i>{position}</i>
-            <i>Position</i>
+            <i>{title}</i>
             <i>{points}</i>
-            <i>Pontuação</i>
             <i>{posts}</i>
-            <i>Publicações</i>
         </li>
     )
 }

@@ -49,7 +49,7 @@ class Ranking extends Component {
                 },
                 {
                     title: 'Ruby',
-                    position: '6',
+                    position: '7',
                     points: '125 Mi',
                     posts: '256 Mi'
                 },
@@ -61,26 +61,28 @@ class Ranking extends Component {
 
     render() {
         const { technologiesPodium } = this.state;
-        const itemsPodium = technologiesPodium.slice(0,3);
-        const listItemsBottom = technologiesPodium.splice(0,3);
+        const itemsPodium = technologiesPodium.slice(0, 3);
+        const listItemsBottom = technologiesPodium.splice(0, 3);
 
         return (
-            <div>
-                <Navbar />
-                <div >
-                    <ul className="content-ranking">
-                        <div className="techs-podium">
-                            {itemsPodium.map((technology, index) => (
-                                <TechnologyPodium key={index} {...technology} />
-                            ))}
-                        </div>
+            <div className="container">
+                <ul className="content-ranking">
+                    <div>
                         <div>
-                            {technologiesPodium.map((technology, index) => (
-                                <BottomTechs key={index} {...technology}  />
-                            ))}
+                            <div className="techs-podium">
+                                {itemsPodium.map((technology, index) => (
+                                    <TechnologyPodium key={index} {...technology} />
+                                ))}
+                            </div>
+                            <div className="container content-listbottom">
+                                    <Navbar />
+                                    {technologiesPodium.map((technology, index) => (
+                                        <BottomTechs key={index} {...technology} />
+                                    ))}
+                            </div>
                         </div>
-                    </ul>
-                </div>
+                    </div>
+                </ul>
             </div>
         )
     }

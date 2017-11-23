@@ -1,6 +1,5 @@
-.bg-1{
-    background-color: #000;
-}
+@import '../../styles/variables.scss';
+
 .techs-podium{
  display: flex;
  color: grey;
@@ -12,4 +11,7 @@
 .content-ranking{
     display: flex;
     flex-direction: column;
+}
+.content-listbottom{
+    background-color: $white-color;
 }
