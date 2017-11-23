@@ -1,35 +1,90 @@
 @import "../../styles/variables";
 
-.form-search {
+.search {
   margin: 0 auto;
   position: relative;
-  display: flex;
-  background-color: #a8abb9;
-  border-radius: 20px;
-  align-items: center;
-  overflow: hidden;
 
-  .fa {
-    color: #ddd;
-    padding: 0 10px;
-    position: absolute;
+  &-form {
+    position: relative;
+    display: flex;
+    background-color: #a8abb9;
+    border-radius: 20px;
+    align-items: center;
+    overflow: hidden;
+
+    .fa {
+      color: #ddd;
+      padding: 0 10px;
+      position: absolute;
+    }
+
+    input {
+      border: none;
+      width: 100%;
+      height: 100%;
+      background-color: $transparent;
+      position: relative;
+      z-index: 1;
+      padding: 10px 10px 10px 30px;
+      color: $white-color;
+
+      &::-webkit-input-placeholder {
+        color: #ddd;
+      }
+      &:-ms-input-placeholder {
+        color: $white-color;
+      }
+    }
   }
 
-  input {
-    border: none;
-    width: 100%;
-    height: 100%;
-    background-color: $transparent;
-    position: relative;
-    z-index: 1;
-    padding: 10px 10px 10px 30px;
-    color: $white-color;
+  &-result {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 45px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: $white-color;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 
-    &::-webkit-input-placeholder {
-      color: #ddd;
+
+    &-title {
+      display: block;
+      flex:1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
-    &:-ms-input-placeholder {
-      color: $white-color;
+
+    ul {
+      width: 100%;
+      flex-direction: column;
+      list-style: none;
+
+      li {
+        width: inherit;
+        margin: 0;
+        border-bottom: 1px solid #f4f4f4;
+
+        &:last-child {
+          border: none;
+        }
+
+        a {
+          padding: 10px;
+          color: #aaa;
+
+          &:hover {
+            color: $second-color;
+            background-color: #f8f8f8;
+          }
+
+          .tags-tech {
+            padding: 0;
+            flex-shrink: 0;
+          }
+        }
+      }
     }
   }
 }
