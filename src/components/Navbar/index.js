@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Avatar from '../Avatar';
 import NavMenu from '../Navmenu';
-import './navbar.css';
+import './navbar.scss';
 import Search from "../Search";
 
 

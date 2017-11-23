@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import './avatar.css';
+import './avatar.scss';
 
 const Avatar = () => (
   <div className="avatar">

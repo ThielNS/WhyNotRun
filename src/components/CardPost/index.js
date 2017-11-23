@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from '../Avatar';
 import Button from '../Button';
-import './cardpost.css';
+import './cardpost.scss';
 
 const CardPost = ({ tags }) => {
 

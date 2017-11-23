@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ItemTech from './ItemTech';
 
-import './style.css';
+import './style.scss';
 
 class CardTech extends Component {
     constructor(props) {

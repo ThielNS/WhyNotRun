@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './publication.css';
+import './publication.scss';
 import Button from "../Button";
 
 class Publication extends Component {

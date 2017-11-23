@@ -6,11 +6,12 @@ import Technologies from "./pages/Technologies";
 import Home from "./pages/Home";
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
+import Ranking  from './components/Ranking/index'
 
 
-import './styles/reset.css';
-import './styles/layout.css';
-import './styles/colors.css';
+import './styles/reset.scss';
+import './styles/layout.scss';
+import './styles/colors.scss';
 
 let store = createStore(
   reducers,
@@ -26,7 +27,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/technologies" component={Technologies}/>
+            <Route path="/technologies" component={Ranking}/>
           </Switch>
         </Router>
       </Provider>
