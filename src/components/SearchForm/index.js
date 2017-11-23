@@ -70,6 +70,10 @@ class SearchForm extends Component {
     this.setState({ textSearch: e.target.value });
   };
 
+  changeTextSearch = () => {
+    this.setState({ textSearch: '' });
+  };
+
   render() {
 
     const rand = Math.floor(Math.random() * 4);
@@ -85,6 +89,7 @@ class SearchForm extends Component {
             placeholder={`"${this.state.textPlaceholder[rand]}"`}
             value={this.state.textSearch}
             onChange={this.search}
+            onBlur={this.changeTextSearch}
           />
         </form>
         <ResultSearch textSearch={textSearch} resultSearch={resultSearch}/>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ac0b381-2fb9-40cc-b804-863963c6a91f" name="Default" comment="" />
+    <list default="true" id="3ac0b381-2fb9-40cc-b804-863963c6a91f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/SearchForm/index.js" afterPath="$PROJECT_DIR$/src/components/SearchForm/index.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,7 +15,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/SearchForm/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -96,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/components/Search/index.js" />
         <option value="$PROJECT_DIR$/src/components/Search/ResultSearch/index.js" />
         <option value="$PROJECT_DIR$/src/components/Search/search.scss" />
-        <option value="$PROJECT_DIR$/src/components/SearchForm/index.js" />
         <option value="$PROJECT_DIR$/src/components/Navbar/index.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.scss" />
         <option value="$PROJECT_DIR$/src/components/PublicationForm/publication.scss" />
@@ -105,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/components/PublicationForm/index.js" />
         <option value="$PROJECT_DIR$/src/styles/reset.scss" />
         <option value="$PROJECT_DIR$/src/components/PublicationForm/form-publication.scss" />
+        <option value="$PROJECT_DIR$/src/components/SearchForm/index.js" />
       </list>
     </option>
   </component>
@@ -164,7 +177,7 @@
               <item name="whynotrun" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="PublicationForm" type="462c0819:PsiDirectoryNode" />
+              <item name="SearchForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="whynotrun" type="b2602c69:ProjectViewProjectNode" />
@@ -266,12 +279,12 @@
       <workItem from="1510665490447" duration="18177000" />
       <workItem from="1510837461109" duration="1411000" />
       <workItem from="1511376683364" duration="5282000" />
-      <workItem from="1511441417593" duration="19766000" />
+      <workItem from="1511441417593" duration="20510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107891000" />
+    <option name="totallyTimeSpent" value="108635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -284,8 +297,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1200" height="1412" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23494487" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23494487" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1901082" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998455" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -626,19 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="13" lean-forward="true" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1511457811000" expanded="true" signature="1677:1901" ph="..." />
-            <marker date="1511457811000" expanded="true" signature="1768:1901" ph="..." />
-            <marker date="1511457811000" expanded="true" signature="1826:1901" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Navbar/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -710,8 +711,16 @@
         <state relative-caret-position="321">
           <caret line="61" column="12" lean-forward="true" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SearchForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
