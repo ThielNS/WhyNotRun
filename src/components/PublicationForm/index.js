@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './publication.css';
+import './form-publication.scss';
 import Button from "../Button";
 
 class PublicationForm extends Component {
@@ -33,47 +33,29 @@ class PublicationForm extends Component {
     const { title, text } = this.state;
 
     return (
-      <div className="container -fluid bg-grey-dark">
-        <div className="container -space-v publication">
-          <h2>Criar Intriga</h2>
-          <form action="" onSubmit={this.submitPost}>
+        <div className="container _margin-top">
+          <form action="" onSubmit={this.submitPost} className="form-publication">
             <input
               type="text"
               name="title"
               placeholder="Titulo"
-              className="col-sm-12"
+              className="input-title col-sm-12"
               onChange={this.handleTitle}
               value={title}
             />
-            <textarea
-              name="text"
-              placeholder="Texto da discussão"
-              className="col-sm-12"
-              onChange={this.handleText}
-              value={text}
-            />
-            <div className="select-tech">
-              <div className="option-tech -header">
-                <span>Tecnologias</span>
-                <i className="fa fa-angle-down"/>
+            <div className="form-publication-informations">
+              <div
+                className="text-description"
+                onChange={this.handleText}
+                contentEditable
+                value={text}
+              />
+              <div className="col-sm-12">
+                <Button style="-second" title="Postar" icon="send"/>
               </div>
             </div>
-            <label>
-              <input type="checkbox" value="1"/>
-              React JS
-            </label>
-            <label>
-              <input type="checkbox" value="2"/>
-              Angular JS
-            </label>
-            <label>
-              <input type="checkbox" value="3"/>
-              Redux
-            </label>
-            <Button style="-default" title="Postar" icon="send"/>
           </form>
         </div>
-      </div>
     );
   }
 }

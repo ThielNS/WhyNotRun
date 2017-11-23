@@ -1,0 +1,22 @@
+@import "variables";
+
+// MARGINS
+._margin {
+  margin: $space;
+
+  &-top {
+    margin-top: $space;
+  }
+
+  &-right {
+    margin-right: $space;
+  }
+
+  &-bottom {
+    margin-bottom: $space;
+  }
+
+  &-left {
+    margin-left: $space;
+  }
+}

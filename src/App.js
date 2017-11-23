@@ -15,6 +15,8 @@ import RegisterContainer from "./containers/registerContainer";
 
 import './styles/reset.scss';
 import './styles/layout.scss';
+import './styles/_variables.scss';
+import './styles/_helpers.scss';
 import './styles/colors.scss';
 import ErrorPage from "./pages/Error/index";
 import ErrorLayout from "./layouts/ErrorLayout/index";
