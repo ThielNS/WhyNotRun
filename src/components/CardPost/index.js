@@ -1,72 +1,51 @@
 import React from 'react';
-import Avatar from '../Avatar';
-import Button from '../Button';
-import './cardpost.scss';
+import PostHeader from "./PostHeader";
+import PostContent from "./PostContent";
+import TagTech from "../TagTech";
+import PostFooter from "./PostFooter";
+import './cardpost.css';
+import PropTypes from 'prop-types';
 
-const CardPost = ({ tags }) => {
 
-  const point = -10;
+const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Description,Techies,Points,Comments}) => {
+
+  const user = {
+    name: UserName,
+    avatar: UserPictures,
+    work: UserProfession,
+  };
+
   return (
     <div className="">
       <div className="post-card">
-        <div className="post-header row -space-between -align-center">
-          <div className="post-user row -align-center">
-            <Avatar/>
-            <span>{'Gabriel Souza'}</span>
-          </div>
-          <div className="post-data">
-            <p>Postado a 1 dia</p>
-          </div>
-        </div>
-
-        <div className="post-content">
-          <h3>Title Tech</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus animi, atque consequatur</p>
-        </div>
-
-        <div className="tags">
-          {tags.map((t, i) => (
-            <span className="tag" key={i}>{t.title}</span>
-          ))}
-        </div>
-
-        <footer className="post-footer">
-          <div className="row -space-between post-data">
-            <div className="post-react">
-              <Button icon="thumbs-o-up" style="-third -no-bg" />
-              <Button icon="thumbs-o-down" style="-danger -no-bg" />
-            </div>
-            <span className={point < 0 ? 'point -negative' : point === 0 ? 'point' : 'point -positive'}>{point} Pontos</span>
-          </div>
-
-          <div className="post-comments">
-            <ul className="row -direct-column">
-              <li className="col-sm-12">
-                <Avatar/>
-                <div className="comment">
-                  <span>{'Gabriel Souza'}</span>
-                  <p>Lorem Ispsum dolos sit amet</p>
-                </div>
-              </li>
-              <li>
-                <Avatar/>
-                <div className="comment">
-                  <span>{'Gabriel Souza'}</span>
-                  <p>Lorem Ispsum dolos sit amet</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="add-comment">
-            <form>
-              <input type="text" placeholder="Comentar..."/>
-              <Button icon="send" style="-third -circle"/>
-            </form>
-          </div>
-        </footer>
+        <PostHeader user={user} date={DateCreation}/>
+        <PostContent title={Title} text={Description}/>
+        <TagTech tags={Techies}/>
+        <PostFooter points={Points} comments={Comments}/>
       </div>
     </div>
   );
+}
+
+CardPost.propTypes = {
+  UserName: PropTypes.string.isRequired,
+  UserPicture: PropTypes.string.isRequired,
+  UserProfession: PropTypes.string.isRequired,
+  DateCreation: PropTypes.string.isRequired,
+  Title: PropTypes.string.isRequired,
+  Description: PropTypes.string.isRequired,
+  Techies: PropTypes.arrayOf(
+    PropTypes.shape({
+      Name: PropTypes.string.isRequired
+    }).isRequired
+  ),
+  Points: PropTypes.number.isRequired,
+  Comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      UserName: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired
+    })
+  )
 }
 
 export default CardPost;

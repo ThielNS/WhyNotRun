@@ -1,12 +1,11 @@
 import React from 'react';
-import Navbar from "../../components/Navbar";
-import Publication from "../../components/publication";
-import Feed from "../../components/Feed/index";
+import PublicationFormContainer from "../../containers/publicationFormContainer";
+import Feed from "../../containers/feedContainer";
 
 const Home = () => (
   <main>
-    <Navbar/>
-    <Publication/>
+    {console.log(localStorage.getItem('userToken'))}
+    <PublicationFormContainer/>
     <Feed/>
   </main>
 );

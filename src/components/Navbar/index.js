@@ -1,23 +1,21 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import Avatar from '../Avatar';
 import NavMenu from '../Navmenu';
 import './navbar.scss';
-import Search from "../Search";
+import SearchForm from "../SearchForm";
+import Logo from "../Logo/index";
 
 
-const NavBar = () => (
-  <nav className="nav-menu row -space-between">
-    <div className="row -flex-start -align-center">
-      <Link to="/feed">
-        <h1>WhyNotRun</h1>
-      </Link>
-      <Search/>
+const NavBar = ({ token }) => (
+  <nav className="nav-menu row -space-between -align-center">
+    <div className="row -flex-start">
+      <Logo/>
     </div>
 
-    <div className="row -flex-end -align-center">
+    <div className="col-sm-12 row -space-between -flex-end -align-center">
+      <SearchForm/>
       <NavMenu/>
-      <Avatar/>
+      {token ? (<Avatar/>) : null}
     </div>
   </nav>
 );

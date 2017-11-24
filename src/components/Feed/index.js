@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardPost from "../CardPost/index";
 
 class Feed extends Component {
@@ -14,13 +15,32 @@ class Feed extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props
+      .listPosts()
+      .catch( e =>{
+        console.log("DEU ERRO AMIGUINHO :(");
+      });
+  }
+
+  renderPosts(){
+    const { posts } = this.props;
+    return posts.map((post, index) => (
+      <CardPost {...post} key={index}/>
+    ));
+  }
+
   render() {
     return (
       <div className="container">
-        <CardPost tags={this.state.tags}/>
+        { this.renderPosts() }
       </div>
     );
   }
 }
+
+Feed.propTypes = {
+  listPosts: PropTypes.func.isRequired
+};
 
 export default Feed;

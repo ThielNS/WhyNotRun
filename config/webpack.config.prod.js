@@ -28,6 +28,11 @@ const publicUrl = publicPath.slice(0, -1);
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
+const extractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash].css",
+  disable: process.env.NODE_ENV === "development"
+});
+
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
 if (env.stringified['process.env'].NODE_ENV !== '"production"') {
@@ -212,6 +217,21 @@ module.exports = {
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
+<<<<<<< HEAD
+=======
+          {
+            test: /\.scss$/,
+            use: extractSass.extract({
+              use: [{
+                loader: "css-loader"
+              }, {
+                loader: "sass-loader"
+              }],
+              // use style-loader in development
+              fallback: "style-loader"
+            })
+          },
+>>>>>>> origin/navbar
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules
@@ -329,6 +349,10 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+<<<<<<< HEAD
+=======
+    extractSass,
+>>>>>>> origin/navbar
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

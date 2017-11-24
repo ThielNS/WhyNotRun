@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "variables";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: #f1f1f1;
 }
 
 h1, h2, h3, h4 {
@@ -23,7 +23,13 @@ p, ul, ol, span, a {
 }
 
 label {
-  display: inline-block;
+  display: block;
+
+  &.-title {
+    font-size: 14px;
+    color: $white-color;
+    margin-bottom: 5px;
+  }
 }
 input, select, textarea, button {
   outline: none;
@@ -33,10 +39,16 @@ input, select, textarea {
   padding: 10px;
   border-radius: 5px;
   font-size: 14px;
+  background-color: $white-color;
 
   &::-webkit-input-placeholder {
     color: $grey-light;
   }
+}
+
+select {
+  padding: 10px;
+  -webkit-appearance:none;
 }
 textarea {
   min-height: 100px;
