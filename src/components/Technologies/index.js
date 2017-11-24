@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TechnologyPodium from './podiumTechs'
-import Navbar from './navbar'
-import BottomTechs from './bottomTechs'
+import Navbar from './navbar';
+import BottomTechs from './bottomTechs';
+import Pagination from '../Pagination';
 
 import './style.scss'
 
@@ -53,6 +54,56 @@ class Ranking extends Component {
                     points: '125 Mi',
                     posts: '256 Mi'
                 },
+                {
+                    title: 'Ruby',
+                    position: '8',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+                {
+                    title: 'Ruby',
+                    position: '9',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+
+                {
+                    title: 'Ruby',
+                    position: '10',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+                {
+                    title: 'C#',
+                    position: '6',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+                {
+                    title: 'Ruby',
+                    position: '7',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+                {
+                    title: 'Ruby',
+                    position: '8',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+                {
+                    title: 'Ruby',
+                    position: '9',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
+
+                {
+                    title: 'Ruby',
+                    position: '10',
+                    points: '125 Mi',
+                    posts: '256 Mi'
+                },
 
             ]
         }
@@ -79,6 +130,9 @@ class Ranking extends Component {
                                     {technologiesPodium.map((technology, index) => (
                                         <BottomTechs key={index} {...technology} />
                                     ))}
+                            </div>
+                            <div className="pagination">
+                                <Pagination />
                             </div>
                         </div>
                     </div>

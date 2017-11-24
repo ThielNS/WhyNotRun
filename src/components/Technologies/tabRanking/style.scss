@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.tab-menu{
+    padding-left: 20px;
+}
+.tab-menu:hover{
+    color: $second-color;
+    cursor: pointer;
+}

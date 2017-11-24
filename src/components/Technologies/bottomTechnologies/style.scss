@@ -1,0 +1,15 @@
+.list-technologies{
+    padding-left: 15px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #EFEFEF;
+    width: 100%;
+    padding-bottom: 25px;
+    height: 20px;
+    
+    .position {
+        margin-left: 4px;
+    }
+}

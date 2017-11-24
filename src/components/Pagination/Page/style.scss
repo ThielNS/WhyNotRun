@@ -1,0 +1,19 @@
+@import '../../../styles/variables';
+
+.page {
+    
+   li {
+       text-align: center;
+       background-color: $white-color;
+       margin: 5px;
+       height: 30px;
+       padding: 5px;
+       width: 30px;
+       border-radius: 80px;
+       cursor: pointer;
+   }
+   li:hover {
+       background-color: $second-color;
+       color:$white-color;
+   }
+}

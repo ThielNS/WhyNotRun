@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.fa-angle-double-left, .fa-angle-double-right{
+    font-size: 25px;
+    padding-right: 10px;
+    color: #C8D0CD;
+}
+.fa-angle-double-right{
+    padding-left: 5px;
+    
+}
+.fa-angle-double-right:hover {
+    color: $second-color;
+}
+.fa-angle-double-left:hover {
+    color: $second-color
+}

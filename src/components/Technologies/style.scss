@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+.content-ranking{
+    display: flex;
+    flex-direction: column;
+    color: $grey-color-light;
+    
+    .techs-podium {
+        display: flex;
+        color: grey;
+    }
+    
+    .pagination{
+        margin-left:70px;
+        
+    }
+
+    .content-listbottom{
+        background-color: $white-color;
+    }
+
+    div.container.content-listbottom {
+        border-radius: 5px;
+        padding-bottom: 10px;
+    }
+
+    .pagination{
+        margin-top: 10px;
+    }
+}
+
