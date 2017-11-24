@@ -5,10 +5,14 @@
 
   .tag {
     padding: 5px;
-    background-color: $second-color;
+    border: 1px solid $second-color;
     font-size: 12px;
-    color: $white-color;
+    color: $second-color;
     margin-right: 10px;
     border-radius: 5px;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 }

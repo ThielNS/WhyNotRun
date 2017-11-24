@@ -2,7 +2,7 @@ import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsRe
 import { get, post } from '../modules/request';
 
 export const listPosts = () => dispatch => {
-  return get('publications?page=1')
+  return get('publications')
     .then(data => {
       return dispatch({
         type: LIST_PUBLICATIONS,

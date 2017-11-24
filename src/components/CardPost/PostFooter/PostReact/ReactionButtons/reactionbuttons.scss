@@ -1,0 +1,51 @@
+@import "../../../../../styles/variables";
+
+.reaction-buttons {
+  padding: 10px $space;
+  button {
+    padding: 0;
+    margin-right: $space;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      color: #666;
+    }
+
+    &.agree-button {
+
+      &:hover {
+        color: $second-color;
+      }
+
+      &.-active {
+        color: $second-color;
+      }
+    }
+
+    &.disagree-button {
+
+      &:hover {
+        color: $danger-color;
+      }
+
+      &.-active {
+        color: $danger-color;
+      }
+    }
+
+    &.add-comment-button, &.share-button {
+      flex-direction: row;
+    }
+
+    .label {
+      font-size: 10px;
+    }
+  }
+}

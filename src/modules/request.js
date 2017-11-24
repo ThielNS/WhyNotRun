@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:55816/";
-
+// const API_URL = "http://localhost:55816";
+const API_URL = "https://private-93e4a-whynotrun1.apiary-mock.com";
 export const get = (url) =>{
   return request(url, {
     method: 'GET'
@@ -24,7 +24,7 @@ export const request = (url, options) => {
   options.headers.append('Authorization', `Bearer ${token}`);
   options.headers.append('Content-Type', 'application/json');
 
-  return fetch(`${API_URL}/${url}`,options)
+  return fetch(`${API_URL}/${url}`)
     .then(response => {
       // if(response.statusCode.toString().match(/^4/))
       //   throw new Error(`${response.statusCode} Error`);

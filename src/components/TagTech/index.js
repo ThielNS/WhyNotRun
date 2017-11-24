@@ -1,5 +1,5 @@
 import React from 'react';
-import './tagstech.css'
+import './tagstech.scss'
 
 const renderTechies = (techies) => {
   return techies.slice(0,2).map((techie, index) => (

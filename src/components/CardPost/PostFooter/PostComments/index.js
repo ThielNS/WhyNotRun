@@ -8,16 +8,19 @@ const PostComments = ({ comments }) => {
         {comments.map((comment, index) => (
           <li className="col-sm-12" key={index}>
             <Avatar/>
-            <div className="comment">
-              <span>{comment.UserName}</span>
-              <p>{comment.Description}</p>
+            <div className="data-comment">
+              <p>
+                <span className="name-user">{comment.UserName}</span>
+                <span className="date-comment">{'há 32 minutos atrás'}</span>
+              </p>
+              <p className="comment">{comment.Description}</p>
             </div>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default PostComments;
 

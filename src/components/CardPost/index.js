@@ -1,9 +1,8 @@
 import React from 'react';
 import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
-import TagTech from "../TagTech";
 import PostFooter from "./PostFooter";
-import './cardpost.css';
+import './cardpost.scss';
 import PropTypes from 'prop-types';
 
 
@@ -18,14 +17,13 @@ const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Descr
   return (
     <div className="">
       <div className="post-card">
-        <PostHeader user={user} date={DateCreation}/>
+        <PostHeader user={user} date={DateCreation} tags={Techies}/>
         <PostContent title={Title} text={Description}/>
-        <TagTech tags={Techies}/>
         <PostFooter points={Points} comments={Comments}/>
       </div>
     </div>
   );
-}
+};
 
 CardPost.propTypes = {
   UserName: PropTypes.string.isRequired,
@@ -36,7 +34,7 @@ CardPost.propTypes = {
   Description: PropTypes.string.isRequired,
   Techies: PropTypes.arrayOf(
     PropTypes.shape({
-      Name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired
     }).isRequired
   ),
   Points: PropTypes.number.isRequired,
@@ -46,6 +44,6 @@ CardPost.propTypes = {
       Description: PropTypes.string.isRequired
     })
   )
-}
+};
 
 export default CardPost;
