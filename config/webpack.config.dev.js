@@ -91,11 +91,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-<<<<<<< HEAD
-
-=======
       
->>>>>>> origin/navbar
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -126,10 +122,6 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/navbar
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -158,11 +150,7 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-<<<<<<< HEAD
-
-=======
               
->>>>>>> origin/navbar
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
@@ -209,18 +197,6 @@ module.exports = {
           {
             test: /\.scss$/,
             use: extractSass.extract({
-<<<<<<< HEAD
-                use: [{
-                    loader: "css-loader"
-                }, {
-                    loader: "sass-loader"
-                }],
-                // use style-loader in development
-                fallback: "style-loader"
-            })
-          },
-
-=======
               use: [{
                 loader: "css-loader"
               }, {
@@ -230,7 +206,6 @@ module.exports = {
               fallback: "style-loader"
             })
           },
->>>>>>> origin/navbar
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
@@ -258,10 +233,6 @@ module.exports = {
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In development, this will be an empty string.
-<<<<<<< HEAD
-    extractSass,
-=======
->>>>>>> origin/navbar
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -290,10 +261,7 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-<<<<<<< HEAD
-=======
     extractSass,
->>>>>>> origin/navbar
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
