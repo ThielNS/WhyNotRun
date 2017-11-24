@@ -6,13 +6,7 @@ class Feed extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      tags: [
-        { title: 'React JS' },
-        { title: 'Angular JS' },
-        { title: 'Vue JS' },
-      ],
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -31,23 +25,6 @@ class Feed extends Component {
   }
 
   render() {
-
-    const tags = [
-      { name: 'Django' },
-      { name: 'Framework' },
-      { name: 'Python' }
-    ];
-
-    const comments = [
-      {
-        UserName: 'Gabriel Souza',
-        Description: 'Nem sei o que é django, para que serve?'
-      },
-      {
-        UserName: 'Juliana Cerquilha',
-        Description: 'Ouvi falar que ele é bom, mas muitos dizem que não vale nem apena comentar sobre isso'
-      }
-    ];
 
     return (
       <div className="container">

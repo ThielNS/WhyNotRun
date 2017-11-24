@@ -3,12 +3,12 @@ import ScoresReaction from "../../../ScoresReaction";
 import ReactionButtonsContainer from "../../../../containers/reactionButtonsContainer";
 import BarStatus from "../../../BarStatus/index";
 
-const PostReact = ({ points }) => {
+const PostReact = ({ reactions }) => {
 
   return (
     <div className="post-react row -direct-column -space-between">
-      <ReactionButtonsContainer/>
-      <BarStatus/>
+      <ReactionButtonsContainer {...reactions}/>
+      <BarStatus agree={reactions.agree} disagree={reactions.disagree}/>
     </div>
   );
 }
