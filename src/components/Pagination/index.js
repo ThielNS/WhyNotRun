@@ -31,7 +31,7 @@ class Pagination extends Component {
     render() {
         const { pages } = this.state;
         return (
-            <ul>
+            <ul className="content-pagination">
                 <i class="fa fa-angle-double-left" aria-hidden="true"></i>
                 {pages.map((page, index) => (
                     <Page key={index} {...page} />

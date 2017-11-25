@@ -1,9 +1,11 @@
 @import '../../../styles/variables';
 
-.tab-menu{
-    padding-left: 20px;
-}
 .tab-menu:hover{
     color: $second-color;
+   border-bottom: 3px solid $second-color;
+   transition: width .3s;
+   
+   /* was 1px 0 0 1px */    
     cursor: pointer;
 }
+

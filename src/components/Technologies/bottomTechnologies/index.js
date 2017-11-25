@@ -2,6 +2,7 @@ import React from 'react';
 
 import './style.scss';
 
+
 const BottomTechnologies = ({ position, title, points, posts }) => {
     return (
         <div>

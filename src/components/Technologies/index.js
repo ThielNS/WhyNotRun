@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TechnologyPodium from './podiumTechs'
 import Navbar from './navbar';
-import BottomTechs from './bottomTechs';
+import BottomTechnologies from './bottomTechnologies';
 import Pagination from '../Pagination';
 
 import './style.scss'
@@ -105,15 +105,41 @@ class Ranking extends Component {
                     posts: '256 Mi'
                 },
 
-            ]
-        }
+            ],
+            currentPage: 1,
+            techsPerPage: 3
+        };
 
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        this.setState({
+            currentPage: Number(e.target.id)
+        });
     }
 
     render() {
-        const { technologiesPodium } = this.state;
+        const { technologiesPodium, currentPage, techsPerPage } = this.state;
         const itemsPodium = technologiesPodium.slice(0, 3);
         const listItemsBottom = technologiesPodium.splice(0, 3);
+
+        const indexOfLastTechs = currentPage * techsPerPage;
+        const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
+        const currentTechs = technologiesPodium.slice(indexOfFirstTechs, indexOfLastTechs);
+        const pageNumbers = [];
+        
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+                <li
+                    key={number}
+                    id={number}
+                    onClick={this.handleClick}
+                >
+                    {number}
+                </li>
+            );
+        });
 
         return (
             <div className="container">
@@ -126,13 +152,13 @@ class Ranking extends Component {
                                 ))}
                             </div>
                             <div className="container content-listbottom">
-                                    <Navbar />
-                                    {technologiesPodium.map((technology, index) => (
-                                        <BottomTechs key={index} {...technology} />
-                                    ))}
+                                <Navbar />
+                                {technologiesPodium.map((technology, index) => (
+                                    <BottomTechnologies key={index} {...technology} />
+                                ))}
                             </div>
                             <div className="pagination">
-                                <Pagination />
+                                {renderPageNumbers}
                             </div>
                         </div>
                     </div>
@@ -141,4 +167,5 @@ class Ranking extends Component {
         )
     }
 }
+
 export default Ranking;
