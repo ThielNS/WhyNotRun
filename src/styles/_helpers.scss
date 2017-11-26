@@ -1,0 +1,43 @@
+@import "variables";
+
+// MARGINS
+._margin {
+  margin: $space;
+
+  &-top {
+    margin-top: $space;
+  }
+
+  &-right {
+    margin-right: $space;
+  }
+
+  &-bottom {
+    margin-bottom: $space;
+  }
+
+  &-left {
+    margin-left: $space;
+  }
+}
+
+// PADDINGS
+._padding {
+  padding: $space;
+
+  &-top {
+    padding-top: $space;
+  }
+
+  &-right {
+    padding-right: $space;
+  }
+
+  &-bottom {
+    padding-bottom: $space;
+  }
+
+  &-left {
+    padding-left: $space;
+  }
+}

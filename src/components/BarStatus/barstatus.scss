@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.bar-status {
+  display: flex;
+  position: relative;
+
+  &:hover {
+    .bar {
+      height: 10px;
+    }
+    .spark-bar {
+      opacity: 1;
+    }
+  }
+
+  .spark-bar {
+    width: 0;
+    transition: .3s;
+    position: relative;
+    opacity: 0;
+
+    img {
+      left: -25px;
+      top: -20px;
+      z-index: 2;
+      position: absolute;
+      width: 50px;
+      display: block;
+    }
+  }
+
+  .bar {
+    transition: .3s;
+    height: 3px;
+
+    &.-agree {
+      background-color: $second-color;
+    }
+
+    &.-disagree {
+      background-color: $danger-color;
+    }
+  }
+
+}

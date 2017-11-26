@@ -1,72 +1,62 @@
 import React from 'react';
-import Avatar from '../Avatar';
-import Button from '../Button';
-import './cardpost.css';
+import PostHeader from "./PostHeader";
+import PostContent from "./PostContent";
+import PostFooter from "./PostFooter";
+import './cardpost.scss';
+import PropTypes from 'prop-types';
 
-const CardPost = ({ tags }) => {
 
-  const point = -10;
+const CardPost = ({ idPost, title, text, datePublication, user, reactions, technologys, comments }) => {
+
   return (
     <div className="">
       <div className="post-card">
-        <div className="post-header row -space-between -align-center">
-          <div className="post-user row -align-center">
-            <Avatar/>
-            <span>{'Gabriel Souza'}</span>
-          </div>
-          <div className="post-data">
-            <p>Postado a 1 dia</p>
-          </div>
-        </div>
-
-        <div className="post-content">
-          <h3>Title Tech</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus animi, atque consequatur</p>
-        </div>
-
-        <div className="tags">
-          {tags.map((t, i) => (
-            <span className="tag" key={i}>{t.title}</span>
-          ))}
-        </div>
-
-        <footer className="post-footer">
-          <div className="row -space-between post-data">
-            <div className="post-react">
-              <Button icon="thumbs-o-up" style="-third -no-bg" />
-              <Button icon="thumbs-o-down" style="-danger -no-bg" />
-            </div>
-            <span className={point < 0 ? 'point -negative' : point === 0 ? 'point' : 'point -positive'}>{point} Pontos</span>
-          </div>
-
-          <div className="post-comments">
-            <ul className="row -direct-column">
-              <li className="col-sm-12">
-                <Avatar/>
-                <div className="comment">
-                  <span>{'Gabriel Souza'}</span>
-                  <p>Lorem Ispsum dolos sit amet</p>
-                </div>
-              </li>
-              <li>
-                <Avatar/>
-                <div className="comment">
-                  <span>{'Gabriel Souza'}</span>
-                  <p>Lorem Ispsum dolos sit amet</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="add-comment">
-            <form>
-              <input type="text" placeholder="Comentar..."/>
-              <Button icon="send" style="-third -circle"/>
-            </form>
-          </div>
-        </footer>
+        <PostHeader user={user} datePublication={datePublication} technologys={technologys}/>
+        <PostContent title={title} text={text}/>
+        <PostFooter reactions={reactions} comments={comments}/>
       </div>
     </div>
   );
-}
+};
+
+CardPost.propTypes = {
+  idPost: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  datePublication: PropTypes.string.isRequired,
+  user: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      profession: PropTypes.string.isRequired
+    }).isRequired
+  ),
+  reactions: PropTypes.arrayOf(
+    PropTypes.objectOf({
+      agree: PropTypes.number.isRequired,
+      disagree: PropTypes.number.isRequired,
+      comments: PropTypes.number.isRequired
+    }).isRequired
+  ).isRequired,
+  technologys: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired
+  ),
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      dataComment: PropTypes.string.isRequired,
+      user: PropTypes.objectOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          picture: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired
+    })
+  )
+};
 
 export default CardPost;

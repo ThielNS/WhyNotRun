@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import filterTechReducer from './filterTechReducer';
+import publicationsReducer from './PublicationsReducer';
+import loginReducer from "./LoginReducer";
 
-const reducerFilter = combineReducers ({
-    technologies: filterTechReducer
-})
-export default reducerFilter;
+const reducerApp = combineReducers({publicationsReducer, loginReducer});
+
+export default reducerApp
