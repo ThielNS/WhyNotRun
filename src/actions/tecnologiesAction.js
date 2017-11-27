@@ -1,6 +1,5 @@
-
-export const getApi = () => (dispatch) => 
-    fetch('https://private-000f3-technologies1.apiary-mock.com/technology')
+export const getApi = () => (dispatch) =>
+    fetch('https://private-de89f-technologies2.apiary-mock.com/technologies')
         .then(response => response.json())
         .then((responseData) => {
             dispatch({ type: 'GET_TECH', payload: responseData })
@@ -8,6 +7,7 @@ export const getApi = () => (dispatch) =>
         .catch(error => {
             console.log(error, "erro");
         })
+
 
 
 const filterTechs = (technology) => (dispatch) => ({

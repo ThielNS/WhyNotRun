@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import CardPost from "../CardPost/index";
 
 class Feed extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -16,9 +15,8 @@ class Feed extends Component {
   }
 
   componentDidMount() {
-    this.props
-      .listPosts()
-      .catch( e =>{
+    this.props.listPosts()
+    .catch( e =>{
         console.log("DEU ERRO AMIGUINHO :(");
       });
   }
