@@ -27,7 +27,6 @@ const store = createStore(
   applyMiddleware(thunk),
 );
 
-
 class App extends Component {
   render() {
     return (
