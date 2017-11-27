@@ -1,5 +1,9 @@
 import React from 'react';
-import './style.scss';
+import trashGold from "../images/trash-gold.png";
+import trashSilver from "../images/trash-silver.png";
+import trashBronze from "../images/trash-bronze.png";
+
+import "./style.scss";
 
 const TechnologyPodium = ({ title, points, posts, position }) => {
 
@@ -8,7 +12,11 @@ const TechnologyPodium = ({ title, points, posts, position }) => {
             <li>
                 <div className="card-tresh">
                     <div>
-                        <i className={(position == 1 ? 'fa fa-trash golden' : position == 2 ? 'fa fa-trash silver' : position == 3 ? 'fa fa-trash bronze' : '')} aria-hidden="true" ></i>
+{/*                         {(position == 1 ? <div className="content-bug"><i class="fa fa-bug" aria-hidden="true"></i></div> : '')}
+ */}
+                        {(position == 1 ? <img src={trashGold} alt="trash-gold" className="trash" /> : position == 2 ? <img src={trashSilver} alt="trash-silver" /> : position == 3 ? <img src={trashBronze} alt="trash-bronze" /> : "")}
+
+
                     </div>
                 </div>
                 <div className="details-technology">

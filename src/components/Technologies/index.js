@@ -128,6 +128,10 @@ class Ranking extends Component {
         const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
         const currentTechs = technologiesPodium.slice(indexOfFirstTechs, indexOfLastTechs);
         const pageNumbers = [];
+
+        for(let i; i <= Math.ceil(technologiesPodium.length / techsPerPage); i++){
+            pageNumbers.push(i);
+        }
         
         const renderPageNumbers = pageNumbers.map(number => {
             return (
@@ -157,6 +161,7 @@ class Ranking extends Component {
                                     <BottomTechnologies key={index} {...technology} />
                                 ))}
                             </div>
+
                             <div className="pagination">
                                 {renderPageNumbers}
                             </div>
