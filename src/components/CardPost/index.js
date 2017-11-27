@@ -24,15 +24,16 @@ CardPost.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   datePublication: PropTypes.string.isRequired,
-  user: PropTypes.arrayOf(
+  user: PropTypes.shape(
     PropTypes.shape({
+      id: PropTypes.object.isRequired,
       name: PropTypes.string.isRequired,
       picture: PropTypes.string.isRequired,
       profession: PropTypes.string.isRequired
     }).isRequired
   ),
-  reactions: PropTypes.arrayOf(
-    PropTypes.objectOf({
+  reactions: PropTypes.shape(
+    PropTypes.shape({
       agree: PropTypes.number.isRequired,
       disagree: PropTypes.number.isRequired,
       comments: PropTypes.number.isRequired
@@ -47,8 +48,8 @@ CardPost.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-      dataComment: PropTypes.string.isRequired,
-      user: PropTypes.objectOf(
+      dateComment: PropTypes.string.isRequired,
+      user: PropTypes.shape(
         PropTypes.shape({
           id: PropTypes.string.isRequired,
           name: PropTypes.string.isRequired,

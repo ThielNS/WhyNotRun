@@ -53,7 +53,7 @@
     }
 
     .post-comments {
-      padding: $space $space 0 $space;
+      padding: $space;
 
       ul li {
         display: flex;
@@ -96,7 +96,7 @@
       display: flex;
       width: 100%;
       align-items: center;
-      padding: $space;
+      padding: 0 $space $space $space;
 
 
       &-form {
