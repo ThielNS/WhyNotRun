@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './form-publication.scss';
 import Button from "../Button";
 import Avatar from "../Avatar/index";
+import AddTechnologys from "./AddTechnologys";
 
 class PublicationForm extends Component {
   //5a059a03e50ef6543868f33d
@@ -11,7 +12,7 @@ class PublicationForm extends Component {
     this.state = {
       publication: {
         title: '',
-        text: '',
+        text: 'Relate sua experiencia',
         idTechies: [],
         idUser: '5a04ac2053d35705fcfbc428',
       },
@@ -21,7 +22,7 @@ class PublicationForm extends Component {
   }
 
   handleTitle = e => {
-    this.setState({ title: e.target.value});
+    this.setState({ publication: { title: e.target.value } });
   };
 
   handleText = e => {
@@ -53,7 +54,7 @@ class PublicationForm extends Component {
   };
 
   render() {
-    const { title, text, classChange, placeholderInput } = this.state;
+    const { publication, classChange, placeholderInput } = this.state;
     return (
         <div className="container _margin-top">
           <div
@@ -72,7 +73,7 @@ class PublicationForm extends Component {
                 className="col-sm-12"
                 onChange={this.handleTitle}
                 onFocus={this.showInformations}
-                value={title}
+                value={publication.title}
               />
               <button
                 onClick={this.closeInformations}
@@ -84,9 +85,9 @@ class PublicationForm extends Component {
                 className="text-description"
                 onChange={this.handleText}
                 contentEditable
-                value={text}
-              >Relate sua experiencia</div>
-              <input type="text" className="col-sm-12" placeholder="Relacione a uma ou mais tecnologias"/>
+                children={publication.text}
+              />
+              <AddTechnologys/>
               <div className="col-sm-12 row -flex-end _padding">
                 <Button style="-second" title="Postar" icon="send"/>
               </div>
@@ -99,6 +100,6 @@ class PublicationForm extends Component {
 
 PublicationForm.propTypes = {
   addPost: PropTypes.func.isRequired
-}
+};
 
 export default PublicationForm;
