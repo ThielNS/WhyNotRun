@@ -6,21 +6,21 @@ import './cardpost.scss';
 import PropTypes from 'prop-types';
 
 
-const CardPost = ({ idPost, title, text, datePublication, user, reactions, technologys, comments }) => {
+const CardPost = ({ id, title, text, datePublication, user, reactions, technologys, comments }) => {
 
   return (
     <div className="">
       <div className="post-card">
         <PostHeader user={user} datePublication={datePublication} technologys={technologys}/>
         <PostContent title={title} text={text}/>
-        <PostFooter idPost={idPost} reactions={reactions} comments={comments}/>
+        <PostFooter idPost={id} reactions={reactions} comments={comments}/>
       </div>
     </div>
   );
 };
 
 CardPost.propTypes = {
-  idPost: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   datePublication: PropTypes.string.isRequired,
@@ -46,16 +46,16 @@ CardPost.propTypes = {
   ),
   comments: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
-      dateComment: PropTypes.string.isRequired,
+      id: PropTypes.string,
+      text: PropTypes.string,
+      dateComment: PropTypes,
       user: PropTypes.shape(
         PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          name: PropTypes.string.isRequired,
-          picture: PropTypes.string.isRequired
-        }).isRequired
-      ).isRequired
+          id: PropTypes.string,
+          name: PropTypes.string,
+          picture: PropTypes.string
+        })
+      )
     })
   )
 };
