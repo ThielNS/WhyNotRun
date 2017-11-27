@@ -23,7 +23,7 @@ class Feed extends Component {
       <CardPost {...post} key={index}/>
     ));
   }
-
+  
   render() {
 
     return (
