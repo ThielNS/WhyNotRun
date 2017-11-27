@@ -13,7 +13,7 @@ const PostComments = ({ comments }) => {
           const dateComment = moment(comment.dateComment).fromNow();
           return (
             <li className="col-sm-12" key={index}>
-              <Avatar/>
+              <Avatar img={comment.user.picture}/>
               <div className="data-comment">
                 <p>
                   <span className="name-user">{comment.user.name}</span>
