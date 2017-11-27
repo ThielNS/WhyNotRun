@@ -13,7 +13,7 @@ const CardPost = ({ idPost, title, text, datePublication, user, reactions, techn
       <div className="post-card">
         <PostHeader user={user} datePublication={datePublication} technologys={technologys}/>
         <PostContent title={title} text={text}/>
-        <PostFooter reactions={reactions} comments={comments}/>
+        <PostFooter idPost={idPost} reactions={reactions} comments={comments}/>
       </div>
     </div>
   );

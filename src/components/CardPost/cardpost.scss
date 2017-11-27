@@ -96,7 +96,17 @@
       display: flex;
       width: 100%;
       align-items: center;
-      padding: 0 $space $space $space;
+      transition: .3s;
+      overflow: hidden;
+      padding: 0;
+      height: 0;
+      opacity: 0;
+
+      &.-show {
+        opacity: 1;
+        height: auto;
+        padding: 0 $space $space $space;
+      }
 
 
       &-form {
@@ -107,7 +117,6 @@
         border: none;
         font-size: 14px;
         border-radius: 35px;
-        margin-right: 10px;
         background-color: #eee;
 
         .avatar {

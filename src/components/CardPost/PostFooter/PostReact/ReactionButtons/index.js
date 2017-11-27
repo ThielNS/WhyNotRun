@@ -2,7 +2,7 @@ import React from 'react';
 import './reactionbuttons.scss';
 import Button from "../../../../Button/index";
 
-const ReactionButtons = ({ agree, disagree, comments }) => (
+const ReactionButtons = ({ agree, disagree, comments, changeAddComment }) => (
   <div className="reaction-buttons col-sm-12 row -align-center -space-between">
     <div className="row">
       <button className="button agree-button -active">
@@ -13,13 +13,13 @@ const ReactionButtons = ({ agree, disagree, comments }) => (
         <span className="count">{disagree} <i className="fa fa-thumbs-o-down"/></span>
         <span className="label">Discordam</span>
       </button>
-      <button className="button comments-button">
+      <button className="button comments-button" onClick={changeAddComment}>
         <span className="count">{comments} <i className="fa fa-comments"/></span>
         <span className="label">Comentários</span>
       </button>
     </div>
     <div className="row">
-      <Button style="add-comment-button" title="Comentar" icon="comment"/>
+      <Button style="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
       <Button style="share-button" title="Compartilhar" icon="share-alt"/>
     </div>
   </div>
