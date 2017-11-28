@@ -3,15 +3,15 @@ import React from 'react';
 import './style.scss';
 
 
-const BottomTechnologies = ({ position, title, points, posts }) => {
+const BottomTechnologies = ({ index, name, points, posts }) => {
     return (
         <div>
             <li className="list-technologies">
                 <div className="position">
-                    <i>{position}</i>
+                    <i>{index}</i>
                 </div>
                 <div className="technology">
-                    <i>{title}</i>
+                    <i>{name}</i>
                 </div>
                 <i className="points">{points}</i>
                 <i className="posts">{posts}</i>

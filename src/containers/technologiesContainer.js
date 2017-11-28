@@ -4,7 +4,7 @@ import Technologies from '../components/Technologies';
 import { listTechs } from "../actions/tecnologiesAction";
 
 const mapStateToProps = state => {
-    return { itemsTech: state.technologiesReducer };
+    return { itemsTechs: state.technologiesReducer };
     
 };
 

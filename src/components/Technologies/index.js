@@ -12,60 +12,7 @@ class Technologies extends Component {
         super(props);
 
         this.state = {
-            itemsTechs: [
-                  {
-                    "title": "Swift",
-                    "position": 1,
-                    "points": 125,
-                    "posts": 256
 
-                }, {
-                    "title": "Python",
-                    "position": 2,
-                    "points": 125,
-                    "posts": 389
-                }, {
-                    "title": "Objective-C",
-                    "position": 3,
-                    "points": 135,
-                    "posts": 198
-                }, {
-                    "title": "Ruby",
-                    "position": 4,
-                    "points": 187,
-                    "posts": 205
-                }, {
-                    "title": "Java",
-                    "position": 5,
-                    "points": 187,
-                    "posts": 205
-                }, {
-                    "title": "JavaScript",
-                    "position": 6,
-                    "points": 204,
-                    "posts": 404
-                }, {
-                    "title": "C#",
-                    "position": 7,
-                    "points": 187,
-                    "posts": 205
-                }, {
-                    "title": "C#",
-                    "position": 8,
-                    "points": 187,
-                    "posts": 205
-                }, {
-                    "title": "C#",
-                    "position": 9,
-                    "points": 187,
-                    "posts": 205
-                }, {
-                    "title": "C#",
-                    "position": 10,
-                    "points": 187,
-                    "posts": 205
-                }  
-            ],
             currentPage: 1,
             techsPerPage: 3
         };
@@ -88,10 +35,12 @@ class Technologies extends Component {
     }
 
     render() {
+        console.log()
         console.log(this.props);
-        const { itemsTechs, currentPage, techsPerPage } = this.state;
 
+        const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
+
         const listItemsBottom = itemsTechs.splice(0, 3);
 
         const indexOfLastTechs = currentPage * techsPerPage;
@@ -116,13 +65,14 @@ class Technologies extends Component {
         });
 
         return (
+
             <div className="container">
                 <ul className="content-ranking">
                     <div>
                         <div>
                             <div className="techs-podium">
                                 {itemsPodium.map((technology, index) => (
-                                    <TechnologyPodium key={index} {...technology} />
+                                        <TechnologyPodium key={index} {...technology} />
                                 ))}
                             </div>
                             <div className="container content-listbottom">
