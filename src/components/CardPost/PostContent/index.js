@@ -13,7 +13,7 @@ const PostContent = ({title, text}) => {
 PostContent.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired
-}
+};
 
 export default PostContent;
 

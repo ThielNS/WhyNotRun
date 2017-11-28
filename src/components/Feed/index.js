@@ -5,19 +5,14 @@ import CardPost from "../CardPost/index";
 class Feed extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      tags: [
-        { title: 'React JS' },
-        { title: 'Angular JS' },
-        { title: 'Vue JS' },
-      ],
-    };
+    this.state = {};
   }
 
   componentDidMount() {
-    this.props.listPosts()
-    .catch( e =>{
-        console.log("DEU ERRO AMIGUINHO :(");
+    this.props
+      .listPosts()
+      .catch( e => {
+        console.log(e);
       });
   }
 
@@ -27,8 +22,9 @@ class Feed extends Component {
       <CardPost {...post} key={index}/>
     ));
   }
-
+  
   render() {
+
     return (
       <div className="container">
         { this.renderPosts() }

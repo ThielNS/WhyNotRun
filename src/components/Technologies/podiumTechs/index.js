@@ -12,11 +12,13 @@ const TechnologyPodium = ({ title, points, posts, position }) => {
             <li>
                 <div className="card-tresh">
                     <div>
-{/*                         {(position == 1 ? <div className="content-bug"><i class="fa fa-bug" aria-hidden="true"></i></div> : '')}
+                        {/*                         {(position == 1 ? <div className="content-bug"><i class="fa fa-bug" aria-hidden="true"></i></div> : '')}
  */}
-                        {(position == 1 ? <img src={trashGold} alt="trash-gold" className="trash" /> : position == 2 ? <img src={trashSilver} alt="trash-silver" /> : position == 3 ? <img src={trashBronze} alt="trash-bronze" /> : "")}
-
-
+                        {(position == 1 ?
+                            <img src={trashGold} alt="trash-gold" className="trash" /> :
+                            position == 2 ? <img src={trashSilver} alt="trash-silver" /> :
+                                position == 3 ? <img src={trashBronze} alt="trash-bronze" /> :
+                                    "")}
                     </div>
                 </div>
                 <div className="details-technology">

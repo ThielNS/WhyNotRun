@@ -1,51 +1,62 @@
 import React from 'react';
 import PostHeader from "./PostHeader";
 import PostContent from "./PostContent";
-import TagTech from "../TagTech";
 import PostFooter from "./PostFooter";
-import './cardpost.css';
+import './cardpost.scss';
 import PropTypes from 'prop-types';
 
 
-const CardPost = ({UserName,UserPictures,UserProfession,DateCreation,Title,Description,Techies,Points,Comments}) => {
-
-  const user = {
-    name: UserName,
-    avatar: UserPictures,
-    work: UserProfession,
-  };
-
+const CardPost = ({ idPost, title, text, datePublication, user, reactions, technologys, comments }) => {
   return (
     <div className="">
       <div className="post-card">
-        <PostHeader user={user} date={DateCreation}/>
-        <PostContent title={Title} text={Description}/>
-        <TagTech tags={Techies}/>
-        <PostFooter points={Points} comments={Comments}/>
+        <PostHeader user={user} datePublication={datePublication} technologys={technologys}/>
+        <PostContent title={title} text={text}/>
+        <PostFooter idPost={idPost} reactions={reactions} comments={comments}/>
       </div>
     </div>
   );
-}
+};
 
 CardPost.propTypes = {
-  UserName: PropTypes.string.isRequired,
-  UserPicture: PropTypes.string.isRequired,
-  UserProfession: PropTypes.string.isRequired,
-  DateCreation: PropTypes.string.isRequired,
-  Title: PropTypes.string.isRequired,
-  Description: PropTypes.string.isRequired,
-  Techies: PropTypes.arrayOf(
+  idPost: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  datePublication: PropTypes.string.isRequired,
+  user: PropTypes.shape(
     PropTypes.shape({
-      Name: PropTypes.string.isRequired
+      id: PropTypes.object.isRequired,
+      name: PropTypes.string.isRequired,
+      picture: PropTypes.string.isRequired,
+      profession: PropTypes.string.isRequired
     }).isRequired
   ),
-  Points: PropTypes.number.isRequired,
-  Comments: PropTypes.arrayOf(
+  reactions: PropTypes.shape(
     PropTypes.shape({
-      UserName: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
+      agree: PropTypes.number.isRequired,
+      disagree: PropTypes.number.isRequired,
+      comments: PropTypes.number.isRequired
+    }).isRequired
+  ).isRequired,
+  technologys: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired
+    }).isRequired
+  ),
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      dateComment: PropTypes.string.isRequired,
+      user: PropTypes.shape(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          picture: PropTypes.string.isRequired
+        }).isRequired
+      ).isRequired
     })
   )
-}
+};
 
 export default CardPost;

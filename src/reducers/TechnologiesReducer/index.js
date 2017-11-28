@@ -1,12 +1,14 @@
-import { GET_TECH } from "./constants";
+import { LIST_TECHS, ERROR_TECH } from "./constants";
 
-const filterTechnologies = (state = [], action) => {
+const technologiesReducer = (state = [], action) => {
     switch (action.type) {
-        case GET_TECH:
-            return state.concat(action.payload);
+        case LIST_TECHS:
+            return state.concat(action.data);
+        case ERROR_TECH:
+            return action.message;
         default:
             return state
     }
 }
 
-export default filterTechnologies;
+export default technologiesReducer;
