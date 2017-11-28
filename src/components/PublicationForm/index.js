@@ -4,6 +4,7 @@ import './form-publication.scss';
 import Button from "../Button";
 import Avatar from "../Avatar/index";
 import AddTechnologys from "./AddTechnologys";
+import { Link } from "react-router-dom";
 
 class PublicationForm extends Component {
   //5a059a03e50ef6543868f33d
@@ -54,45 +55,66 @@ class PublicationForm extends Component {
   };
 
   render() {
+
     const { publication, classChange, placeholderInput } = this.state;
+    const token = localStorage.getItem('userToken');
+    const user = JSON.parse(localStorage.getItem('user'));
+
     return (
         <div className="container _margin-top">
-          <div
-            onClick={this.closeInformations}
-            className={classChange.bgFormPublication ? `bg-form-publication ${classChange.bgFormPublication}` : 'bg-form-publication'}
-          />
-          <form autoComplete="off" action="" onSubmit={this.submitPost} className={classChange.formPublication ? `form-publication ${classChange.formPublication}` : 'form-publication'}>
-            <div
-              className={classChange.inputTitle ? `input-title ${classChange.inputTitle}` : 'input-title'}
-            >
-              <Avatar img="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb"/>
-              <input
-                type="text"
-                name="title"
-                placeholder={placeholderInput}
-                className="col-sm-12"
-                onChange={this.handleTitle}
-                onFocus={this.showInformations}
-                value={publication.title}
-              />
-              <button
-                onClick={this.closeInformations}
-                className={classChange.button ? `button ${classChange.button}` : 'button'}
-              ><i className="fa fa-times"/></button>
-            </div>
-            <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
+          {token ? (
+            <div>
               <div
-                className="text-description"
-                onChange={this.handleText}
-                contentEditable
-                children={publication.text}
+                onClick={this.closeInformations}
+                className={classChange.bgFormPublication ? `bg-form-publication ${classChange.bgFormPublication}` : 'bg-form-publication'}
               />
-              <AddTechnologys/>
-              <div className="col-sm-12 row -flex-end _padding">
-                <Button style="-second" title="Postar" icon="send"/>
+              <form autoComplete="off" action="" onSubmit={this.submitPost} className={classChange.formPublication ? `form-publication ${classChange.formPublication}` : 'form-publication'}>
+                <div
+                  className={classChange.inputTitle ? `input-title ${classChange.inputTitle}` : 'input-title'}
+                >
+                  <Avatar img={user.picture}/>
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder={placeholderInput}
+                    className="col-sm-12"
+                    onChange={this.handleTitle}
+                    onFocus={this.showInformations}
+                    value={publication.title}
+                  />
+                  <button
+                    onClick={this.closeInformations}
+                    className={classChange.button ? `button ${classChange.button}` : 'button'}
+                  ><i className="fa fa-times"/></button>
+                </div>
+                <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
+                  <div
+                    className="text-description"
+                    onChange={this.handleText}
+                    contentEditable
+                    children={publication.text}
+                  />
+                  <AddTechnologys/>
+                  <div className="col-sm-12 row -flex-end _padding">
+                    <Button style="-second" title="Postar" icon="send"/>
+                  </div>
+                </div>
+              </form>
+            </div>
+          ) : (
+            <div className="row -align-center -direct-column _padding-bottom">
+              <h3 className="_margin-bottom">Participe da discução, Faça Login, ou crie uma conta!</h3>
+              <div>
+                <Link to="/register" className="button -second">
+                  <i className="fa fa-address-card-o"/> Registrar-se
+                </Link>
+                <Link to="/login" className="button -primare -no-bg">
+                  <i className="fa fa-address-card-o"/> Login
+                </Link>
               </div>
             </div>
-          </form>
+          ) }
+
         </div>
     );
   }

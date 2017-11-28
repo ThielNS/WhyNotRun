@@ -4,7 +4,7 @@ import PublicationForm from '../components/PublicationForm';
 import { addPost } from "../actions/publicationsAction";
 
 const mapStateToProps = state => {
-  return state;
+  return { access: state.loginReducer };
 };
 
 const mapDispatchToProps = dispatch => ({
