@@ -38,7 +38,11 @@ class FormLogin extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.access);
+    const token = localStorage.getItem('userToken');
+    if(token) {
+      const { push } = this.props.history;
+      push('/');
+    }
   }
 
   render() {

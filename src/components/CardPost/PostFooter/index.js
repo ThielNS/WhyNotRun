@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PostReact from "./PostReact";
 import PostComments from "./PostComments";
 import AddComment from "./AddComment";
+import AddCommentContainer from "../../../containers/AddCommentContainer";
 
 class PostFooter extends Component {
 
@@ -39,7 +40,7 @@ class PostFooter extends Component {
       <footer className="post-footer">
         <PostReact reactions={reactions} changeAddComment={this.changeAddComment.bind(this)}/>
         <PostComments comments={comments}/>
-        <AddComment id={`input-${idPost}`} className={classAddComment}/>
+        <AddCommentContainer id={`input-${idPost}`} className={classAddComment}/>
       </footer>
     );
   };

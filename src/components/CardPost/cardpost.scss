@@ -133,6 +133,10 @@
           background-color: $transparent;
         }
       }
+
+      a {
+        outline: none;
+      }
     }
   }
 }
