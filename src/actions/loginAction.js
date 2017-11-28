@@ -12,10 +12,11 @@ export const loginAuthentication = (email, password) => dispatch => {
   };
 
   return post('login', bodyParameters)
-    .then(token => {
+    .then(data => {
       dispatch({
         type: AUTH_LOGIN,
-        token: token
+        token: data.token,
+        user: data.user
       })
     })
     .catch(error => {

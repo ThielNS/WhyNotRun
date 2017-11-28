@@ -4,7 +4,6 @@ import Feed from "../../containers/feedContainer";
 
 const Home = () => (
   <main>
-    {console.log(localStorage.getItem('userToken'))}
     <PublicationFormContainer/>
     <Feed/>
   </main>

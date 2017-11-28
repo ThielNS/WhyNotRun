@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Route } from "react-router-dom";
-import NavBar from '../../components/Navbar/index'
+import NavBarContainer from '../../containers/NavBarContainer';
 
 class DefaultLayout extends React.Component {
 
@@ -13,7 +13,7 @@ class DefaultLayout extends React.Component {
 
     return (
       <div>
-        <NavBar/>
+        <NavBarContainer/>
         <Route {...restProps} render={Component}/>
       </div>
     );

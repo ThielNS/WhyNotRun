@@ -29,12 +29,6 @@ class NavMenu extends Component {
           icon: 'address-card-o',
           button: true,
         },
-        {
-          to: '/profile',
-          title: 'Gabriel Souza',
-          icon: 'https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb',
-          avatar: true,
-        },
       ],
     }
   }
@@ -42,7 +36,7 @@ class NavMenu extends Component {
   render() {
 
     const { items } = this.state;
-    const token = true;
+    const { token } = this.props;
 
     return (
       <ul>
@@ -52,9 +46,7 @@ class NavMenu extends Component {
               return (<Item key={index} {...item}/>);
             }
           } else {
-            if (item.to !== '/profile') {
-              return (<Item key={index} {...item}/>);
-            }
+            return (<Item key={index} {...item}/>);
           }
         })}
       </ul>

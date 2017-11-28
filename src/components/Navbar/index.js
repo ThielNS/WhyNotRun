@@ -6,18 +6,24 @@ import SearchForm from "../SearchForm";
 import Logo from "../Logo/index";
 
 
-const NavBar = ({ token }) => (
-  <nav className="nav-menu row -space-between -align-center">
-    <div className="row -flex-start">
-      <Logo/>
-    </div>
+const NavBar = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  const token = localStorage.getItem('userToken');
+  const renderAvatar = token ? (<Avatar img={user.picture}/>) : null;
 
-    <div className="col-sm-12 row -space-between -flex-end -align-center">
-      <SearchForm/>
-      <NavMenu/>
-      {token ? (<Avatar/>) : null}
-    </div>
-  </nav>
-);
+  return (
+    <nav className="nav-menu row -space-between -align-center">
+      <div className="row -flex-start">
+        <Logo/>
+      </div>
+
+      <div className="col-sm-12 row -space-between -flex-end -align-center">
+        <SearchForm/>
+        <NavMenu token={token}/>
+        {renderAvatar}
+      </div>
+    </nav>
+  );
+};
 
 export default NavBar;
