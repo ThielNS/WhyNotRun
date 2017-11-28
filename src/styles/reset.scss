@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100');
 @import "variables";
 
 * {
@@ -6,10 +6,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: $bg-color;
 }
 
 h1, h2, h3, h4 {
@@ -30,13 +31,15 @@ label {
     margin-bottom: 5px;
   }
 }
+input, select {
+  border-radius: 20px;
+}
 input, select, textarea, button {
   outline: none;
 }
 input, select, textarea {
   border: 1px solid #eee;
   padding: 10px;
-  border-radius: 5px;
   font-size: 14px;
   background-color: $white-color;
 
@@ -50,6 +53,7 @@ select {
   -webkit-appearance:none;
 }
 textarea {
+  border-radius: 5px;
   min-height: 100px;
   resize: vertical;
 }

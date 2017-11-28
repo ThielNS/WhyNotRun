@@ -24,7 +24,7 @@ export const request = (url, options) => {
   options.headers.append('Authorization', `Bearer ${token}`);
   options.headers.append('Content-Type', 'application/json');
 
-  return fetch(`${API_URL}/${url}`)
+  return fetch(`${API_URL}/${url}`, options)
     .then(response => {
       // if(response.statusCode.toString().match(/^4/))
       //   throw new Error(`${response.statusCode} Error`);

@@ -4,6 +4,7 @@ import FormLogin from '../components/FormLogin';
 import { loginAuthentication } from "../actions/loginAction";
 
 const mapStateToProps = state => {
+  return { access: state.loginReducer }
 };
 
 const mapDispatchToProps = dispatch => {

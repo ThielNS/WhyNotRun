@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import Logo from "../../components/Logo/index";
 import FooterLogin from "../../components/FooterLogin/index";
-import '../../styles/access.css';
-import PublicationForm from "../../components/PublicationForm/index";
+import '../../styles/access.scss';
 
 //TODO: Decidir nome do AuthenticationLayout
 class AuthenticationLayout extends Component {
@@ -18,11 +17,7 @@ class AuthenticationLayout extends Component {
     return (
       <main className="access">
         <section className="access-box">
-          <header className="access-header">
-            <Logo/>
-          </header>
           <Route {...restProps} render={Component}/>
-          <FooterLogin {...restProps.location}/>
         </section>
       </main>
     );

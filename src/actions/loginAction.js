@@ -1,5 +1,7 @@
-import { VALID_LOGIN } from '../reducers/LoginReducer/constants';
+import { AUTH_LOGIN, VALID_LOGIN } from '../reducers/LoginReducer/constants';
 import { urlLogin } from '../constants/routesApi';
+import { post } from "../modules/request";
+import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 
 
 export const loginAuthentication = (email, password) => dispatch => {
@@ -9,19 +11,14 @@ export const loginAuthentication = (email, password) => dispatch => {
     password: password
   };
 
-  return fetch(urlLogin,{
-    method: 'POST',
-    body: JSON.stringify(bodyParameters),
-    headers: { 'Content-Type': 'application/json' }
-  })
-  .then(response => response.json())
-  .then(({ token }) => {
-    dispatch({
-      type: VALID_LOGIN,
-      token
-    });
-  })
-  .catch( error => {
-    console.log(error);
-  });
+  return post('login', bodyParameters)
+    .then(token => {
+      dispatch({
+        type: AUTH_LOGIN,
+        token: token
+      })
+    })
+    .catch(error => {
+      throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
+    })
 };
