@@ -16,7 +16,7 @@ const publicationsReducer = (state = [], action) => {
       return state.concat(newPost);
 
     case LIST_PUBLICATIONS:
-      return state.concat(action.data);
+      return state = action.data;
     case ERROR_PUBLICATION:
       return action.message;
     default:
