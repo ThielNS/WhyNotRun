@@ -54,6 +54,10 @@ class PublicationForm extends Component {
     this.setState({ classChange: {}, placeholderInput: 'Crashou? diga sobre.'});
   };
 
+
+  componentDidMount() {
+    this.refs.meuComp.contentEditable = true;
+  }
   render() {
 
     const { publication, classChange, placeholderInput } = this.state;
@@ -91,7 +95,7 @@ class PublicationForm extends Component {
                   <div
                     className="text-description"
                     onChange={this.handleText}
-                    contentEditable
+                    ref="meuComp"
                     children={publication.text}
                   />
                   <AddTechnologys/>

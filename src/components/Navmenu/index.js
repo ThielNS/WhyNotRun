@@ -39,7 +39,7 @@ class NavMenu extends Component {
     const { token } = this.props;
 
     return (
-      <ul>
+      <ul className="nav-menu">
         {items.map((item, index) => {
           if (token) {
             if (item.to !== '/login' && item.to !== '/register') {

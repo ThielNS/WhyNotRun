@@ -12,7 +12,7 @@ const NavBar = () => {
   const renderAvatar = token ? (<Avatar img={user.picture}/>) : null;
 
   return (
-    <nav className="nav-menu row -space-between -align-center">
+    <nav className="nav-bar row -space-between -align-center">
       <div className="row -flex-start">
         <Logo/>
       </div>

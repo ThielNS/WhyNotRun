@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import CardPost from "../CardPost/index";
+import CardPost from "../CardPost";
+import GameBug from "../GameBug/index";
 
 class Feed extends Component {
 
@@ -28,6 +29,7 @@ class Feed extends Component {
 
     return (
       <div className="container">
+        <GameBug/>
         { this.renderPosts() }
       </div>
     );
