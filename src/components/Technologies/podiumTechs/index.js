@@ -2,12 +2,14 @@ import React from 'react';
 import trashGold from "../images/trash-gold.png";
 import trashSilver from "../images/trash-silver.png";
 import trashBronze from "../images/trash-bronze.png";
+import BugsTech from "./bugsTech";
 
 import "./style.scss";
 
-const TechnologyPodium = ({ index, name, points, posts, position }) => {
+const TechnologyPodium = ({ index, name, points, posts, position, text }) => {
     const  itemsTechs  = this.props;
     console.log(index)
+
     return (
         <div className="content-ranking">
             <li>
@@ -16,9 +18,12 @@ const TechnologyPodium = ({ index, name, points, posts, position }) => {
                         {/* {(position == 1 ? <div className="content-bug"><i class="fa fa-bug" aria-hidden="true"></i></div> : '')}
  */}
                         {(index == 0  ?
-                            <img src={trashGold} alt="trash-gold" className="trash bug-all" /> :
-                            index == 1 ? <img src={trashSilver} alt="trash-silver bug-medium" /> :
-                                index == 2 ? <img src={trashBronze} alt="trash-bronze bug-little" /> :
+                            <div className="content-techBug">
+                            <div><BugsTech/></div>
+                                <img src={trashGold} alt="trash-gold" className="trash bug-all" />
+                                </div> :
+                            index == 1 ? <div className="content-techBug"><div><BugsTech/></div> <img src={trashSilver} alt="trash-silver" className="trash"/></div> :
+                                index == 2 ? <div className="content-techBug"><div><BugsTech/></div><img src={trashBronze} alt="trash-bronze bug-little" className="trash"/></div> :
                                     "")}
                     </div>
                 </div>

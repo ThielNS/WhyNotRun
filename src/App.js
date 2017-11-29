@@ -14,6 +14,7 @@ import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
 import Ranking from "./pages/Ranking";
 
+
 import './styles/reset.scss';
 import './styles/layout.scss';
 import './styles/_variables.scss';

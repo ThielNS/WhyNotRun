@@ -5,9 +5,11 @@
     .fa-trash{
         font-size: 110px;
     }
+    img.trash {
+        margin-top: -5px;
+    }
    .silver{
         color: #A9A9A9;
-        
    }
     .golden{
         color: $golden-color;
@@ -56,5 +58,16 @@
       font-size: 10px;
       top: 0;
     }
-
+    .bug-medium:before{
+      content: "\f188"; 
+      font-family: FontAwesome;
+      color:#000;
+      font-size: 10px;      
+      background-repeat: repeat-y;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .content-techBug{
+        background: url()
+    }
 }

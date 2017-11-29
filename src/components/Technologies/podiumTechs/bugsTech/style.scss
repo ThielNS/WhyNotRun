@@ -1,0 +1,31 @@
+.content-icbug{
+    animation: nudge 3s linear infinite alternate,
+    move 4s steps(70) infinite both;
+    height: 5px;
+    padding: 5px;
+    margin-right: 50px;
+    color: #000;
+}
+ @keyframes nudge {
+    0%,10% {
+        transform: translate(0,0);
+    }
+    30% {
+        transform: translate(2px,0);
+    }
+    80%{
+        transform: translate(2px,0);
+    }
+}
+@keyframes move {
+    from { 
+        transform: rotate(0deg);
+     }
+    to {
+        transform: rotate(360deg)
+    }
+} 
+
+
+
+    
