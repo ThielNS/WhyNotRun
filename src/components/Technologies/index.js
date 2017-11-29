@@ -29,20 +29,26 @@ class Technologies extends Component {
     componentDidMount() {
         this.props
             .listTechs()
-            .catch(e => {
-                console.log(e);
-            });
+            .catch(console.log);
     }
 
     render() {
         console.log()
         console.log(this.props);
 
+
         const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
 
-        const listItemsBottom = itemsTechs.splice(0, 3);
+       /*   const index = itemsTechs.map(function (e) { return e.name }).indexOf('Ruby');
+         console.log(index);  */
 
+        const itemIndex = itemsTechs[0];
+        console.log(itemIndex);
+
+        //const itemsBottom = itemsTechs.splice(0,3);
+
+        
         const indexOfLastTechs = currentPage * techsPerPage;
         const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
         const currentTechs = itemsTechs.slice(indexOfFirstTechs, indexOfLastTechs);
@@ -72,16 +78,19 @@ class Technologies extends Component {
                         <div>
                             <div className="techs-podium">
                                 {itemsPodium.map((technology, index) => (
-                                        <TechnologyPodium key={index} {...technology} />
+                                    <div key={index}>
+                                        <TechnologyPodium index={index} {...technology} />
+                                    </div>
                                 ))}
                             </div>
                             <div className="container content-listbottom">
                                 <Navbar />
                                 {itemsTechs.map((technology, index) => (
-                                    <BottomTechnologies key={index} {...technology} />
+                                    <div key={index}>
+                                        <BottomTechnologies index={index} {...technology} />
+                                    </div>
                                 ))}
                             </div>
-
                             <div className="pagination">
                                 {renderPageNumbers}
                             </div>

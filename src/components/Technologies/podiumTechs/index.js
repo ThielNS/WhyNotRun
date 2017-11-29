@@ -6,8 +6,8 @@ import trashBronze from "../images/trash-bronze.png";
 import "./style.scss";
 
 const TechnologyPodium = ({ index, name, points, posts, position }) => {
-    const itemsTechs = this.props;
-
+    const  itemsTechs  = this.props;
+    console.log(index)
     return (
         <div className="content-ranking">
             <li>
@@ -15,10 +15,10 @@ const TechnologyPodium = ({ index, name, points, posts, position }) => {
                     <div>
                         {/* {(position == 1 ? <div className="content-bug"><i class="fa fa-bug" aria-hidden="true"></i></div> : '')}
  */}
-                        {(index == 0 ?
-                            <img src={trashGold} alt="trash-gold" className="trash" /> :
-                            index == 1 ? <img src={trashSilver} alt="trash-silver" /> :
-                                index == 2 ? <img src={trashBronze} alt="trash-bronze" /> :
+                        {(index == 0  ?
+                            <img src={trashGold} alt="trash-gold" className="trash bug-all" /> :
+                            index == 1 ? <img src={trashSilver} alt="trash-silver bug-medium" /> :
+                                index == 2 ? <img src={trashBronze} alt="trash-bronze bug-little" /> :
                                     "")}
                     </div>
                 </div>
@@ -26,11 +26,11 @@ const TechnologyPodium = ({ index, name, points, posts, position }) => {
                     <h3 className="technology-title">{name}</h3>
                     <div className="card-details">
                         <div className="details-flex">
-                            <i>{points}</i>
+                            <i>{posts}</i>
                             <i>Postagens</i>
                         </div>
                         <div className="details-flex">
-                            <i>{posts}</i>
+                            <i>{points}</i>
                             <i>Pontos</i>
                         </div>
                     </div>
