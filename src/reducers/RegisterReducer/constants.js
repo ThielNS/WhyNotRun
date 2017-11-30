@@ -1,0 +1,2 @@
+export const REGISTER_USER = 'REGISTER_USER';
+export const VALID_REGISTER = 'VALID_REGISTER';
