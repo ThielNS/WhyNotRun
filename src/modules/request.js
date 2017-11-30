@@ -6,14 +6,12 @@ export const get = (url) =>{
   });
 };
 
-
-export const post = (url, data) =>{
+export const post = (url, data) => {
   return request(url, {
     method: 'POST',
     body: JSON.stringify(data)
   });
 };
-
 
 export const request = (url, options) => {
   options = {

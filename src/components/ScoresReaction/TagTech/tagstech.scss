@@ -1,0 +1,18 @@
+@import "../../styles/variables";
+
+.tags-tech {
+  padding: 0 $space $space $space;
+
+  .tag {
+    padding: 1px 3px;
+    border: 1px solid $second-color;
+    font-size: 11px;
+    color: $second-color;
+    margin-right: 10px;
+    border-radius: 5px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

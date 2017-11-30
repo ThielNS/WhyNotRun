@@ -10,7 +10,7 @@ export const listPosts = () => dispatch => {
       });
     })
     .catch(erro => {
-      throw new Error("RequestError",{ type: ERROR_PUBLICATION, message: erro.message });
+      throw new Error("RequestError", { type: ERROR_PUBLICATION, message: erro.message });
     });
 };
 
@@ -24,8 +24,8 @@ export const addPost = (title, text, idTech, idUser) => dispatch => {
   };
 
   return post('publications', bodyParameters)
-    .then ()
-    .catch (error => {
-      throw new Error ('RequestError', {type: ERROR_PUBLICATION, message: error.message});
+    .then()
+    .catch(error => {
+      throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
     });
 }

@@ -1,0 +1,70 @@
+@import "../../../styles/variables";
+.content-ranking{
+    margin: -10px;
+    .fa-trash{
+        font-size: 110px;
+    }
+    img.trash {
+        margin-top: -15px;
+    }
+   .silver{
+        color: #A9A9A9;
+   }
+    .golden{
+        color: $golden-color;
+    }
+    .bronze {
+        color: #CCA785;
+    }
+    .list-podium {
+        color: grey;
+     }
+     li{
+         padding: 20px;
+     }
+     .card-tresh {
+         margin-top: 40px;
+         background-color: $grey-color;
+         display: flex;
+         justify-content: center;
+         width: 185px;
+         padding: 10px;
+         border-top-left-radius: 5px;
+         border-top-right-radius: 5px;
+     }
+     
+     .details-technology {
+         padding: 10px;
+         background-color: white;
+         border-bottom-left-radius: 5px;
+         border-bottom-right-radius: 5px;
+     }
+     .technology-title {
+         text-align: center;
+         padding: 4px;
+     }
+     i{
+         font-style: normal;
+     }
+     .details-flex{
+         display: flex;
+         justify-content: space-between;
+     }
+     .card-details{
+         padding-top: 5px;
+     }
+    .fa-bug{
+      font-size: 10px;
+      top: 0;
+    }
+    .bug-medium:before{
+      content: "\f188"; 
+      font-family: FontAwesome;
+      color:#000;
+      font-size: 10px;      
+      background-repeat: repeat-y;
+      border-radius: 50%;
+      position: absolute;
+    }
+    
+}
