@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import InfoHeader from "./InfoHeader";
 import './gamebug.scss';
 import Bug from "./Bug";
-import SpaceShip from "./SpaceShip";
+import SpaceShip, { positionSpaceShip } from "./SpaceShip";
 
 class GameBug extends Component {
 
@@ -12,14 +12,15 @@ class GameBug extends Component {
       life: 4,
       myRecord: 234,
       myPoints: 0,
-      bugs: 100,
+      bugs: 20,
       positionBugs: [],
+      killedBugs: 0,
     }
   }
 
   createBugs = () => {
 
-    const screenSize = window.innerWidth - 10;
+    const screenSize = window.innerWidth - 30;
 
     let { positionBugs } = this.state;
 
@@ -32,7 +33,7 @@ class GameBug extends Component {
       positionBugs.push({
         top: `${topRand}px`,
         left: `${leftRand}px`,
-        size: `${sizeRand}px`
+        size: sizeRand
       });
     }
   };
@@ -41,31 +42,46 @@ class GameBug extends Component {
     this.createBugs();
   }
 
-  shoot = (element, position) => {
-    console.log(element)
+  changeMyPoints = (points) => {
+    const { myPoints } = this.state;
+    this.setState({ myPoints: myPoints + points });
+  };
+
+  changeKilledBugs = (kills) => {
+    const { killedBugs } = this.state;
+    this.setState({ killedBugs: killedBugs + kills });
   };
 
   actionShoot = e => {
     e.preventDefault();
-    const { myPoints, positionBugs } = this.state;
-    let spaceShip = document.getElementById('spaceShip');
-    spaceShip.style.left = positionBugs[myPoints].left;
-    setTimeout(this.shoot(spaceShip), 1000)
-    this.setState({ myPoints: myPoints + 1 });
+    const { positionBugs, killedBugs } = this.state;
+    positionSpaceShip(positionBugs, killedBugs);
+    setTimeout(this.changeMyPoints(positionBugs[killedBugs].size), 2000);
+    this.changeKilledBugs(killedBugs + 1);
   };
 
+  renderBug = () => {
+
+    const { positionBugs } = this.state;
+
+    return positionBugs.map((bug, index) => (
+      <Bug {...bug} index={index} key={index}/>
+    ))
+  };
 
   render() {
 
-    const { myPoints, positionBugs } = this.state;
+    const { life, myRecord, myPoints } = this.state;
 
     return (
       <div className="game-bug">
-        <InfoHeader myPoints={myPoints}/>
+        <InfoHeader
+          life={life}
+          myRecord={myRecord}
+          myPoints={myPoints}
+        />
         <button onClick={this.actionShoot}>Atirar</button>
-        {positionBugs.map((bug, index) => (
-          <Bug {...bug} index={index} key={index}/>
-        ))}
+        {this.renderBug()}
         <SpaceShip/>
       </div>
     );

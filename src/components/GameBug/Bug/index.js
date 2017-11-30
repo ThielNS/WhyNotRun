@@ -7,7 +7,7 @@ const Bug = ({ top, left, size, index }) => {
       style={{
         top: top,
         left: left,
-        fontSize: size
+        fontSize: `${size}px`
       }}
     />
   );
