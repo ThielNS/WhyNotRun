@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: $bg-color;
+  background-image: linear-gradient($bg1, $bg-color);
+  background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4 {

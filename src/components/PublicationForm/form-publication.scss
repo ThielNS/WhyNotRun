@@ -66,6 +66,7 @@
 
   &-informations {
     display: none;
+    transition: .3s;
     flex-direction: column;
     background-color: $white-color;
     border-radius: 0 0 5px 5px;
