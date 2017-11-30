@@ -1,18 +1,24 @@
 import React from 'react';
+import spaceShip from './spaceship.png';
 
 export const positionSpaceShip = (position, index) => {
+
   let spaceShip = document.getElementById('space-ship');
   let shootElement = spaceShip.lastElementChild;
-  spaceShip.style.left = position[index].left;
-  shootElement.style.left = position[index].left + 11;
-  setTimeout(shoot(shootElement, position, index), 1000);
-};
 
-const shoot = (shoot, position, index) => {
-  shoot.style.left = position[index].left;
-  shoot.style.top = position[index].top;
-  shoot.classList.add('-animete');
-  setTimeout(shoot.classList.remove('-animate', 1000))
+  spaceShip.style.left = `${position[index].left}px`;
+  shootElement.style.left = `${position[index].left + 9}px`;
+
+  setTimeout(() => {
+    shootElement.classList.add('-animete');
+    shootElement.style.top = `${position[index].top}px`;
+
+    setTimeout(() => {
+      shootElement.classList.remove('-animete');
+      shootElement.style.top = '99%';
+      shootElement.style.opacity = '0';
+    }, 1000);
+  }, 1000);
 };
 
 const SpaceShip = () => {
@@ -21,7 +27,7 @@ const SpaceShip = () => {
       id="space-ship"
       className="space-ship"
     >
-      <i className="fa fa-space-shuttle fa-rotate-270"/>
+      <img src={spaceShip} alt="Nave Bits"/>
       <span className="shoot"></span>
     </span>
   )

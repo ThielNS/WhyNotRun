@@ -1,8 +1,6 @@
 import React from 'react';
-import ScoresReaction from "../../../ScoresReaction";
 import ReactionButtonsContainer from "../../../../containers/reactionButtonsContainer";
 import BarStatus from "../../../BarStatus/index";
-
 
 const PostReact = ({ reactions, changeAddComment }) => {
 

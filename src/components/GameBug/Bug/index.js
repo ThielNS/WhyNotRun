@@ -5,8 +5,8 @@ const Bug = ({ top, left, size, index }) => {
     <span
       className={`bug ${index %2 === 0 ? 'move-left' : 'move-right'} fa fa-bug fa-flip-vertical`}
       style={{
-        top: top,
-        left: left,
+        top: `${top}px`,
+        left: `${left}px`,
         fontSize: `${size}px`
       }}
     />

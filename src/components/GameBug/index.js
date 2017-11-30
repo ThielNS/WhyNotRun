@@ -26,13 +26,17 @@ class GameBug extends Component {
 
     for(let i = 0; i < this.state.bugs; i++) {
 
-      const topRand = Math.random() * (600 - 10) + 10;
-      const leftRand = Math.random() * (screenSize - 5) + 5;
-      const sizeRand = Math.random() * (25 - 10) + 10;
+      let topRand = Math.random() * (600 - 10) + 10;
+      let leftRand = Math.random() * (screenSize - 5) + 5;
+      let sizeRand = Math.random() * (25 - 10) + 10;
+
+      topRand = parseFloat(topRand.toFixed(0));
+      leftRand = parseFloat(leftRand.toFixed(0));
+      sizeRand = parseFloat(sizeRand.toFixed(0));
 
       positionBugs.push({
-        top: `${topRand}px`,
-        left: `${leftRand}px`,
+        top: topRand,
+        left: leftRand,
         size: sizeRand
       });
     }
