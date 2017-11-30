@@ -40,9 +40,6 @@ class Technologies extends Component {
         const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
 
-       /*   const index = itemsTechs.map(function (e) { return e.name }).indexOf('Ruby');
-         console.log(index);  */
-
         const itemIndex = itemsTechs[0];
         console.log(itemIndex);
 
@@ -73,9 +70,8 @@ class Technologies extends Component {
         return (
 
             <div className="container">
-                <ul className="content-ranking">
+                <div className="content-ranking">
                     <div>
-                        <div>
                             <div className="techs-podium">
                                 {itemsPodium.map((technology, index) => (
                                     <div key={index}>
@@ -94,9 +90,8 @@ class Technologies extends Component {
                             <div className="pagination">
                                 {renderPageNumbers}
                             </div>
-                        </div>
                     </div>
-                </ul>
+                </div>
             </div>
         )
     }
