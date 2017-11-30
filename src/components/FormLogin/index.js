@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from "../Button/index";
+import { Link } from "react-router-dom";
 
 
 class FormLogin extends Component {
@@ -36,32 +37,49 @@ class FormLogin extends Component {
     this.setState({ password: e.target.value });
   };
 
+  componentDidMount() {
+    console.log(this.props.access);
+  }
+
   render() {
 
     const { email, password } = this.state;
 
     return (
-      <form
-        method="post"
-        className="access-form"
-        onSubmit={this.handleSubmit}
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={this.handleEmail}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Senha"
-          value={password}
-          onChange={this.handlePassword}
-        />
-        <Button style="-default" title="Login" type="submit"/>
-      </form>
+      <div>
+        <header className="access-header">
+          <h2>Login</h2>
+        </header>
+        <form
+          method="post"
+          className="access-form"
+          onSubmit={this.handleSubmit}
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={this.handleEmail}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            value={password}
+            onChange={this.handlePassword}
+          />
+          <div className="row -space-between -align-center">
+            <Button style="-second col-sm-5" title="Entrar" icon="lock" type="submit"/>
+            <Link to="/login/forget">Esqueceu a senha?</Link>
+          </div>
+        </form>
+        <footer className="access-footer">
+          <p>
+            <Link to="/register">Não tem conta? Crie uma, ou não.</Link>
+          </p>
+        </footer>
+      </div>
     );
   }
 }
