@@ -1,12 +1,11 @@
 @import "../../../styles/variables";
 .content-ranking{
     margin: -10px;
-    
     .fa-trash{
         font-size: 110px;
     }
     img.trash {
-        margin-top: -5px;
+        margin-top: -15px;
     }
    .silver{
         color: #A9A9A9;
@@ -67,7 +66,5 @@
       border-radius: 50%;
       position: absolute;
     }
-    .content-techBug{
-        background: url()
-    }
+    
 }

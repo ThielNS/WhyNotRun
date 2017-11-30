@@ -22,7 +22,7 @@ const TechnologyPodium = ({ index, name, points, posts, position, text }) => {
                             <div><BugsTech/></div>
                                 <img src={trashGold} alt="trash-gold" className="trash bug-all" />
                                 </div> :
-                            index == 1 ? <div className="content-techBug"><div><BugsTech/></div> <img src={trashSilver} alt="trash-silver" className="trash"/></div> :
+                            index == 1 ? <div className="content-techBug"><div><BugsTech  /></div> <img src={trashSilver} alt="trash-silver" className="trash"/></div> :
                                 index == 2 ? <div className="content-techBug"><div><BugsTech/></div><img src={trashBronze} alt="trash-bronze bug-little" className="trash"/></div> :
                                     "")}
                     </div>

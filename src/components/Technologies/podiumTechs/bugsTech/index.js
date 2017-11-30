@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./style.scss";
+import ItemBug from "./itemBug";
 
 class BugsTech extends Component {
     constructor(props) {
@@ -17,14 +18,17 @@ class BugsTech extends Component {
         for (let i = 0; i <= 2; i++) {
             const { bugs } = this.state;
             bugs.push(
-                <div><div className="content-icbug">
-                    {bugs.map((item, index) => (
-                        <i class="fa fa-bug ic-bug" aria-hidden="true" index={index} {...item}></i>
-                    ))}
-                </div>
+                <div>
+                    <div>
+                        {bugs.map((item, index) => (
+                            <ItemBug index={index} {...item}/>
+                        ))}
+                    </div>
                 </div>
             )
         }
+
+
 
         const { bugs } = this.state;
         return (
