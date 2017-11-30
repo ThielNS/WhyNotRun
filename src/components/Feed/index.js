@@ -6,7 +6,9 @@ import GameBug from "../GameBug/index";
 class Feed extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      bugs: 0,
+    };
   }
 
   componentDidMount() {
@@ -15,6 +17,8 @@ class Feed extends Component {
       .catch( e => {
         console.log(e);
       });
+
+    this.setState({ bugs: this.props.posts.length });
   }
 
   renderPosts(){
@@ -25,10 +29,9 @@ class Feed extends Component {
   }
   
   render() {
-
     return (
       <div className="container">
-        <GameBug/>
+        <GameBug lengthBugs={this.state.bugs}/>
         { this.renderPosts() }
       </div>
     );

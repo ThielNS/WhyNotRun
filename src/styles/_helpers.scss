@@ -41,3 +41,10 @@
     padding-left: $space;
   }
 }
+
+//COLORS
+._color {
+  &-white {
+    color: $white-color;
+  }
+}
