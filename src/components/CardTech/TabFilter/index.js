@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Item from './Item'
-import './style.css'
+import './style.scss'
 
 class TabFilter extends Component {
    

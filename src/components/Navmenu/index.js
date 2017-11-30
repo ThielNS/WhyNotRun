@@ -14,7 +14,7 @@ class NavMenu extends Component {
           icon: 'newspaper-o',
         },
         {
-          to: '/technologys',
+          to: '/ranking',
           title: 'Ranking',
           icon: 'trash',
         },

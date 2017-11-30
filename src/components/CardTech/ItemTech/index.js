@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./style.css";
+import "./style.scss";
 
 const ItemTech = ({ technology, points, posts }) => (
     <li className="list-techs">

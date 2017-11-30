@@ -1,0 +1,39 @@
+.content-icbug{
+    position: relative;
+    display: flex;
+    height: 10px;
+    margin-right: 95px;
+    animation: rotate 3s linear infinite alternate,
+    move 4s steps(70) infinite both;
+    height: 5px;
+    padding: 5px;
+    margin-right: 50px;
+    offset: path("M 5 50 L 50 50 L 50 50 z") auto;
+    color: #696866;
+    transform-origin: 100%;
+
+    .linear {
+        position: absolute;
+    }
+   
+}
+ @keyframes nudge {
+    0%,10% {
+        transform: translate(0,0);
+    }
+    30% {
+        transform: translate(2px,10px);
+    }
+    80%{
+        transform: translate(2px,0);
+    }
+}
+@keyframes move {
+    from { 
+        transform: rotate(0deg);
+     }
+    to {
+        transform: rotate(360deg)
+    }
+} 
+

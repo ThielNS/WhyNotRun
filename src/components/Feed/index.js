@@ -4,7 +4,6 @@ import CardPost from "../CardPost";
 import GameBug from "../GameBug/index";
 
 class Feed extends Component {
-
   constructor(props) {
     super(props);
     this.state = {

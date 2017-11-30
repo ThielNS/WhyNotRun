@@ -12,6 +12,8 @@ import AuthenticationLayout from "./layouts/Authentication";
 import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
+import Ranking from "./pages/Ranking";
+
 
 import './styles/reset.scss';
 import './styles/layout.scss';
@@ -34,6 +36,7 @@ class App extends Component {
         <Router>
           <Switch>
             <MainLayout exact path="/" component={HomePage} />
+            <MainLayout exact path="/ranking" component={Ranking} />
             <AuthenticationLayout exact path="/login" component={LoginContainer} />
             <AuthenticationLayout exact path="/register" component={RegisterContainer} />
             <ErrorLayout path="*" component={ErrorPage} />
