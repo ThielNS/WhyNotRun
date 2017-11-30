@@ -45,7 +45,7 @@ class Technologies extends Component {
 
         //const itemsBottom = itemsTechs.splice(0,3);
 
-        
+
         const indexOfLastTechs = currentPage * techsPerPage;
         const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
         const currentTechs = itemsTechs.slice(indexOfFirstTechs, indexOfLastTechs);
@@ -69,27 +69,27 @@ class Technologies extends Component {
 
         return (
 
-            <div className="container">
+            <div className="container _padding">
                 <div className="content-ranking">
                     <div>
-                            <div className="techs-podium">
-                                {itemsPodium.map((technology, index) => (
-                                    <div key={index}>
-                                        <TechnologyPodium index={index} {...technology} />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="container content-listbottom">
-                                <Navbar />
-                                {itemsTechs.map((technology, index) => (
-                                    <div key={index}>
-                                        <BottomTechnologies index={index} {...technology} />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="pagination">
-                                {renderPageNumbers}
-                            </div>
+                        <div className="techs-podium">
+                            {itemsPodium.map((technology, index) => (
+                                <div key={index}>
+                                    <TechnologyPodium index={index} {...technology} />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="container content-listbottom">
+                            <Navbar />
+                            {itemsTechs.map((technology, index) => (
+                                <div key={index}>
+                                    <BottomTechnologies index={index} {...technology} />
+                                </div>
+                            ))}
+                        </div>
+                        <div className="pagination">
+                            {renderPageNumbers}
+                        </div>
                     </div>
                 </div>
             </div>
