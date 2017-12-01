@@ -21,7 +21,9 @@ class BugsTech extends Component {
                 <div>
                     <div>
                         {bugs.map((item, index) => (
-                            <ItemBug index={index} {...item}/>
+                            <div key= {index}>
+                                <ItemBug index={index} {...item} />
+                            </div>
                         ))}
                     </div>
                 </div>

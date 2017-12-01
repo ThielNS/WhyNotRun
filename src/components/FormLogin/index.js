@@ -20,13 +20,13 @@ class FormLogin extends Component {
     const { email, password } = this.state;
 
     this.props.loginAuthentication(email, password)
-    .then(() => {
-      const { history } = this.props;
-      history.push('/');
-    })
-    .catch(() => {
-      console.log('Erro ao Fazer login');
-    });
+      .then(() => {
+        const { history } = this.props;
+        history.push('/');
+      })
+      .catch(() => {
+        console.log('Erro ao Fazer login');
+      });
   };
 
   handleEmail = e => {
@@ -39,7 +39,7 @@ class FormLogin extends Component {
 
   componentDidMount() {
     const token = localStorage.getItem('userToken');
-    if(token) {
+    if (token) {
       const { push } = this.props.history;
       push('/');
     }
@@ -74,13 +74,13 @@ class FormLogin extends Component {
             onChange={this.handlePassword}
           />
           <div className="row -space-between -align-center">
-            <Button style="-second col-sm-5" title="Entrar" icon="lock" type="submit"/>
+            <Button style="-second col-sm-5" title="Entrar" icon="lock" type="submit" />
             <Link to="/login/forget">Esqueceu a senha?</Link>
           </div>
         </form>
         <footer className="access-footer">
           <p>
-            <Link to="/register">Não tem conta? Crie uma, ou não.</Link>
+            <Link to="/register"> Não tem conta? Crie uma, ou não. </Link>
           </p>
         </footer>
       </div>
