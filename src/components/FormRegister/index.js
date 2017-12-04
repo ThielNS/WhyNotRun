@@ -29,10 +29,11 @@ class FormRegister extends Component {
     const { name, email, password, profession, confirmPassword } = this.state;
 
     if (password == confirmPassword) {
-      this.props.registerUser(name, email, password, profession, confirmPassword)
+      this.props.registerUser(name, email, profession, password, confirmPassword)
         .then(() => {
           const { history } = this.props;
           console.log('Success')
+
           history.push('/');
         })
         .catch((error) => {

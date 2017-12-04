@@ -9,19 +9,10 @@ export const registerUser = (name, email, profession, password, confirmPassword)
         email: email,
         profession: profession,
         password: password,
-        confirmPassword: confirmPassword
     };
 
-    return post('register', bodyParams)
+    return post('users', bodyParams)
         .then(data => {            
-            dispatch({
-                type: REGISTER_USER,             
-                name: data.name,
-                email: data.email,
-                profession: data.profession,
-                password: data.password,
-                confirmPassword: data.confirmPassword
-            })
             //return Promise.resolve();
         })
         .catch(error => {
