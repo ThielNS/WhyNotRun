@@ -27,16 +27,21 @@ class FormRegister extends Component {
 
     const { dispatch } = this.props;
     const { name, email, password, profession, confirmPassword } = this.state;
-  
-    this.props.registerUser(name, email, password, profession, confirmPassword)    
+
+    if (password == confirmPassword) {
+      this.props.registerUser(name, email, password, profession, confirmPassword)
         .then(() => {
-        const { history } = this.props;
-        console.log('Success')
-        history.push('/');
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+          const { history } = this.props;
+          console.log('Success')
+          history.push('/');
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    } else {
+      console.log('Senha inválida.');
+    }
+
   }
 
   handleName = e => {

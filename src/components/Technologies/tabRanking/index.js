@@ -3,7 +3,7 @@ import './style.scss';
 
 const TabRanking = ({index, title}) => {
     return (
-       <li className='tab-menu clicked'>
+       <li className={(index == 0 ? 'unclick' : 'tab-menu clicked')}>
            {title}
        </li>
     )

@@ -15,14 +15,14 @@ class BugsTech extends Component {
 
         const listBugs = [];
 
-        for (let i = 0; i <= 2; i++) {
+        for (let i = 0; i <= 1; i++) {
             const { bugs } = this.state;
             bugs.push(
                 <div>
                     <div>
                         {bugs.map((item, index) => (
-                            <div key= {index}>
-                                <ItemBug index={index} {...item} />
+                            <div key={index}>
+                                 {/*  <ItemBug index={index} {...item} />   */}
                             </div>
                         ))}
                     </div>

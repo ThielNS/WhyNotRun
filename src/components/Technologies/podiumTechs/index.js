@@ -7,7 +7,7 @@ import BugsTech from "./bugsTech";
 import "./style.scss";
 
 const TechnologyPodium = ({ index, name, points, posts, position, text }) => {
-    const  itemsTechs  = this.props;
+    const itemsTechs = this.props;
     console.log(index)
 
     return (
@@ -17,13 +17,13 @@ const TechnologyPodium = ({ index, name, points, posts, position, text }) => {
                     <div>
                         {/* {(position == 1 ? <div className="content-bug"><i class="fa fa-bug" aria-hidden="true"></i></div> : '')}
  */}
-                        {(index == 0  ?
+                        {(index == 0 ?
                             <div className="content-techBug">
-                            <div><BugsTech/></div>
+                                <div><BugsTech /></div>
                                 <img src={trashGold} alt="trash-gold" className="trash bug-all" />
-                                </div> :
-                            index == 1 ? <div className="content-techBug"><div><BugsTech  /></div> <img src={trashSilver} alt="trash-silver" className="trash"/></div> :
-                                index == 2 ? <div className="content-techBug"><div><BugsTech/></div><img src={trashBronze} alt="trash-bronze bug-little" className="trash"/></div> :
+                            </div> :
+                            index == 1 ? <div className="content-techBug"><div></div> <img src={trashSilver} alt="trash-silver" className="trash" /></div> :
+                                index == 2 ? <div className="content-techBug"><div></div><img src={trashBronze} alt="trash-bronze bug-little" className="trash" /></div> :
                                     "")}
                     </div>
                 </div>

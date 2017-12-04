@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'anticon';
+    src: url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.eot');
+    /* IE9*/
+    src: url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.eot?#iefix') format('embedded-opentype'), /* chrome、firefox */ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.woff') format('woff'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.ttf') format('truetype'), /* iOS 4.1- */ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.svg#iconfont') format('svg');
+  }
+@import '../../../../node_modules/antd/lib/pagination/style/index.css';
+@import '../../../styles/variables.scss';
+
+li.ant-pagination-item {
+    margin-top: 30px;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.5);
+}
+.ant-pagination-item-active:focus, .ant-pagination-item-active:hover {
+    background-color: $second-color;
+    border-color: $second-color;
+    color: #000;
+
+}
+.ant-pagination-item:focus {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    background-color: $second-color;
+    color: white;
+    
+}
+.ant-pagination-item:hover{
+    background-color: white;
+    color: #000;
+}
+.ant-pagination-item-active {
+    background-color: $second-color;
+    border-color: $second-color;
+}
+.ant-pagination-item:focus a {
+    color: white;
+}
+.ant-pagination-item:hover a{
+    color: #000;
+}
+.ant-pagination-item:hover {
+    color: #000
+}
+.ant-pagination-item:focus, .ant-pagination-item:hover {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-color: $second-color;
+}
+a.ant-pagination-item-link:hover{
+    color: $second-color;
+}
+.ant-pagination-prev .ant-pagination-item-link:after {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border-color: $second-color;
+    width: 20px;
+    height: 28px;
+}
+.ant-pagination-next .ant-pagination-item-link:after {
+    width: 20px;
+    height: 28px;
+}
+.ant-pagination-next:hover, .ant-pagination-item-link:after:hover {
+    color: $second-color;
+}
+a.ant-pagination-item-link:hover{
+    color: $second-color;
+}
+.ant-pagination-prev:hover {
+    color: $second-color;
+}
+.ant-pagination-item-active{
+}

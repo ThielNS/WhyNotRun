@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import TechnologyPodium from './podiumTechs'
 import Navbar from './navbar';
 import BottomTechnologies from './bottomTechnologies';
-import Pagination from '../Pagination';
 import PropTypes from 'prop-types';
+import Pages from './pagination'
 
 import './style.scss'
 
 class Technologies extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
 
-            currentPage: 1,
-            techsPerPage: 3
+            currentPage: 3,
+
         };
 
         this.handleClick = this.handleClick.bind(this);
-        //this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     handleClick(e) {
@@ -32,11 +32,18 @@ class Technologies extends Component {
             .catch(console.log);
     }
 
+    onChangePage = (page) => {
+        console.log(page);
+        this.setState({
+            currentPage: page,
+        });
+    }
+
     render() {
         console.log()
         console.log(this.props);
 
-
+        const Pagination = require('rc-pagination');
         const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
 
@@ -88,13 +95,14 @@ class Technologies extends Component {
                             ))}
                         </div>
                         <div className="pagination">
-                            {renderPageNumbers}
+                            <Pages />
                         </div>
                     </div>
                 </div>
             </div>
         )
     }
-}
+};
+
 
 export default Technologies;
