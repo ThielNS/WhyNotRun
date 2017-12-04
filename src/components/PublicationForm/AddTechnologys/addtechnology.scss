@@ -1,5 +1,82 @@
+@import "../../../../node_modules/antd/lib/select/style/index.css";
+
+$border-color: #f4f4f4;
+
+.ant-select {
+  &-selection {
+    padding-left: 10px;
+    border-color: $border-color;
+
+    &:hover {
+      border-color: $border-color;
+    }
+
+    ul {
+      list-style: none;
+    }
+    &--multiple {
+      min-height: auto;
+      > ul {
+        > li {
+          margin-left: 0;
+          padding: 0;
+        }
+      }
+      .ant-select-selection {
+        border-color: $border-color;
+
+        &:hover {
+          border-color: $border-color;
+        }
+        &__rendered {
+          padding: 10px;
+          padding-left: 0;
+          margin-left: 0px;
+          margin-bottom: 0px;
+          height: auto;
+        }
+      }
+    }
+  }
+  &-search {
+    &--inline {
+      .ant-select-search__field {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+      }
+    }
+  }
+}
+.ant-select-selection {
+  border-color: $border-color;
+}
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active,
+.ant-select-selection:hover {
+  border-color: $border-color;
+  border: none;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  outline: none;
+  box-shadow: none;
+}
+
 .add-technologys {
   position: relative;
+  border-left: none;
+  border-right: none;
+
+  &.ant-select-focused .ant-select-selection,
+  .ant-select-selection:focus,
+  .ant-select-selection:active {
+    border: none;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    outline: none;
+    box-shadow: none;
+  }
 
   .list-technologys {
     width: 100%;

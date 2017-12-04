@@ -1,5 +1,5 @@
 import React from 'react';
-import Technologies from "../../containers/technologiesContainer"
+import Technologies from "../../containers/AddTechnologiesContainer"
 
 const Ranking = () => {
     return (

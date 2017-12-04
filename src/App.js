@@ -8,11 +8,13 @@ import reducers from './reducers';
 
 import MainLayout from "./layouts/Main";
 import AuthenticationLayout from "./layouts/Authentication";
+import ErrorLayout from "./layouts/ErrorLayout/index";
 
 import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
 import Ranking from "./pages/Ranking";
+import ErrorPage from "./pages/Error/index";
 
 
 import './styles/reset.scss';
@@ -20,8 +22,6 @@ import './styles/layout.scss';
 import './styles/_variables.scss';
 import './styles/_helpers.scss';
 import './styles/colors.scss';
-import ErrorPage from "./pages/Error/index";
-import ErrorLayout from "./layouts/ErrorLayout/index";
 
 const store = createStore(
   reducers,

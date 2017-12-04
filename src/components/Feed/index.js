@@ -14,9 +14,9 @@ class Feed extends Component {
   componentDidMount() {
     this.props
       .listPosts()
-      .catch( e => {
-        console.log(e);
-      });
+      .catch(error => (
+        'Deu erro amiguxo!'
+  ));
 
     this.setState({ bugs: this.props.posts.length });
   }

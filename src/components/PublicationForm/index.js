@@ -4,36 +4,50 @@ import './form-publication.scss';
 import Button from "../Button";
 import Avatar from "../Avatar/index";
 import AddTechnologys from "./AddTechnologys";
+import AddTechnologiesContainer from '../../containers/AddTechnologiesContainer';
 import { Link } from "react-router-dom";
-
+import { listTechs } from "../../actions/tecnologiesAction";
 class PublicationForm extends Component {
   //5a059a03e50ef6543868f33d
   constructor(props) {
     super(props);
     this.state = {
-      publication: {
-        title: '',
-        text: 'Relate sua experiencia',
-        idTechies: [],
-        idUser: '5a04ac2053d35705fcfbc428',
-      },
+      title: '',
+      text: 'Relate sua experiencia',
+      technologies: [],
+      idUser: JSON.parse(localStorage.getItem('user')).id,
       classChange: {},
       placeholderInput: 'Bugou? diga sobre.',
     }
   }
 
   handleTitle = e => {
-    this.setState({ publication: { title: e.target.value } });
+    this.setState({ title: e.innerHTML });
   };
 
-  handleText = e => {
-    this.setState({ text: e.target.value});
+  handleText = () => {
+    const text = this.refs.divText.innerHTML;
+    this.setState({ text: text});
+  };
+
+  handleTecnologies = (listTechs) => {
+    this.setState({ technologies: listTechs });
   };
 
   submitPost = e => {
     e.preventDefault();
-    const { title, text, idTechies, idUser } = this.props;
-    this.props.addPost(title,text,idTechies,idUser);
+    debugger;
+
+    const { title, text, technologies, idUser } = this.state;
+
+    const posting = {
+      title: title,
+      text: text,
+      techies: technologies,
+      userId: idUser
+    };
+
+    this.props.addPost(posting);
   };
 
   showInformations = () => {
@@ -56,13 +70,21 @@ class PublicationForm extends Component {
 
 
   componentDidMount() {
-    if(this.refs.meuComp){
-      this.refs.meuComp.contentEditable = true;
+    if(this.refs.divText){
+      this.refs.divText.contentEditable = true;
     }
   }
+
+  componentDidUpdate(){
+    const divText = document.getElementById('divText');
+    // this.setState({ text: divText});
+    console.log(divText.innerText);
+  }
+
   render() {
 
-    const { publication, classChange, placeholderInput } = this.state;
+
+    const { title, text, classChange, placeholderInput } = this.state;
     const token = localStorage.getItem('userToken');
     const user = JSON.parse(localStorage.getItem('user'));
 
@@ -86,7 +108,7 @@ class PublicationForm extends Component {
                     className="col-sm-12"
                     onChange={this.handleTitle}
                     onFocus={this.showInformations}
-                    value={publication.title}
+                    value={title}
                   />
                   <button
                     onClick={this.closeInformations}
@@ -96,13 +118,14 @@ class PublicationForm extends Component {
                 <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
                   <div
                     className="text-description"
-                    onChange={this.handleText}
-                    ref="meuComp"
-                    children={publication.text}
+                    ref="divText"
+                    id="divText"
+                    children={text}
+                    onKeyDown={this.handleText}
                   />
-                  <AddTechnologys/>
+                  <AddTechnologiesContainer handleTecnologies={this.handleTecnologies.bind(this)}/>
                   <div className="col-sm-12 row -flex-end _padding">
-                    <Button style="-second" title="Postar" icon="send"/>
+                    <Button style="-second" title="Postar" icon="send" onClick={this.submitPost}/>
                   </div>
                 </div>
               </form>

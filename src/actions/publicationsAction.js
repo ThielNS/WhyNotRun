@@ -2,7 +2,7 @@ import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsRe
 import { get, post } from '../modules/request';
 
 export const listPosts = () => dispatch => {
-  return get('publications')
+  return get('publications?page=1')
     .then(data => {
       return dispatch({
         type: LIST_PUBLICATIONS,
@@ -14,18 +14,10 @@ export const listPosts = () => dispatch => {
     });
 };
 
-export const addPost = (title, text, idTech, idUser) => dispatch => {
-
-  const bodyParameters = {
-    title: title,
-    description: text,
-    techies: idTech,
-    user: idUser
-  };
-
+export const addPost = bodyParameters => dispatch => {
   return post('publications', bodyParameters)
     .then()
     .catch(error => {
       throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
     });
-}
+};

@@ -8,8 +8,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addPost: (title, text, idTech, idUser) => {
-    dispatch(addPost(title, text, idTech, idUser));
+  addPost: posting => {
+    dispatch(addPost(posting));
   }
 });
 

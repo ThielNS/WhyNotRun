@@ -18,8 +18,9 @@ class FormLogin extends Component {
     e.preventDefault();
 
     const { email, password } = this.state;
+    const {loginAuthentication} = this.props;
 
-    this.props.loginAuthentication(email, password)
+    loginAuthentication(email, password)
     .then(() => {
       const { history } = this.props;
       history.push('/');
