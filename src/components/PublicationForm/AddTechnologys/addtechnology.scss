@@ -1,12 +1,13 @@
 .add-technologys {
   position: relative;
 
-  .list-technologys {
+  li.list-technologys {
     width: 100%;
     position: absolute;
     background-color: #f8f8f8;
     display: flex;
     flex-direction: column;
+   
 
     li {
       margin: 0;

@@ -10,7 +10,7 @@ class Navbar extends Component {
         this.state = {
             tabs: [
                 {
-                    title:'#'
+                    title: '#'
                 },
                 {
                     title: 'Tecnologia'

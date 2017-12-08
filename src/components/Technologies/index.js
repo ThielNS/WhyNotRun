@@ -4,6 +4,7 @@ import Navbar from './navbar';
 import BottomTechnologies from './bottomTechnologies';
 import PropTypes from 'prop-types';
 import Pages from './pagination'
+import NavTabs from './Tabs';
 
 import './style.scss'
 
@@ -13,7 +14,7 @@ class Technologies extends Component {
         super(props);
 
         this.state = {
-
+            
             currentPage: 3,
 
         };
@@ -67,15 +68,13 @@ class Technologies extends Component {
                 <li
                     key={number}
                     id={number}
-                    onClick={this.handleClick}
-                >
+                    onClick={this.handleClick}>
                     {number}
                 </li>
             );
         });
 
         return (
-
             <div className="container _padding">
                 <div className="content-ranking">
                     <div>
@@ -87,7 +86,7 @@ class Technologies extends Component {
                             ))}
                         </div>
                         <div className="container content-listbottom">
-                            <Navbar />
+                            <NavTabs />
                             {itemsTechs.map((technology, index) => (
                                 <div key={index}>
                                     <BottomTechnologies index={index} {...technology} />

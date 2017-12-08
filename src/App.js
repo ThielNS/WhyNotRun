@@ -13,6 +13,7 @@ import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
 import Ranking from "./pages/Ranking";
+import LandingPage from "./pages/LandingPage";
 
 
 import './styles/reset.scss';
@@ -37,6 +38,7 @@ class App extends Component {
           <Switch>
             <MainLayout exact path="/" component={HomePage} />
             <MainLayout exact path="/ranking" component={Ranking} />
+            <MainLayout exact path="/whynotrun" component={LandingPage} />
             <AuthenticationLayout exact path="/login" component={LoginContainer} />
             <AuthenticationLayout exact path="/register" component={RegisterContainer} />
             <ErrorLayout path="*" component={ErrorPage} />

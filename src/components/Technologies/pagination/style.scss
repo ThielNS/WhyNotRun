@@ -38,7 +38,7 @@ li.ant-pagination-item {
 .ant-pagination-item:focus a {
     color: white;
 }
-.ant-pagination-item:hover a{
+.ant-pagination-item:hover a {
     color: #000;
 }
 .ant-pagination-item:hover {
@@ -49,7 +49,7 @@ li.ant-pagination-item {
     transition: all .3s;
     border-color: $second-color;
 }
-a.ant-pagination-item-link:hover{
+a.ant-pagination-item-link:hover {
     color: $second-color;
 }
 .ant-pagination-prev .ant-pagination-item-link:after {
@@ -85,4 +85,12 @@ a.ant-pagination-item-link{
     height: 28px;
     background-color: rgba(255,255,255,.5);
 }
-
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+    background-color: rgba(255,255,255,.5);
+}
+.ant-pagination-next .ant-pagination-item-link:after {
+    background-color: rgba(255,255,255,.5);
+}
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+    background-color: rgba(255,255,255,.5);
+}
