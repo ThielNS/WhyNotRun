@@ -84,7 +84,7 @@ class GameBug extends Component {
           myRecord={myRecord}
           myPoints={myPoints}
         />
-        <button onClick={this.actionShoot}>Atirar</button>
+        {/*<button onClick={this.actionShoot}>Atirar</button>*/}
         {this.renderBug()}
         <SpaceShip/>
       </div>

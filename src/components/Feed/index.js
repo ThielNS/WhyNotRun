@@ -24,7 +24,7 @@ class Feed extends Component {
   renderPosts(){
     const { posts } = this.props;
     return posts.map((post, index) => (
-      <CardPost {...post} key={index}/>
+      <CardPost {...post} key={index} index={index}/>
     ));
   }
   

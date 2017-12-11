@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './form-publication.scss';
+import { Link } from "react-router-dom";
+import ContentEditable from 'react-contenteditable';
 import Button from "../Button";
 import Avatar from "../Avatar/index";
-import AddTechnologys from "./AddTechnologys";
 import AddTechnologiesContainer from '../../containers/AddTechnologiesContainer';
-import { Link } from "react-router-dom";
-import { listTechs } from "../../actions/tecnologiesAction";
+import './form-publication.scss';
+
 class PublicationForm extends Component {
   //5a059a03e50ef6543868f33d
   constructor(props) {
     super(props);
     this.state = {
       title: '',
-      text: 'Relate sua experiencia',
+      text: '',
       technologies: [],
       idUser: JSON.parse(localStorage.getItem('user')).id,
       classChange: {},
       placeholderInput: 'Bugou? diga sobre.',
+      placeholderText: 'Relate sua experiencia',
     }
   }
 
@@ -25,9 +26,8 @@ class PublicationForm extends Component {
     this.setState({ title: e.innerHTML });
   };
 
-  handleText = () => {
-    const text = this.refs.divText.innerHTML;
-    this.setState({ text: text});
+  handleText = e => {
+    this.setState({ text: e.target.value});
   };
 
   handleTecnologies = (listTechs) => {
@@ -35,9 +35,6 @@ class PublicationForm extends Component {
   };
 
   submitPost = e => {
-    e.preventDefault();
-    debugger;
-
     const { title, text, technologies, idUser } = this.state;
 
     const posting = {
@@ -68,23 +65,9 @@ class PublicationForm extends Component {
     this.setState({ classChange: {}, placeholderInput: 'Crashou? diga sobre.'});
   };
 
-
-  componentDidMount() {
-    if(this.refs.divText){
-      this.refs.divText.contentEditable = true;
-    }
-  }
-
-  componentDidUpdate(){
-    const divText = document.getElementById('divText');
-    // this.setState({ text: divText});
-    console.log(divText.innerText);
-  }
-
   render() {
 
-
-    const { title, text, classChange, placeholderInput } = this.state;
+    const { title, text, classChange, placeholderInput, placeholderText } = this.state;
     const token = localStorage.getItem('userToken');
     const user = JSON.parse(localStorage.getItem('user'));
 
@@ -116,12 +99,14 @@ class PublicationForm extends Component {
                   ><i className="fa fa-times"/></button>
                 </div>
                 <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
-                  <div
+                  <div className={`text-description-placeholder ${text.length > 0 ? `-hide` : ``}`}>
+                    {placeholderInput}
+                  </div>
+                  <ContentEditable
                     className="text-description"
-                    ref="divText"
-                    id="divText"
-                    children={text}
-                    onKeyDown={this.handleText}
+                    html={text}
+                    disabled={false}
+                    onChange={this.handleText}
                   />
                   <AddTechnologiesContainer handleTecnologies={this.handleTecnologies.bind(this)}/>
                   <div className="col-sm-12 row -flex-end _padding">

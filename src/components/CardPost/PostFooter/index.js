@@ -19,7 +19,7 @@ class PostFooter extends Component {
 
   componentDidUpdate() {
 
-    const addComment = document.getElementById(`input-${this.props.idPost}`);
+    const addComment = document.getElementById(`input-${this.props.postId}`);
 
     if(this.state.showAddComment) {
       addComment.classList.add('-show');
@@ -31,16 +31,16 @@ class PostFooter extends Component {
 
   render() {
 
-    const { idPost, reactions, comments } = this.props;
+    const { postId, postIndex, reactions, comments } = this.props;
     const { showAddComment } = this.state;
 
     const classAddComment = showAddComment ? '-show' : '';
 
     return (
       <footer className="post-footer">
-        <PostReact reactions={reactions} changeAddComment={this.changeAddComment.bind(this)}/>
+        <PostReact reactions={reactions} postId={postId} postIndex={postIndex} changeAddComment={this.changeAddComment.bind(this)}/>
         <PostComments comments={comments}/>
-        <AddCommentContainer id={`input-${idPost}`} className={classAddComment}/>
+        <AddCommentContainer id={`input-${postId}`} postId={postId} postIndex={postIndex} className={classAddComment}/>
       </footer>
     );
   };

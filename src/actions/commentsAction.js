@@ -1,24 +1,26 @@
-import { ADD_COMMENT} from "../reducers/Comments/constants";
+import { ADD_COMMENT } from "../reducers/PublicationsReducer/constants";
 import { post } from "../modules/request";
 
-export const addComent = (postId, postIndex, userId, comment) => dispatch => {
+export const addComment = (postId, postIndex, text) => dispatch => {
+
+  const userId = JSON.parse(localStorage.getItem('user')).id;
 
   const bodyParameters = {
-    postId: postId,
+    publicationId: postId,
     userId: userId,
-    comment: comment
+    text: text
   };
 
-  return post('comments', bodyParameters)
-    .then(response => response.json())
-    .then(({ data }) => {
-      dispatch({
+  post('comments', bodyParameters)
+    .then(data => {
+      return dispatch({
         type: ADD_COMMENT,
+        data,
         postIndex,
-        data
       });
     })
     .catch(error => {
-      throw new Error("ErrorRequest", { message: error.message });
+      // throw new Error("ErrorRequest", { message: error.message });
     });
 };
+

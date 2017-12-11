@@ -6,14 +6,13 @@ import './cardpost.scss';
 import PropTypes from 'prop-types';
 
 
-const CardPost = ({ id, title, text, datePublication, user, reactions, technologys, comments }) => {
-
+const CardPost = ({ id, title, text, datePublication, user, reactions, technologys, comments, index }) => {
   return (
     <div className="">
       <div className="post-card">
         <PostHeader user={user} datePublication={datePublication} technologys={technologys}/>
         <PostContent title={title} text={text}/>
-        <PostFooter idPost={id} reactions={reactions} comments={comments}/>
+        <PostFooter postId={id} postIndex={index} reactions={reactions} comments={comments}/>
       </div>
     </div>
   );

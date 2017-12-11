@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:55816";
-// const API_URL = "https://private-93e4a-whynotrun1.apiary-mock.com";
+// const API_URL = "http://localhost:55816";
+const API_URL = "https://private-93e4a-whynotrun1.apiary-mock.com";
 export const get = (url) =>{
   return request(url, {
     method: 'GET'
@@ -9,6 +9,13 @@ export const get = (url) =>{
 export const post = (url, data) => {
   return request(url, {
     method: 'POST',
+    body: JSON.stringify(data)
+  });
+};
+
+export const patch = (url, data) => {
+  return request(url, {
+    method: 'PATCH',
     body: JSON.stringify(data)
   });
 };

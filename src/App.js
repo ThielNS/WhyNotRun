@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
+import { LocaleProvider } from 'antd';
+import ptBR from 'antd/lib/locale-provider/pt_BR';
 
 import reducers from './reducers';
 
@@ -33,15 +35,17 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
-          <Switch>
-            <MainLayout exact path="/" component={HomePage} />
-            <MainLayout exact path="/ranking" component={Ranking} />
-            <AuthenticationLayout exact path="/login" component={LoginContainer} />
-            <AuthenticationLayout exact path="/register" component={RegisterContainer} />
-            <ErrorLayout path="*" component={ErrorPage} />
-          </Switch>
-        </Router>
+        <LocaleProvider locale={ptBR}>
+          <Router>
+            <Switch>
+              <MainLayout exact path="/" component={HomePage} />
+              <MainLayout exact path="/ranking" component={Ranking} />
+              <AuthenticationLayout exact path="/login" component={LoginContainer} />
+              <AuthenticationLayout exact path="/register" component={RegisterContainer} />
+              <ErrorLayout path="*" component={ErrorPage} />
+            </Switch>
+          </Router>
+        </LocaleProvider>
       </Provider>
     );
   }
