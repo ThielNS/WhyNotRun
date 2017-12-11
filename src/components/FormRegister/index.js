@@ -23,6 +23,7 @@ class FormRegister extends Component {
   }
 
   handleSubmit = e => {
+
     e.preventDefault();
 
     const { dispatch } = this.props;

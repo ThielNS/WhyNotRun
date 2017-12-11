@@ -8,6 +8,7 @@ import reducers from './reducers';
 
 import MainLayout from "./layouts/Main";
 import AuthenticationLayout from "./layouts/Authentication";
+import LandingPageLayout from "./layouts/LandingPageLayout";
 
 import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
@@ -36,8 +37,10 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Switch>
+            <LandingPageLayout exact path="/landing-page" component= {LandingPage} />
             <MainLayout exact path="/" component={HomePage} />
             <MainLayout exact path="/ranking" component={Ranking} />
+           
             <MainLayout exact path="/whynotrun" component={LandingPage} />
             <AuthenticationLayout exact path="/login" component={LoginContainer} />
             <AuthenticationLayout exact path="/register" component={RegisterContainer} />

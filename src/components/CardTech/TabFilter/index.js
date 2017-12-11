@@ -4,10 +4,6 @@ import './style.scss'
 
 class TabFilter extends Component {
    
-  constructor(props) {
-    super(props);
-
-  }
 
   render() {
 

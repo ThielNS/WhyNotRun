@@ -8,13 +8,13 @@ class Footer extends Component {
         this.state = {
             items: [
                 {
-                    icon:'face'
+                    icon:'facebook'
                 },
                 {
                     icon:'instagram'
                 },
                 {
-                    icon:'gitHub'
+                    icon:'github-alt'
                 },
                 {
                     icon:'twitter'
@@ -30,7 +30,7 @@ class Footer extends Component {
         return (
             <ul>
                 {items.map((item, index) => (
-                    <ItemFooter item={item} key={index}/>
+                    <ItemFooter key={index} {...item}/>
                 ))}
             </ul>
         )

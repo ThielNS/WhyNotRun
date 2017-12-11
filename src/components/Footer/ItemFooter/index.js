@@ -1,8 +1,8 @@
 import React from "react";
 
-const ItemFooter = ({item}) => {
+const ItemFooter = ({item, icon}) => {
     return (
-        <li>{item.icon}</li>
+        <li><i className={`fa fa-${icon}`}/></li>
     )
 }
 
