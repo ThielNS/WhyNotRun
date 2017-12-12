@@ -1,7 +1,7 @@
 import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 import { get, post } from '../modules/request';
 
-export const listPosts = () => dispatch => {
+export const listPosts = () => (dispatch,getState) => {
   return get('publications?page=1')
     .then(data => {
       return dispatch({

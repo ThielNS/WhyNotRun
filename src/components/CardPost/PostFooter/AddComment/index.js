@@ -27,15 +27,13 @@ class AddComment extends Component {
 
   render () {
 
-    const { id, idPost, postIndex, className } = this.props;
+    const { id, idPost, postIndex, className, access } = this.props;
+    const { userToken, user } = access;
     const { text } = this.state;
-    const local = localStorage;
-    const token = local.getItem ('userToken');
-    const user = JSON.parse (local.getItem ('user'));
 
     return (
       <div className={`add-comment ${className}`} id={id}>
-        {token ? (
+        {userToken ? (
           <form className='add-comment-form' onSubmit={e => this.submitComment(e, idPost, postIndex)}>
             <Avatar img={user.picture}/>
             <input

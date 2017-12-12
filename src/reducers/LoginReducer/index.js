@@ -5,12 +5,20 @@ const login = (state = [initialState], action) => {
 
   switch (action.type) {
     case AUTH_LOGIN:
-      return state;
+      let local = localStorage;
+      const { token, user } = action;
+
+      local.setItem('userToken', token);
+      local.setItem('user', JSON.stringify(user));
+
+      state = initialState;
+
+      return state[0];
     case LOGOUT:
       localStorage.clear();
       return state = [];
     default :
-      return state;
+      return state[0];
   }
 };
 

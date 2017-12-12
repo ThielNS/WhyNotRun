@@ -68,8 +68,8 @@ class PublicationForm extends Component {
   render() {
 
     const { title, text, classChange, placeholderInput, placeholderText } = this.state;
-    const token = localStorage.getItem('userToken');
-    const user = JSON.parse(localStorage.getItem('user'));
+    const { access } = this.props;
+    const { token, user } = access;
 
     return (
         <div className="container _margin-top">
@@ -100,7 +100,7 @@ class PublicationForm extends Component {
                 </div>
                 <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
                   <div className={`text-description-placeholder ${text.length > 0 ? `-hide` : ``}`}>
-                    {placeholderInput}
+                    {placeholderText}
                   </div>
                   <ContentEditable
                     className="text-description"

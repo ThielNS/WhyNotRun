@@ -6,10 +6,8 @@ const mapStateToProps = state => {
   return { posts: state.publicationsReducer };
 };
 
-const mapDispatchToProps = dispatch => ({
-  listPosts: () => {
-    return dispatch(listPosts());
-  }
-});
+const mapDispatchToProps  = {
+  listPosts
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

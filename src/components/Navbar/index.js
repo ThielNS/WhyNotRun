@@ -6,10 +6,9 @@ import SearchForm from "../SearchForm";
 import Logo from "../Logo/index";
 
 
-const NavBar = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
-  const token = localStorage.getItem('userToken');
-  const renderAvatar = token ? (<Avatar img={user.picture}/>) : null;
+const NavBar = (props) => {
+  const { userToken, user } = props.access;
+  const renderAvatar = userToken ? (<Avatar img={user.picture}/>) : null;
 
   return (
     <nav className="nav-bar row -space-between -align-center">
@@ -19,7 +18,7 @@ const NavBar = () => {
 
       <div className="col-sm-12 row -space-between -flex-end -align-center">
         <SearchForm/>
-        <NavMenu token={token}/>
+        <NavMenu userToken={userToken}/>
         {renderAvatar}
       </div>
     </nav>

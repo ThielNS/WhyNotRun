@@ -29,6 +29,9 @@ class NavMenu extends Component {
           icon: 'address-card-o',
           button: true,
         },
+        {
+          to: '/logout'
+        }
       ],
     }
   }
@@ -36,17 +39,17 @@ class NavMenu extends Component {
   render() {
 
     const { items } = this.state;
-    const { token } = this.props;
+    const { userToken } = this.props;
 
     return (
       <ul className="nav-menu">
         {items.map((item, index) => {
-          if (token) {
+          if (!userToken) {
+            return (<Item key={index} {...item}/>);
+          } else {
             if (item.to !== '/login' && item.to !== '/register') {
               return (<Item key={index} {...item}/>);
             }
-          } else {
-            return (<Item key={index} {...item}/>);
           }
         })}
       </ul>

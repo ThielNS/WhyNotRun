@@ -12,7 +12,7 @@ class GameBug extends Component {
       life: 4,
       myRecord: 234,
       myPoints: 0,
-      bugs: 20,
+      bugs: 0,
       positionBugs: [],
       killedBugs: 0,
     }
@@ -24,7 +24,7 @@ class GameBug extends Component {
 
     let { positionBugs } = this.state;
 
-    for(let i = 0; i < this.state.bugs; i++) {
+    for(let i = 0; i < this.props.bugs; i++) {
 
       let topRand = Math.random() * (600 - 10) + 10;
       let leftRand = Math.random() * (screenSize - 5) + 5;

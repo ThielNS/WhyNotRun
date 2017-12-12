@@ -14,7 +14,7 @@ class FormLogin extends Component {
     };
   }
 
-  handleSubmit = e => {
+  formSubmit = e => {
     e.preventDefault();
 
     const { email, password } = this.state;
@@ -30,17 +30,19 @@ class FormLogin extends Component {
     });
   };
 
-  handleEmail = e => {
+  changeEmail = e => {
     this.setState({ email: e.target.value });
   };
 
-  handlePassword = e => {
+  changePassword = e => {
     this.setState({ password: e.target.value });
   };
 
   componentDidMount() {
-    const token = localStorage.getItem('userToken');
-    if (token) {
+    const { access } = this.props;
+    const { userToken } = access;
+
+    if (userToken) {
       const { push } = this.props.history;
       push('/');
     }
@@ -58,21 +60,21 @@ class FormLogin extends Component {
         <form
           method="post"
           className="access-form"
-          onSubmit={this.handleSubmit}
+          onSubmit={this.formSubmit}
         >
           <input
             type="email"
             name="email"
             placeholder="E-mail"
             value={email}
-            onChange={this.handleEmail}
+            onChange={this.changeEmail}
           />
           <input
             type="password"
             name="password"
             placeholder="Senha"
             value={password}
-            onChange={this.handlePassword}
+            onChange={this.changePassword}
           />
           <div className="row -space-between -align-center">
             <Button style="-second col-sm-5" title="Entrar" icon="lock" type="submit" />

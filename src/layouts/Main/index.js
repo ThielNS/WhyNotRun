@@ -9,6 +9,7 @@ class DefaultLayout extends React.Component {
   }
 
   render() {
+
     const { Component, ...restProps} = this.props;
 
     return (

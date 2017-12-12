@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CardPost from "../CardPost";
-import GameBug from "../GameBug/index";
+import GameBug from "../GameBug";
 
 class Feed extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -12,16 +13,23 @@ class Feed extends Component {
   }
 
   componentDidMount() {
-    this.props
-      .listPosts()
+
+    const { listPosts, posts } = this.props;
+    console.log(
+    listPosts()
+      .then(result => {
+        console.log(result);
+      })
       .catch(error => (
-        'Deu erro amiguxo!'
-      ));
-    this.setState({ bugs: this.props.posts.length });
+        'Erro ao Listar as postagens!'
+      )) );
+
+    this.setState({ bugs: posts.length });
   }
 
   renderPosts(){
     const { posts } = this.props;
+
     return posts.map((post, index) => (
       <CardPost {...post} key={index} index={index}/>
     ));
@@ -40,5 +48,7 @@ class Feed extends Component {
 Feed.propTypes = {
   listPosts: PropTypes.func.isRequired
 };
+
+
 
 export default Feed;
