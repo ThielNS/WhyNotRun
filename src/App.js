@@ -5,18 +5,19 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import { LocaleProvider } from 'antd';
 import ptBR from 'antd/lib/locale-provider/pt_BR';
-
 import reducers from './reducers';
 
 import MainLayout from "./layouts/Main";
 import AuthenticationLayout from "./layouts/Authentication";
 import ErrorLayout from "./layouts/ErrorLayout/index";
+import LandingPageLayout from "./layouts/LandingPageLayout";
 
-import HomePage from "./pages/Home";
 import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
 import Ranking from "./pages/Ranking";
+import HomePage from "./pages/Home";
 import ErrorPage from "./pages/Error/index";
+import LandingPage from "./pages/LandingPage";
 
 
 import './styles/reset.scss';
@@ -38,6 +39,7 @@ class App extends Component {
         <LocaleProvider locale={ptBR}>
           <Router>
             <Switch>
+              <LandingPageLayout exact path="/landing-page" component= {LandingPage} />
               <MainLayout exact path="/" component={HomePage} />
               <MainLayout exact path="/ranking" component={Ranking} />
               <AuthenticationLayout exact path="/login" component={LoginContainer} />

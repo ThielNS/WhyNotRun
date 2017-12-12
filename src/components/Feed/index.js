@@ -16,8 +16,7 @@ class Feed extends Component {
       .listPosts()
       .catch(error => (
         'Deu erro amiguxo!'
-  ));
-
+      ));
     this.setState({ bugs: this.props.posts.length });
   }
 

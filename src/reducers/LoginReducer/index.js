@@ -1,12 +1,14 @@
-import { AUTH_LOGIN } from './constants';
+import { AUTH_LOGIN, LOGOUT } from './constants';
+import { initialState } from "./initialState";
 
-const login = (state = [], action) => {
+const login = (state = [initialState], action) => {
+
   switch (action.type) {
     case AUTH_LOGIN:
-      const local = localStorage;
-      local.setItem('userToken',action.token);
-      local.setItem('user', JSON.stringify(action.user));
-      return state.concat({token: action.token, user: action.user});
+      return state;
+    case LOGOUT:
+      localStorage.clear();
+      return state = [];
     default :
       return state;
   }

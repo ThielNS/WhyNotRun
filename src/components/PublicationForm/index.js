@@ -15,7 +15,7 @@ class PublicationForm extends Component {
       title: '',
       text: '',
       technologies: [],
-      idUser: JSON.parse(localStorage.getItem('user')).id,
+      idUser: (localStorage.getItem('user'))? JSON.parse(localStorage.getItem('user')).id : null,
       classChange: {},
       placeholderInput: 'Bugou? diga sobre.',
       placeholderText: 'Relate sua experiencia',

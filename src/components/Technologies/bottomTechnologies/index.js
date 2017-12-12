@@ -10,7 +10,7 @@ const BottomTechnologies = ({ index, name, points, posts }) => {
                 <li className="list-technologies">
                     <div className="position">
                         <i>
-                            {index}
+                            {index + 1}
                         </i>
                     </div>
                     <div className="technology">

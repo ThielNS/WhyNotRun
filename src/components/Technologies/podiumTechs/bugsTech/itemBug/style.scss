@@ -2,20 +2,25 @@
     position: relative;
     display: flex;
     height: 10px;
-    margin-right: 95px;
     animation: rotate 3s linear infinite alternate,
-    move 4s steps(70) infinite both;
+    move 2s steps(20) infinite both;
     height: 5px;
     padding: 5px;
-    margin-right: 50px;
+    margin-right: 40px;
     offset: path("M 5 50 L 50 50 L 50 50 z") auto;
     color: #696866;
-    transform-origin: 100%;
+    transform-origin: 20%;
 
     .linear {
         position: absolute;
+        offset: path("M 10 10 L 10 10 L 10 50 z") auto;        
+        top: 5px;
     }
    
+}
+
+.teste{
+    color: red;
 }
  @keyframes nudge {
     0%,10% {
@@ -29,11 +34,18 @@
     }
 }
 @keyframes move {
-    from { 
+
+   from {
+       transform: rotate(0deg)
+   }
+   to {
+       transform: rotate(360deg)
+   }
+    /*  from { 
         transform: rotate(0deg);
      }
     to {
         transform: rotate(360deg)
-    }
+    } */
 } 
 

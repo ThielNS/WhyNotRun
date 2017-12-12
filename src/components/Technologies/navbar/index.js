@@ -10,7 +10,7 @@ class Navbar extends Component {
         this.state = {
             tabs: [
                 {
-                    title:'#'
+                    title: '#'
                 },
                 {
                     title: 'Tecnologia'
@@ -29,7 +29,7 @@ class Navbar extends Component {
         return (
             <ul className="navbar-technologies">
                 {tabs.map((tab, index) => (
-                    <TabRanking key={index} {...tab} />
+                    <TabRanking index={index} {...tab} />
                 ))}
             </ul>
         )
