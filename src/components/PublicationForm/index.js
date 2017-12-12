@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 class PublicationForm extends Component {
   //5a059a03e50ef6543868f33d
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       publication: {
@@ -55,9 +55,6 @@ class PublicationForm extends Component {
   };
 
 
-  componentDidMount() {
-    this.refs.meuComp.contentEditable = true;
-  }
   render() {
 
     const { publication, classChange, placeholderInput } = this.state;
@@ -118,7 +115,6 @@ class PublicationForm extends Component {
               </div>
             </div>
           ) }
-
         </div>
     );
   }
