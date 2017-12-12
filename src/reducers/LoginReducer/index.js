@@ -1,7 +1,6 @@
 import { AUTH_LOGIN, LOGOUT } from './constants';
 import { initialState } from "./initialState";
-
-const login = (state = [initialState], action) => {
+const login = (state = initialState, action) => {
 
   switch (action.type) {
     case AUTH_LOGIN:
@@ -12,13 +11,15 @@ const login = (state = [initialState], action) => {
       local.setItem('user', JSON.stringify(user));
 
       state = initialState;
-
-      return state[0];
+      return state;
     case LOGOUT:
       localStorage.clear();
-      return state = [];
+      return state = {
+        userToken: null,
+        user: null
+      };
     default :
-      return state[0];
+      return state;
   }
 };
 
