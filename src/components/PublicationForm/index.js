@@ -1,39 +1,50 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './form-publication.scss';
+import { Link } from "react-router-dom";
+import ContentEditable from 'react-contenteditable';
 import Button from "../Button";
 import Avatar from "../Avatar/index";
-import AddTechnologys from "./AddTechnologys";
-import { Link } from "react-router-dom";
+import AddTechnologiesContainer from '../../containers/AddTechnologiesContainer';
+import './form-publication.scss';
 
 class PublicationForm extends Component {
   //5a059a03e50ef6543868f33d
   constructor (props) {
     super(props);
     this.state = {
-      publication: {
-        title: '',
-        text: 'Relate sua experiencia',
-        idTechies: [],
-        idUser: '5a04ac2053d35705fcfbc428',
-      },
+      title: '',
+      text: '',
+      technologies: [],
+      idUser: (localStorage.getItem('user'))? JSON.parse(localStorage.getItem('user')).id : null,
       classChange: {},
       placeholderInput: 'Bugou? diga sobre.',
+      placeholderText: 'Relate sua experiencia',
     }
   }
 
   handleTitle = e => {
-    this.setState({ publication: { title: e.target.value } });
+    this.setState({ title: e.innerHTML });
   };
 
   handleText = e => {
     this.setState({ text: e.target.value});
   };
 
+  handleTecnologies = (listTechs) => {
+    this.setState({ technologies: listTechs });
+  };
+
   submitPost = e => {
-    e.preventDefault();
-    const { title, text, idTechies, idUser } = this.props;
-    this.props.addPost(title,text,idTechies,idUser);
+    const { title, text, technologies, idUser } = this.state;
+
+    const posting = {
+      title: title,
+      text: text,
+      techies: technologies,
+      userId: idUser
+    };
+
+    this.props.addPost(posting);
   };
 
   showInformations = () => {
@@ -54,10 +65,9 @@ class PublicationForm extends Component {
     this.setState({ classChange: {}, placeholderInput: 'Crashou? diga sobre.'});
   };
 
-
   render() {
 
-    const { publication, classChange, placeholderInput } = this.state;
+    const { title, text, classChange, placeholderInput, placeholderText } = this.state;
     const token = localStorage.getItem('userToken');
     const user = JSON.parse(localStorage.getItem('user'));
 
@@ -81,7 +91,7 @@ class PublicationForm extends Component {
                     className="col-sm-12"
                     onChange={this.handleTitle}
                     onFocus={this.showInformations}
-                    value={publication.title}
+                    value={title}
                   />
                   <button
                     onClick={this.closeInformations}
@@ -89,27 +99,30 @@ class PublicationForm extends Component {
                   ><i className="fa fa-times"/></button>
                 </div>
                 <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
-                  <div
+                  <div className={`text-description-placeholder ${text.length > 0 ? `-hide` : ``}`}>
+                    {placeholderInput}
+                  </div>
+                  <ContentEditable
                     className="text-description"
+                    html={text}
+                    disabled={false}
                     onChange={this.handleText}
-                    ref="meuComp"
-                    children={publication.text}
                   />
-                  <AddTechnologys/>
+                  <AddTechnologiesContainer handleTecnologies={this.handleTecnologies.bind(this)}/>
                   <div className="col-sm-12 row -flex-end _padding">
-                    <Button style="-second" title="Postar" icon="send"/>
+                    <Button style="-second" title="Postar" icon="send" onClick={this.submitPost}/>
                   </div>
                 </div>
               </form>
             </div>
           ) : (
             <div className="row -align-center -direct-column _padding-bottom">
-              <h3 className="_margin-bottom">Participe da discução, Faça Login, ou crie uma conta!</h3>
+              <h3 className="_margin-bottom _color-white">Participe da discução, Faça Login, ou crie uma conta!</h3>
               <div>
                 <Link to="/register" className="button -second">
                   <i className="fa fa-address-card-o"/> Registrar-se
                 </Link>
-                <Link to="/login" className="button -primare -no-bg">
+                <Link to="/login" className="button -default -no-bg">
                   <i className="fa fa-address-card-o"/> Login
                 </Link>
               </div>

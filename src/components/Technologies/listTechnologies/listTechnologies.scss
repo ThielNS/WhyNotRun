@@ -12,20 +12,25 @@
     padding-top: 15px;
         
     .position {
-        margin-left: 4px;
+        margin-left: 15px;
         width: 20px;
     }
-    .technology{
-        width: 70px;
-        margin-right: 30px;
+    .technology { 
+        width: 70px;        
+        i {
+            margin-left: -40px;
+        }
     }
-    .points{
+    .points {
         width: 50px;
+        margin-left: -25px;
     }
     .posts {
         width: 50px;
+        margin-left: -35px;
     }
 }
+
 li.list-technologies {
    height: 40px;
    padding-top: 10px;

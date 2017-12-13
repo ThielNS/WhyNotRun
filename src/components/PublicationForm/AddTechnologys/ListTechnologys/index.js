@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-
-const RenderIten = ({name}) => (<li>{name}</li>);
+import React from 'react';
 
 const ListTechnologys = ({ list, text }) => {
   return (

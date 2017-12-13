@@ -1,0 +1,33 @@
+@import '../../../../node_modules/antd/lib/tabs/style/index.css';
+@import "../../../styles/variables";
+
+.ant-tabs-nav .ant-tabs-tab-active,.ant-tabs-nav .ant-tabs-tab:hover {
+    color: $second-color;
+}
+.ant-tabs-tab, .ant-tabs-tab, .ant-tabs-tab {
+    margin-left: 20px;
+}
+.ant-tabs-ink-bar {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 2px;
+    background-color: $second-color;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.ant-tabs-nav, .ant-tabs-nav-animated{
+    font-size: 16px;
+    margin-left: 25px;
+}
+.ant-tabs-tab-active, .ant-tabs-tab{
+    margin-right: 20px;
+}
+.ant-tabs-nav-scroll {
+    margin-left: -25px; 
+}
+

@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Technologies from '../components/Technologies';
 import { listTechs } from "../actions/tecnologiesAction";

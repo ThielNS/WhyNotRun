@@ -1,6 +1,13 @@
 @import "../../../styles/variables";
 .content-ranking{
     margin: -10px;
+    .trophy-bronze {
+        margin-top: 10px;
+    }
+    img.trophy-bronze {
+        height: 30px;
+    }
+    
     .fa-trash{
         font-size: 110px;
     }
@@ -19,7 +26,7 @@
     .list-podium {
         color: grey;
      }
-     li{
+     li {
          padding: 20px;
      }
      .card-tresh {
@@ -28,7 +35,8 @@
          display: flex;
          justify-content: center;
          width: 185px;
-         padding: 10px;
+         padding: 20px;
+         padding-top: 40px;
          border-top-left-radius: 5px;
          border-top-right-radius: 5px;
      }
@@ -38,20 +46,47 @@
          background-color: white;
          border-bottom-left-radius: 5px;
          border-bottom-right-radius: 5px;
+         
+        .technology-title {
+            text-align: center;
+            padding: 4px;
+        }
+        .icon-medal {
+            content: '';
+            width: 23px;
+            height: 23px;
+            text-align: center;
+            color: white;
+            margin-top: 7px;
+            border-radius: 50%;
+        }
+        .bg-golden {
+            background-color: #F1CD6F;   
+        }
+        .bg-silver {
+            background-color: #CCCCCC;  
+            
+        }
+        .bg-bronze {
+            background-color: #DCBDAC;
+        }
+        .card-details {
+            padding-top: 5px;
+        }
+        .details-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-podium {
+            display: flex;
+            justify-content: center;
+        }
      }
-     .technology-title {
-         text-align: center;
-         padding: 4px;
-     }
-     i{
+     i {
          font-style: normal;
      }
-     .details-flex{
-         display: flex;
-         justify-content: space-between;
-     }
-     .card-details{
-         padding-top: 5px;
+     h3 {
+         margin-left: 5px;
      }
     .fa-bug{
       font-size: 10px;
@@ -66,5 +101,4 @@
       border-radius: 50%;
       position: absolute;
     }
-    
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TabRanking from '../tabRanking';
 
-import './style.scss'
+import './navbar.scss'
 
 class Navbar extends Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class Navbar extends Component {
         this.state = {
             tabs: [
                 {
-                    title:'#'
+                    title: '#'
                 },
                 {
                     title: 'Tecnologia'

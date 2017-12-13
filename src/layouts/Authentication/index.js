@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route } from "react-router-dom";
-import Logo from "../../components/Logo/index";
-import FooterLogin from "../../components/FooterLogin/index";
+import { Route } from "react-router-dom";
 import '../../styles/access.scss';
 
 //TODO: Decidir nome do AuthenticationLayout

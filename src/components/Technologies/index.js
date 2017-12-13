@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import TechnologyPodium from './podiumTechs'
-import Navbar from './navbar';
-import BottomTechnologies from './bottomTechnologies';
-import Pagination from '../Pagination';
-import PropTypes from 'prop-types';
+import ListTechnologies from './listTechnologies';
+import Pages from './pagination'
+import NavTabs from './Tabs';
 
 import './style.scss'
 
 class Technologies extends Component {
+
     constructor(props) {
         super(props);
 
         this.state = {
+            
+            currentPage: 3,
 
-            currentPage: 1,
-            techsPerPage: 3
         };
 
         this.handleClick = this.handleClick.bind(this);
-        //this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     handleClick(e) {
@@ -32,19 +31,23 @@ class Technologies extends Component {
             .catch(console.log);
     }
 
+    onChangePage = (page) => {
+        console.log(page);
+        this.setState({
+            currentPage: page,
+        });
+    }
+
     render() {
         console.log()
         console.log(this.props);
 
-
+        //const Pagination = require('rc-pagination');
         const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
 
         const itemIndex = itemsTechs[0];
         console.log(itemIndex);
-
-        //const itemsBottom = itemsTechs.splice(0,3);
-
 
         const indexOfLastTechs = currentPage * techsPerPage;
         const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
@@ -60,16 +63,14 @@ class Technologies extends Component {
                 <li
                     key={number}
                     id={number}
-                    onClick={this.handleClick}
-                >
+                    onClick={this.handleClick}>
                     {number}
                 </li>
             );
         });
 
         return (
-
-            <div className="container _padding">
+            <div className="container _padding ranking">
                 <div className="content-ranking">
                     <div>
                         <div className="techs-podium">
@@ -80,21 +81,22 @@ class Technologies extends Component {
                             ))}
                         </div>
                         <div className="container content-listbottom">
-                            <Navbar />
+                            <NavTabs />
                             {itemsTechs.map((technology, index) => (
                                 <div key={index}>
-                                    <BottomTechnologies index={index} {...technology} />
+                                    <ListTechnologies index={index} {...technology} />
                                 </div>
                             ))}
                         </div>
                         <div className="pagination">
-                            {renderPageNumbers}
+                            <Pages />
                         </div>
                     </div>
                 </div>
             </div>
         )
     }
-}
+};
+
 
 export default Technologies;

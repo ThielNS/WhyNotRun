@@ -1,6 +1,4 @@
 import React from 'react';
-import PublicationFormContainer from "../../containers/publicationFormContainer";
-import Feed from "../../containers/feedContainer";
 
 const ErrorPage = (props) => (
   <main className="error">

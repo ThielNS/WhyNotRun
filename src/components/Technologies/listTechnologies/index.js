@@ -1,16 +1,16 @@
 import React from 'react';
 
-import './style.scss';
+import './listTechnologies.scss';
 
 
-const BottomTechnologies = ({ index, name, points, posts }) => {
+const ListTechnologies = ({ index, name, points, posts }) => {
     return (
         <div>
             {(index > 2 ?
                 <li className="list-technologies">
                     <div className="position">
                         <i>
-                            {index}
+                            {index + 1}
                         </i>
                     </div>
                     <div className="technology">
@@ -28,4 +28,4 @@ const BottomTechnologies = ({ index, name, points, posts }) => {
     )
 }
 
-export default BottomTechnologies;
+export default ListTechnologies;

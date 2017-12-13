@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Logo from "../Logo";
-import NavmenuLandingPage from "../NavmenuLandingPage";
-import "./style.scss"
+import NavMenu from "../Navmenu/index";
 
 class NavbarLandingPage extends Component {
     render() {
@@ -10,9 +9,8 @@ class NavbarLandingPage extends Component {
                 <div className="row -flex-start">
                     <Logo />
                 </div>
-
                 <div className="col-sm-4 row -space-between -flex-end -align-center">
-                    <NavmenuLandingPage  />
+                    <NavMenu  />
                 </div>
             </nav>
         )

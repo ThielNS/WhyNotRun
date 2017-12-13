@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Feed from '../components/Feed';
 import { listPosts } from "../actions/publicationsAction";

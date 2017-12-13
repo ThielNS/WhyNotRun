@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { addComment } from "../actions/commentsAction";
 import AddComment from "../components/CardPost/PostFooter/AddComment";
 
 const mapStateToProps = state => {
@@ -6,7 +7,11 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {}
+  return {
+    addComment: (idPost, postIndex, text) => {
+      return dispatch(addComment(idPost, postIndex, text));
+    }
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddComment);

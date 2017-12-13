@@ -1,44 +1,39 @@
 import React, { Component } from 'react';
+import { Select } from 'antd';
 import ListTechnologys from "./ListTechnologys";
+// import 'antd/dist/antd.css';
 import './addtechnology.scss';
+
 
 class AddTechnologys extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: '',
-      list: [
-        { name: 'React JS' },
-        { name: 'Angular JS' },
-        { name: 'Vue JS' },
-        { name: 'Django' },
-        { name: 'Framework' },
-        { name: 'PHP' },
-        { name: 'JavaScript' },
-      ]
-    }
+  renderOption() {
+
+    let { technologies } = this.props;
+    const Option = Select.Option;
+
+    return technologies.map((item, index) => (
+      <Option key={index} value={item.name}>{item.name}</Option>
+    ));
   }
 
-  changeText = (e) => {
-    this.setState({ text: e.target.value })
-  };
+  componentDidMount() {
+    this.props.listTechs();
+  }
 
   render() {
 
-    const { text, list } = this.state;
+    const { handleTecnologies } = this.props;
 
     return (
-      <div className="add-technologys">
-        <input
-          type="text"
-          className="col-sm-12"
-          placeholder="Relacione a uma ou mais tecnologias"
-          onChange={this.changeText}
-          value={text}
-        />
-        <ListTechnologys list={list} text={text} />
-      </div>
+      <Select
+        mode="tags"
+        className="add-technologys"
+        placeholder="Referencie alguma tecnologia"
+        onChange={handleTecnologies}
+      >
+        {this.renderOption()}
+      </Select>
     );
   }
 }

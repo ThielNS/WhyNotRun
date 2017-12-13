@@ -18,7 +18,6 @@
 .form-publication {
   position: relative;
   z-index: 2;
-  position: relative;
 
   &.-actived {
     width: 600px;
@@ -66,7 +65,9 @@
   }
 
   &-informations {
+    position: relative;
     display: none;
+    transition: .3s;
     flex-direction: column;
     background-color: $white-color;
     border-radius: 0 0 5px 5px;
@@ -77,11 +78,27 @@
 
     .text-description {
       font-size: 14px;
+      width: 100%;
       min-height: 150px;
       border-top: 1px solid #f4f4f4;
       color: #999;
       padding: 10px;
       outline: none;
+      position: relative;
+      z-index: 1;
+
+
+      &-placeholder {
+        position: absolute;
+        padding: 10px;
+        z-index: 0;
+        font-size: 14px;
+        color: #999;
+
+        &.-hide {
+          display: none;
+        }
+      }
     }
   }
 }

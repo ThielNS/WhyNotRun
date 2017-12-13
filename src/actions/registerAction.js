@@ -1,1 +1,22 @@
-import { LOGIN_USER, VALID_LOGIN } from "./constants";
+import { post } from "../modules/request";
+import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
+
+
+export const registerUser = (name, email, profession, password, confirmPassword) => (dispatch) => {
+    const bodyParams = {
+        name: name,
+        email: email,
+        profession: profession,
+        password: password,
+    };
+
+    return post('register', bodyParams)
+        .then(data => {            
+            //return Promise.resolve();
+        })
+        .catch(error => {
+            //return Promise.reject(error)
+            throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
+        })
+};
+

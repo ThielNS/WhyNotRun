@@ -6,29 +6,32 @@ import GameBug from "../GameBug/index";
 class Feed extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      bugs: 0,
+    };
   }
 
   componentDidMount() {
     this.props
       .listPosts()
-      .catch( e => {
-        console.log(e);
-      });
+      .catch(error => (
+        'Deu erro amiguxo!'
+      ));
+    this.setState({ bugs: this.props.posts.length });
   }
 
   renderPosts(){
+    
     const { posts } = this.props;
     return posts.map((post, index) => (
-      <CardPost {...post} key={index}/>
+      <CardPost {...post} key={index} index={index}/>
     ));
   }
   
   render() {
-
     return (
       <div className="container">
-        <GameBug/>
+        <GameBug lengthBugs={this.state.bugs}/>
         { this.renderPosts() }
       </div>
     );
