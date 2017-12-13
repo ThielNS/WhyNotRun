@@ -5,26 +5,14 @@ import GameBug from "../GameBug";
 
 class Feed extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      bugs: 0,
-    };
-  }
-
   componentDidMount() {
 
-    const { listPosts, posts } = this.props;
-    console.log(
+    const { listPosts } = this.props;
+
     listPosts()
-      .then(result => {
-        console.log(result);
-      })
       .catch(error => (
         'Erro ao Listar as postagens!'
-      )) );
-
-    this.setState({ bugs: posts.length });
+      ));
   }
 
   renderPosts(){
@@ -38,7 +26,7 @@ class Feed extends Component {
   render() {
     return (
       <div className="container">
-        <GameBug lengthBugs={this.state.bugs}/>
+        <GameBug/>
         { this.renderPosts() }
       </div>
     );

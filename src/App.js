@@ -14,6 +14,7 @@ import LandingPageLayout from "./layouts/LandingPageLayout";
 
 import LoginContainer from "./containers/loginContainer";
 import RegisterContainer from "./containers/registerContainer";
+import LogoutContainer from "./containers/LogoutContainer";
 import Ranking from "./pages/Ranking";
 import HomePage from "./pages/Home";
 import ErrorPage from "./pages/Error/index";
@@ -44,6 +45,7 @@ class App extends Component {
               <MainLayout exact path="/ranking" component={Ranking} />
               <AuthenticationLayout exact path="/login" component={LoginContainer} />
               <AuthenticationLayout exact path="/register" component={RegisterContainer} />
+              <Route exact path="/logout" component={LogoutContainer}/>
               <ErrorLayout path="*" component={ErrorPage} />
             </Switch>
           </Router>

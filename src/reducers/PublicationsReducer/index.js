@@ -16,7 +16,7 @@ const publicationsReducer = (state = [], action) => {
       return state.concat(newPost);
 
     case LIST_PUBLICATIONS:
-      debugger;
+
       state = action.data;
       return state;
 
@@ -57,15 +57,15 @@ const publicationsReducer = (state = [], action) => {
           }
 
           if(like === true) {
-            if(!oldLike) {
+            item.reactions.agree = agree + 1;
+            if(oldLike === false) {
               item.reactions.disagree = disagree - 1;
             }
-            item.reactions.agree = agree + 1;
           } else if(like === false) {
-            if(oldLike) {
+            item.reactions.disagree = disagree + 1;
+            if(oldLike === true) {
               item.reactions.agree = agree - 1;
             }
-            item.reactions.disagree = disagree + 1;
           }
         }
         return item;

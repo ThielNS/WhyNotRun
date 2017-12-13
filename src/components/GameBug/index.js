@@ -12,7 +12,7 @@ class GameBug extends Component {
       life: 4,
       myRecord: 234,
       myPoints: 0,
-      bugs: 0,
+      bugs: 20,
       positionBugs: [],
       killedBugs: 0,
     }
@@ -22,9 +22,9 @@ class GameBug extends Component {
 
     const screenSize = window.innerWidth - 30;
 
-    let { positionBugs } = this.state;
+    let { positionBugs, bugs } = this.state;
 
-    for(let i = 0; i < this.props.bugs; i++) {
+    for(let i = 0; i < bugs; i++) {
 
       let topRand = Math.random() * (600 - 10) + 10;
       let leftRand = Math.random() * (screenSize - 5) + 5;
@@ -63,6 +63,7 @@ class GameBug extends Component {
     setTimeout(this.changeMyPoints(positionBugs[killedBugs].size), 2000);
     this.changeKilledBugs(killedBugs + 1);
   };
+
 
   renderBug = () => {
 

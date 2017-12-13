@@ -1,4 +1,4 @@
-import { AUTH_LOGIN } from '../reducers/LoginReducer/constants';
+import { AUTH_LOGIN, LOGOUT } from '../reducers/LoginReducer/constants';
 import { urlLogin } from '../constants/routesApi';
 import { post } from "../modules/request";
 import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
@@ -23,3 +23,9 @@ export const loginAuthentication = (email, password) => dispatch => {
       throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
     })
 };
+
+export const logout = () => dispatch => {
+  dispatch({
+    type: LOGOUT
+  })
+}

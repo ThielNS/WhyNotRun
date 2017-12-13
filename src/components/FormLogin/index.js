@@ -38,7 +38,7 @@ class FormLogin extends Component {
     this.setState({ password: e.target.value });
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { access } = this.props;
     const { userToken } = access;
 

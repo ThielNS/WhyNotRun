@@ -8,7 +8,6 @@ import AddTechnologiesContainer from '../../containers/AddTechnologiesContainer'
 import './form-publication.scss';
 
 class PublicationForm extends Component {
-  //5a059a03e50ef6543868f33d
   constructor(props) {
     super(props);
     this.state = {
@@ -69,11 +68,11 @@ class PublicationForm extends Component {
 
     const { title, text, classChange, placeholderInput, placeholderText } = this.state;
     const { access } = this.props;
-    const { token, user } = access;
+    const { userToken, user } = access;
 
     return (
         <div className="container _margin-top">
-          {token ? (
+          {userToken ? (
             <div>
               <div
                 onClick={this.closeInformations}

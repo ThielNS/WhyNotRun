@@ -19,6 +19,10 @@ class NavMenu extends Component {
           icon: 'trash',
         },
         {
+          to: '/logout',
+          title: 'Sair'
+        },
+        {
           to: '/login',
           title: 'Login',
           icon: 'lock',
@@ -29,9 +33,6 @@ class NavMenu extends Component {
           icon: 'address-card-o',
           button: true,
         },
-        {
-          to: '/logout'
-        }
       ],
     }
   }
@@ -45,11 +46,11 @@ class NavMenu extends Component {
       <ul className="nav-menu">
         {items.map((item, index) => {
           if (!userToken) {
-            return (<Item key={index} {...item}/>);
-          } else {
-            if (item.to !== '/login' && item.to !== '/register') {
+            if(item.to !== '/logout')
               return (<Item key={index} {...item}/>);
-            }
+          } else {
+            if (item.to !== '/login' && item.to !== '/register')
+              return (<Item key={index} {...item}/>);
           }
         })}
       </ul>

@@ -3,11 +3,11 @@
 .search {
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 4;
 
   &-form {
     position: relative;
-    z-index: 2;
+    z-index: inherit;
     display: flex;
     background-color: rgba(255, 255, 255, .2);
     border-radius: 20px;
@@ -44,7 +44,7 @@
 
   &-result {
     position: absolute;
-    z-index: 2;
+    z-index: inherit;
     left: 0;
     top: 45px;
     border-radius: 5px;
