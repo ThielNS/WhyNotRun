@@ -12,7 +12,7 @@ class Technologies extends Component {
         super(props);
 
         this.state = {
-            
+
             currentPage: 3,
 
         };
@@ -69,15 +69,16 @@ class Technologies extends Component {
             <div className="container _padding ranking">
                 <div className="content-ranking">
                     <div>
-                        <div className="techs-podium">
-                            {itemsPodium.map((technology, index) => (
-                                <div key={index}>
-                                    <TechnologyPodium index={index} {...technology} />
-                                </div>
-                            ))}
-                        </div>
+
                         <div className="container content-listbottom">
                             <NavTabs />
+                            <div className="techs-podium">
+                                {itemsPodium.map((technology, index) => (
+                                    <div key={index}>
+                                        <TechnologyPodium index={index} {...technology} />
+                                    </div>
+                                ))}
+                            </div>
                             {itemsTechs.map((technology, index) => (
                                 <div key={index}>
                                     <ListTechnologies index={index} {...technology} />

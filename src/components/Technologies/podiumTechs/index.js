@@ -26,8 +26,8 @@ const TechnologyPodium = ({ index, name, points, posts, position, text }) => {
                 </div>
                 <div className="details-technology">
                     <div className="content-podium">
-                        {index === 0 ? (<img src={trophyGold} alt="trophy-gold" className="trophy-gold"/>
-                        ) : index === 1 ? (<img src={trophySilver} alt="trophy-silver" className="trophy-silver"/>) : index === 2 ? (<img src={trophyBronze} alt="trophy-bronze" className="trophy-bronze"/>) : ''}
+                        {index === 0 ? (<img src={trophyGold} alt="trophy-gold" className="trophy-gold" />
+                        ) : index === 1 ? (<img src={trophySilver} alt="trophy-silver" className="trophy-silver" />) : index === 2 ? (<img src={trophyBronze} alt="trophy-bronze" className="trophy-bronze" />) : ''}
                         <h3 className="technology-title">{name}</h3>
                     </div>
                     <div className="card-details">

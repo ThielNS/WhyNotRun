@@ -29,9 +29,6 @@ class BugsTech extends Component {
                 </div>
             )
         }
-
-
-
         const { bugs } = this.state;
         return (
             <div>

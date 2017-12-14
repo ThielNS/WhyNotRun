@@ -39,7 +39,7 @@ class FormRegister extends Component {
           console.log(error);
         })
     } else {
-      alert('Senhas não correspondem.');
+      console.log('Senhas não correspondem.');
     }
 
   }
