@@ -4,7 +4,7 @@ import './style.scss';
 
 const Pages = () => {
     return (
-        <Pagination defaultCurrent = {10} total={50}/>
+        <Pagination defaultCurrent = {1} total={50}/>
     )
 }
 

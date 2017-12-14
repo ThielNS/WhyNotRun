@@ -1,9 +1,9 @@
 import React from 'react';
 import './button.scss';
 
-const Button = ({title, icon, style, ...actions}) => {
+const Button = ({title, icon, classStyle, ...actions}) => {
   return (
-    <button className={style ? `button ${style}` : 'button'} {...actions}>
+    <button className={classStyle ? `button ${classStyle}` : 'button'} {...actions}>
       {icon ? (<i className={`fa fa-${icon}`}></i>) : null}
       {title}
     </button>

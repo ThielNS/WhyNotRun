@@ -6,11 +6,11 @@ import './cardpost.scss';
 import PropTypes from 'prop-types';
 
 
-const CardPost = ({ id, title, text, datePublication, user, reactions, technologys, comments, index }) => {
+const CardPost = ({ id, title, text, datePublication, user, reactions, technologies, comments, index }) => {
   return (
     <div className="">
       <div className="post-card">
-        <PostHeader user={user} datePublication={datePublication} technologys={technologys}/>
+        <PostHeader user={user} datePublication={datePublication} technologies={technologies}/>
         <PostContent title={title} text={text}/>
         <PostFooter postId={id} postIndex={index} reactions={reactions} comments={comments}/>
       </div>
@@ -23,22 +23,18 @@ CardPost.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   datePublication: PropTypes.string.isRequired,
-  user: PropTypes.shape(
-    PropTypes.shape({
-      id: PropTypes.object.isRequired,
-      name: PropTypes.string.isRequired,
-      picture: PropTypes.string.isRequired,
-      profession: PropTypes.string.isRequired
-    }).isRequired
-  ),
-  reactions: PropTypes.shape(
-    PropTypes.shape({
-      agree: PropTypes.number.isRequired,
-      disagree: PropTypes.number.isRequired,
-      comments: PropTypes.number.isRequired
-    }).isRequired
-  ).isRequired,
-  technologys: PropTypes.arrayOf(
+  user: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    picture: PropTypes.string.isRequired,
+    profession: PropTypes.string.isRequired
+  }).isRequired,
+  reactions: PropTypes.shape({
+    agree: PropTypes.number.isRequired,
+    disagree: PropTypes.number.isRequired,
+    comments: PropTypes.number.isRequired
+  }).isRequired,
+  technologies: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired
@@ -47,14 +43,12 @@ CardPost.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       text: PropTypes.string,
-      dateComment: PropTypes,
-      user: PropTypes.shape(
-        PropTypes.shape({
-          id: PropTypes.string,
-          name: PropTypes.string,
-          picture: PropTypes.string
-        })
-      )
+      dateComment: PropTypes.string.isRequired,
+      user: PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+        picture: PropTypes.string
+      })
     })
   )
 };

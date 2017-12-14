@@ -90,7 +90,7 @@ class FormRegister extends Component {
           <input type="password" name="password" placeholder="Senha" onChange={this.handlePassword} />
           <input type="password" name="repeatPassword" placeholder="Repetir Senha" onChange={this.handleConfirmPass} />
           <div className="options-register">
-            <Button style="-second col-sm-5" title="Registrar-se" icon="" />
+            <Button classStyle="-second col-sm-5" title="Registrar-se" icon="" />
             <Link to="/login" className="back-signin">Já tenho conta.</Link>
           </div>
         </form>

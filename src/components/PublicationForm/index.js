@@ -111,7 +111,7 @@ class PublicationForm extends Component {
                   />
                   <AddTechnologiesContainer handleTecnologies={this.handleTecnologies.bind(this)}/>
                   <div className="col-sm-12 row -flex-end _padding">
-                    <Button style="-second" title="Postar" icon="send" onClick={this.submitPost}/>
+                    <Button classStyle="-second" title="Postar" icon="send" onClick={this.submitPost}/>
                   </div>
                 </div>
               </form>

@@ -50,7 +50,7 @@ class ReactionButtons extends Component {
           </button>
         </div>
         <div className="row">
-          <Button style="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
+          <Button classStyle="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
           <div
             className="fb-share-button row -align-center"
             data-href={location}

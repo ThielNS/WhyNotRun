@@ -76,7 +76,7 @@ class FormLogin extends Component {
             onChange={this.changePassword}
           />
           <div className="row -space-between -align-center">
-            <Button style="-second col-sm-5" title="Entrar" icon="lock" type="submit" />
+            <Button classStyle="-second col-sm-5" title="Entrar" icon="lock" type="submit" />
             <Link to="/login/forget">Esqueceu a senha?</Link>
           </div>
         </form>
