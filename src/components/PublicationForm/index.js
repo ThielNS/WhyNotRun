@@ -24,7 +24,7 @@ class PublicationForm extends Component {
   }
 
   handleTitle = e => {
-    this.setState({ title: e.innerHTML });
+    this.setState({ title: e.target.value });
   };
 
   handleText = e => {
@@ -72,8 +72,10 @@ class PublicationForm extends Component {
     const { access } = this.props;
     const { userToken, user } = access;
 
+    const containerStyle = Object.keys(this.state.classChange).length ? {zIndex: 5} : {zIndex: 3};
+
     return (
-        <div className="container _margin-top" style={{position: 'relative', zIndex: 3}}>
+        <div className="container _margin-top _relative" style={containerStyle}>
           {userToken ? (
             <div>
               <div
@@ -88,11 +90,11 @@ class PublicationForm extends Component {
                   <input
                     type="text"
                     name="title"
-                    placeholder={placeholderInput}
+                    placeholder={ placeholderInput }
                     className="col-sm-12"
                     onChange={this.handleTitle}
                     onFocus={this.showInformations}
-                    value={title}
+                    value={ title }
                   />
                   <button
                     onClick={this.closeInformations}
