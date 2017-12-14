@@ -10,6 +10,9 @@
     .trophy-silver, .trophy-gold {
         height: 32px;
     }
+    .bronze{
+        padding-top: 45px;
+    }
     .fa-trash{
         font-size: 110px;
     }
@@ -59,6 +62,7 @@
          border-bottom-left-radius: 5px;
          border-bottom-right-radius: 5px;
          
+    
          h3.technology-title{
             text-align: center;
             padding: 4px;
@@ -94,6 +98,7 @@
         .content-podium {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
      }
      i {
