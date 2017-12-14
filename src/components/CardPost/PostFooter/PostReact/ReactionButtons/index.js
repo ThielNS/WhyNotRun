@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { notification } from 'antd';
+import 'antd/lib/notification/style/index.css';
 import './reactionbuttons.scss';
 import Button from "../../../../Button/index";
 import { Link } from "react-router-dom";
@@ -11,7 +13,10 @@ class ReactionButtons extends Component {
     if(access.userToken) {
       reactions(postId, postIndex, value);
     } else {
-      alert('Para reagir é necessário fazer login!');
+      notification.open({
+        message: 'Reação',
+        description: 'Para reagir é necessário fazer login!',
+      });
     }
   };
 

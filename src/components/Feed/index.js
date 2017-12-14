@@ -10,9 +10,9 @@ class Feed extends Component {
     const { listPosts } = this.props;
 
     listPosts()
-      .catch(error => (
-        'Erro ao Listar as postagens!'
-      ));
+      .catch(error =>{
+          console.log(error);
+        });
   }
 
   renderPosts(){

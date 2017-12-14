@@ -9,8 +9,8 @@ export const listPosts = () => (dispatch,getState) => {
         data
       });
     })
-    .catch(erro => {
-      throw new Error("RequestError", { type: ERROR_PUBLICATION, message: erro.message });
+    .catch(error => {
+      throw new Error(`Erro ao fazer uma requisição`);
     });
 };
 

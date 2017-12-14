@@ -12,11 +12,10 @@ const renderTechies = (techies) => {
 const TagTech = ({ tags }) => {
 
   const lengthTags = tags.length;
-  let comma = lengthTags > 3 ? ', ' : '';
 
   const titleTechies = tags.slice(2).map(item => {
-    return `${item.name}${comma}`;
-  });
+    return item.name;
+  }).join(`, `);
 
   return (
     <div className="tags-tech">
