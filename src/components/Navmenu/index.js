@@ -52,6 +52,7 @@ class NavMenu extends Component {
             if (item.to !== '/login' && item.to !== '/register')
               return (<Item key={index} {...item}/>);
           }
+          return null;
         })}
       </ul>
     )

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { FacebookButton } from 'react-social';
 import './reactionbuttons.scss';
 import Button from "../../../../Button/index";
 import { Link } from "react-router-dom";

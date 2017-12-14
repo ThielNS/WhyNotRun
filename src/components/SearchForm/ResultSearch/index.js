@@ -33,7 +33,7 @@ const ResultSearch = ({ textSearch, resultSearch }) => {
                 </li>
               )
             }
-
+            return null;
           })
         }
       </ul>

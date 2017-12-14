@@ -31,39 +31,10 @@ class Technologies extends Component {
             .catch(console.log);
     }
 
-    onChangePage = (page) => {
-        this.setState({
-            currentPage: page,
-        });
-    }
-
     render() {
 
-        //const Pagination = require('rc-pagination');
-        const { itemsTechs, currentPage, techsPerPage } = this.props;
+        const { itemsTechs } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
-
-        const itemIndex = itemsTechs[0];
-
-        const indexOfLastTechs = currentPage * techsPerPage;
-        const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
-        const currentTechs = itemsTechs.slice(indexOfFirstTechs, indexOfLastTechs);
-        const pageNumbers = [];
-
-        for (let i; i <= Math.ceil(itemsTechs.length / techsPerPage); i++) {
-            pageNumbers.push(i);
-        }
-
-        const renderPageNumbers = pageNumbers.map(number => {
-            return (
-                <li
-                    key={number}
-                    id={number}
-                    onClick={this.handleClick}>
-                    {number}
-                </li>
-            );
-        });
 
         return (
             <div className="container _padding ranking">
@@ -92,7 +63,6 @@ class Technologies extends Component {
             </div>
         )
     }
-};
-
+}
 
 export default Technologies;
