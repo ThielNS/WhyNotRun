@@ -46,7 +46,13 @@
         color: $grey-light;
       }
     }
-
+    .options-register {
+      display: flex;
+      justify-content: space-between;
+    }
+    a.back-signin {
+      margin-top: 5px;
+    }
     .access-footer {
       p {
         text-align: center;

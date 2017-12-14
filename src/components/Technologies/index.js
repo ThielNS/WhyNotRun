@@ -32,22 +32,18 @@ class Technologies extends Component {
     }
 
     onChangePage = (page) => {
-        console.log(page);
         this.setState({
             currentPage: page,
         });
     }
 
     render() {
-        console.log()
-        console.log(this.props);
 
         //const Pagination = require('rc-pagination');
         const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
 
         const itemIndex = itemsTechs[0];
-        console.log(itemIndex);
 
         const indexOfLastTechs = currentPage * techsPerPage;
         const indexOfFirstTechs = indexOfLastTechs - techsPerPage;

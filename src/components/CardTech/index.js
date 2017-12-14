@@ -12,12 +12,10 @@ class CardTech extends Component {
         }
     }
     componentDidMount() {
-        console.log(this.props);
         this.props.getApi();
     }
 
     render() {
-        console.log(this.props)
         const { items } = this.props;
 
         return (

@@ -3,7 +3,7 @@
     src: url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.eot');
     /* IE9*/
     src: url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.eot?#iefix') format('embedded-opentype'), /* chrome、firefox */ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.woff') format('woff'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.ttf') format('truetype'), /* iOS 4.1- */ url('https://at.alicdn.com/t/font_zck90zmlh7hf47vi.svg#iconfont') format('svg');
-  }
+    }
 @import '../../../../node_modules/antd/lib/pagination/style/index.css';
 @import '../../../styles/variables.scss';
 
@@ -93,4 +93,21 @@ a.ant-pagination-item-link{
 }
 .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
     background-color: rgba(255,255,255,.5);
+}
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+    background-color: rgba(255,255,255,.5);
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    display: block;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.ant-pagination-next .ant-pagination-item-link:after {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+.ant-pagination-next .ant-pagination-item-link:after {
+    background-color: rgba(255,255,255,.1);
+    border-radius: 4px;
 }

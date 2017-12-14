@@ -7,18 +7,30 @@
     img.trophy-bronze {
         height: 30px;
     }
-    
+    .trophy-silver, .trophy-gold {
+        height: 32px;
+    }
     .fa-trash{
         font-size: 110px;
     }
     img.trash {
         margin-top: -15px;
     }
-   .silver{
+    .bronze {
+        padding-top: 20px;
+    }
+    
+    .bronze {
+        padding-top: 2px;
+    }
+   .silver {
         color: #A9A9A9;
    }
     .golden{
         color: $golden-color;
+    }
+    h3.align{
+        margin-top: 5px;
     }
     .bronze {
         color: #CCA785;
@@ -47,14 +59,15 @@
          border-bottom-left-radius: 5px;
          border-bottom-right-radius: 5px;
          
-        .technology-title {
+         h3.technology-title{
             text-align: center;
             padding: 4px;
+            margin-top: 5px;
         }
         .icon-medal {
             content: '';
             width: 23px;
-            height: 23px;
+            height: 23px; 
             text-align: center;
             color: white;
             margin-top: 7px;
@@ -68,6 +81,7 @@
             
         }
         .bg-bronze {
+            padding-top: 10px;
             background-color: #DCBDAC;
         }
         .card-details {

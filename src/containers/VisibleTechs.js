@@ -6,7 +6,6 @@ import CardTech from '../components/CardTech'
 import {getApi} from '../actions/tecnologiesAction'
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         items: state.technologies
     };

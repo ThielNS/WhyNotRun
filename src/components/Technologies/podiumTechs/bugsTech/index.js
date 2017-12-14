@@ -35,7 +35,6 @@ class BugsTech extends Component {
         const { bugs } = this.state;
         return (
             <div>
-                {console.log({ bugs })}
                 {bugs}
             </div>
         )
