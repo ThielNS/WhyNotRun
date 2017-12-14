@@ -17,7 +17,13 @@ class PublicationForm extends Component {
       text: '',
       technologies: [],
       idUser: (localStorage.getItem('user'))? JSON.parse(localStorage.getItem('user')).id : null,
-      classChange: {},
+      classChange: {
+        informations: '',
+        inputTitle: '',
+        button: '',
+        formPublication: '',
+        bgFormPublication: ''
+      },
       placeholderInput: 'Bugou? diga sobre.',
       placeholderText: 'Relate sua experiencia',
     }
@@ -74,17 +80,20 @@ class PublicationForm extends Component {
 
     const containerStyle = Object.keys(this.state.classChange).length ? {zIndex: 5} : {zIndex: 3};
 
+    const formPublicationClass = `form-publication ${classChange.formPublication}`;
+
+
     return (
         <div className="container _margin-top _relative" style={containerStyle}>
           {userToken ? (
             <div>
               <div
                 onClick={this.closeInformations}
-                className={classChange.bgFormPublication ? `bg-form-publication ${classChange.bgFormPublication}` : 'bg-form-publication'}
+                className={`bg-form-publication ${classChange.bgFormPublication}`}
               />
-              <form autoComplete="off" action="" onSubmit={this.submitPost} className={classChange.formPublication ? `form-publication ${classChange.formPublication}` : 'form-publication'}>
+              <form autoComplete="off" action="" onSubmit={this.submitPost} className={formPublicationClass}>
                 <div
-                  className={classChange.inputTitle ? `input-title ${classChange.inputTitle}` : 'input-title'}
+                  className={`input-title ${classChange.inputTitle}`}
                 >
                   <Avatar img={user.picture}/>
                   <input
@@ -98,7 +107,7 @@ class PublicationForm extends Component {
                   />
                   <button
                     onClick={this.closeInformations}
-                    className={classChange.button ? `button ${classChange.button}` : 'button'}
+                    className={`button ${classChange.button}`}
                   ><i className="fa fa-times"/></button>
                 </div>
                 <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
