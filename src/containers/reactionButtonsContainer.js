@@ -3,7 +3,9 @@ import ReactionButtons from "../components/CardPost/PostFooter/PostReact/Reactio
 import { reactions } from "../actions/reactionsAction";
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    access: state.loginReducer
+  }
 };
 
 const mapDispatchToProps = dispatch => (

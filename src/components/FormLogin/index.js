@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from "../Button/index";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 
 class FormLogin extends Component {
@@ -43,8 +43,7 @@ class FormLogin extends Component {
     const { userToken } = access;
 
     if (userToken) {
-      const { push } = this.props.history;
-      push('/');
+      return (<Redirect to='/'/>);
     }
   }
 

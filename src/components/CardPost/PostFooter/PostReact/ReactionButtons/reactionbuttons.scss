@@ -2,7 +2,7 @@
 
 .reaction-buttons {
   padding: 10px $space;
-  button {
+  .button {
     padding: 0;
     margin-right: $space;
     color: #999;
@@ -40,7 +40,7 @@
       }
     }
 
-    &.add-comment-button, &.share-button {
+    &.add-comment-button, &.fb-xfbml-parse-ignore {
       flex-direction: row;
     }
 

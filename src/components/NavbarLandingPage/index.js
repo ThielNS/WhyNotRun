@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import Logo from "../Logo";
-import "./style.scss"
+import "../Navbar/navbar.scss";
 import NavMenu from "../Navmenu/index";
 
 class NavbarLandingPage extends Component {
     render() {
         return (
-            <nav className="nav-bar row -space-between -align-left">
-                <div className="row -flex-start">
+            <nav className="nav-bar row -space-between -align-center">
+                <div className="row">
                     <Logo />
                 </div>
 
-                <div className="col-sm-4 row -space-between -flex-end -align-center">
+                <div className="row -align-center">
                     <NavMenu  />
                 </div>
             </nav>

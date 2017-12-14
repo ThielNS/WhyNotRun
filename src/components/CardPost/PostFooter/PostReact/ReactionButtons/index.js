@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
+import { FacebookButton } from 'react-social';
 import './reactionbuttons.scss';
 import Button from "../../../../Button/index";
+import { Link } from "react-router-dom";
 
 class ReactionButtons extends Component {
 
   changeReaction = (value) => {
 
-    const { reactions, postId, postIndex } = this.props;
-
-    reactions(postId, postIndex, value);
+    const { reactions, postId, postIndex, access } = this.props;
+    if(access.userToken) {
+      reactions(postId, postIndex, value);
+    } else {
+      alert('Para reagir é necessário fazer login!');
+    }
   };
 
   render() {
 
-    const { agree, disagree, comments, like, changeAddComment } = this.props;
+    const { agree, disagree, comments, changeAddComment, access } = this.props;
+    let { like } = this.props;
 
+    if(!access.userToken) {
+      like = null;
+    }
+
+    // const location = window.location.href;
+    const location = 'https://stackoverflow.com/questions/332872/encode-url-in-javascript';
+    
     return (
       <div className="reaction-buttons col-sm-12 row -align-center -space-between">
         <div className="row">
@@ -39,7 +52,22 @@ class ReactionButtons extends Component {
         </div>
         <div className="row">
           <Button style="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
-          <Button style="share-button" title="Compartilhar" icon="share-alt"/>
+          <div
+            className="fb-share-button row -align-center"
+            data-href={location}
+            data-layout="button"
+            data-size="large"
+            data-mobile-iframe="false"
+          >
+            <Link
+              className="fb-xfbml-parse-ignore button"
+              target="_blank"
+              to={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(location)}%2F&amp;src=sdkpreparse`}
+            >
+              <i className="fa fa-facebook-official"/>
+              Compartilhar
+            </Link>
+          </div>
         </div>
       </div>
     );

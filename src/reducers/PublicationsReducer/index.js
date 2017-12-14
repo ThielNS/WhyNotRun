@@ -27,6 +27,7 @@ const publicationsReducer = (state = [], action) => {
       return state.map((item, index) => {
         if(index === action.postIndex) {
           item.comments = newComments;
+          item.reactions.comments++;
         }
         return item;
       });

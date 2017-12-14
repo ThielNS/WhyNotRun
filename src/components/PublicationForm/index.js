@@ -71,7 +71,7 @@ class PublicationForm extends Component {
     const { userToken, user } = access;
 
     return (
-        <div className="container _margin-top">
+        <div className="container _margin-top" style={{position: 'relative', zIndex: 3}}>
           {userToken ? (
             <div>
               <div
