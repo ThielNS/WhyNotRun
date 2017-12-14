@@ -1,8 +1,10 @@
 @import '../../styles/variables.scss';
+
 .content-ranking{
     display: flex;
     flex-direction: column;
     color: $grey-color-light;
+
     li{
         list-style: none;
     }

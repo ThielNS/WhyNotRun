@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from "../Button/index";
-
+import { Link } from "react-router-dom";
 
 class FormRegister extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class FormRegister extends Component {
           console.log(error);
         })
     } else {
-      console.log('Senha inválida.');
+      console.log('Senhas não correspondem.');
     }
 
   }
@@ -90,11 +90,15 @@ class FormRegister extends Component {
           <input type="text" name="work" placeholder="Profissão" onChange={this.handleProfession} />
           <input type="password" name="password" placeholder="Senha" onChange={this.handlePassword} />
           <input type="password" name="repeatPassword" placeholder="Repetir Senha" onChange={this.handleConfirmPass} />
-          <Button style="-second col-sm-5" title="Registrar-se" icon="" />
+          <div>
+            <Button style="-second col-sm-5" title="Registrar-se" icon="" />
+            <Link to="/login" className="back-signin">Já tenho conta.</Link>
+          </div>
         </form>
       </div>
     );
   }
 }
+
 
 export default FormRegister;

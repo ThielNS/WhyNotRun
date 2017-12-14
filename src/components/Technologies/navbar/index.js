@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TabRanking from '../tabRanking';
 
-import './style.scss'
+import './navbar.scss'
 
 class Navbar extends Component {
     constructor(props) {

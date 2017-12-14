@@ -25,9 +25,8 @@ class ReactionButtons extends Component {
       like = null;
     }
 
-    // const location = window.location.href;
-    const location = 'https://stackoverflow.com/questions/332872/encode-url-in-javascript';
-    
+    const location = window.location.href;
+
     return (
       <div className="reaction-buttons col-sm-12 row -align-center -space-between">
         <div className="row">

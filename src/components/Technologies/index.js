@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import TechnologyPodium from './podiumTechs'
-import Navbar from './navbar';
-import BottomTechnologies from './bottomTechnologies';
-import PropTypes from 'prop-types';
+import ListTechnologies from './listTechnologies';
 import Pages from './pagination'
 import NavTabs from './Tabs';
 
@@ -44,15 +42,12 @@ class Technologies extends Component {
         console.log()
         console.log(this.props);
 
-        const Pagination = require('rc-pagination');
+        //const Pagination = require('rc-pagination');
         const { itemsTechs, currentPage, techsPerPage } = this.props;
         const itemsPodium = itemsTechs.slice(0, 3);
 
         const itemIndex = itemsTechs[0];
         console.log(itemIndex);
-
-        //const itemsBottom = itemsTechs.splice(0,3);
-
 
         const indexOfLastTechs = currentPage * techsPerPage;
         const indexOfFirstTechs = indexOfLastTechs - techsPerPage;
@@ -75,7 +70,7 @@ class Technologies extends Component {
         });
 
         return (
-            <div className="container _padding">
+            <div className="container _padding ranking">
                 <div className="content-ranking">
                     <div>
                         <div className="techs-podium">
@@ -89,7 +84,7 @@ class Technologies extends Component {
                             <NavTabs />
                             {itemsTechs.map((technology, index) => (
                                 <div key={index}>
-                                    <BottomTechnologies index={index} {...technology} />
+                                    <ListTechnologies index={index} {...technology} />
                                 </div>
                             ))}
                         </div>

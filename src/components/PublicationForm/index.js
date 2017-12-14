@@ -8,7 +8,9 @@ import AddTechnologiesContainer from '../../containers/AddTechnologiesContainer'
 import './form-publication.scss';
 
 class PublicationForm extends Component {
+
   constructor(props) {
+
     super(props);
     this.state = {
       title: '',
@@ -127,7 +129,6 @@ class PublicationForm extends Component {
               </div>
             </div>
           ) }
-
         </div>
     );
   }

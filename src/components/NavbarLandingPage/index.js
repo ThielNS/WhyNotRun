@@ -10,7 +10,6 @@ class NavbarLandingPage extends Component {
                 <div className="row">
                     <Logo />
                 </div>
-
                 <div className="row -align-center">
                     <NavMenu  />
                 </div>

@@ -1,4 +1,4 @@
-import { LIST_TECHS, ERROR_TECH } from "../reducers/TechnologiesReducer/constants";
+import { LIST_TECHS } from "../reducers/TechnologiesReducer/constants";
 import { get } from '../modules/request';
 
 

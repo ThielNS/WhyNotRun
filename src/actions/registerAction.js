@@ -1,4 +1,3 @@
-import { VALID_REGISTER, REGISTER_USER } from '../reducers/RegisterReducer/constants';
 import { post } from "../modules/request";
 import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 

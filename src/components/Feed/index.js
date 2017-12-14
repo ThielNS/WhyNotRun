@@ -16,6 +16,7 @@ class Feed extends Component {
   }
 
   renderPosts(){
+    
     const { posts } = this.props;
 
     return posts.map((post, index) => (
