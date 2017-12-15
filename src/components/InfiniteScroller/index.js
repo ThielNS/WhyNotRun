@@ -25,7 +25,7 @@ class InifiniteScroller extends Component {
   };
 
   componentWillMount() {
-    this.props.listPosts()
+    this.props.listPosts(1)
       .catch(error => {
           this.errorLoad();
       });

@@ -17,7 +17,11 @@ const publicationsReducer = (state = [], action) => {
 
     case LIST_PUBLICATIONS:
 
-      return state.concat(action.data);
+      if (action.page > 1) {
+        return state.concat(action.data);
+      } else {
+        return action.data;
+      }
 
     case ADD_COMMENT:
 

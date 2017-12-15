@@ -3,16 +3,11 @@ import { get, post } from '../modules/request';
 
 export const listPosts = (page) => (dispatch,getState) => {
 
-  let pageIndex = 1;
-
-  if (page !== undefined) {
-    pageIndex = page;
-  }
-
-  return get(`publications?page=${pageIndex}`)
+  return get(`publications?page=${page}`)
     .then(data => {
       return dispatch({
         type: LIST_PUBLICATIONS,
+        page,
         data
       });
     })
