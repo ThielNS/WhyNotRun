@@ -1,8 +1,15 @@
 import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 import { get, post } from '../modules/request';
 
-export const listPosts = () => (dispatch,getState) => {
-  return get('publications?page=1')
+export const listPosts = (page) => (dispatch,getState) => {
+
+  let pageIndex = 1;
+
+  if (page !== undefined) {
+    pageIndex = page;
+  }
+
+  return get(`publications?page=${pageIndex}`)
     .then(data => {
       return dispatch({
         type: LIST_PUBLICATIONS,
