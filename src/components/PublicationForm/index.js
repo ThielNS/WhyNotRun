@@ -78,7 +78,7 @@ class PublicationForm extends Component {
     const { access } = this.props;
     const { userToken, user } = access;
 
-    const containerStyle = Object.keys(this.state.classChange).length ? {zIndex: 5} : {zIndex: 3};
+    const containerStyle = classChange.informations ? {zIndex: 5} : {zIndex: 3};
 
     const formPublicationClass = `form-publication ${classChange.formPublication}`;
 
