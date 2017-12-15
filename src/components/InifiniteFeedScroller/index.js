@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import CardPost from "../CardPost/index";
 import GameBug from "../GameBug/index";
 
-class InifiniteScroller extends Component {
+class InifiniteFeedScroller extends Component {
 
   constructor(props) {
     super(props);
@@ -78,4 +78,4 @@ class InifiniteScroller extends Component {
   }
 }
 
-export default InifiniteScroller;
+export default InifiniteFeedScroller;
