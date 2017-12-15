@@ -4,6 +4,7 @@ import 'antd/lib/message/style/index.css';
 import 'antd/lib/spin/style/index.css';
 import InfiniteScroll from 'react-infinite-scroller';
 import CardPost from "../CardPost/index";
+import GameBug from "../GameBug/index";
 
 class InifiniteScroller extends Component {
 
@@ -58,6 +59,7 @@ class InifiniteScroller extends Component {
 
     return (
       <div className="container">
+        <GameBug/>
         <InfiniteScroll
           initialLoad={false}
           pageStart={0}
