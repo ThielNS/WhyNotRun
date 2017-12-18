@@ -12,8 +12,8 @@ import AuthenticationLayout from "./layouts/Authentication";
 import ErrorLayout from "./layouts/ErrorLayout/index";
 import LandingPageLayout from "./layouts/LandingPageLayout";
 
-import LoginContainer from "./containers/loginContainer";
-import RegisterContainer from "./containers/registerContainer";
+import LoginContainer from "./containers/LoginContainer";
+import RegisterContainer from "./containers/RegisterContainer";
 import LogoutContainer from "./containers/LogoutContainer";
 import Ranking from "./pages/Ranking";
 import HomePage from "./pages/Home";

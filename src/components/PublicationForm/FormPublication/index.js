@@ -31,7 +31,7 @@ class FormPublication extends Component {
   };
 
   changePlaceholder = () => {
-    this.props.showInformations();
+    this.props.openFormPublication();
     this.setState({ placeholderInput: 'Título da publicação' });
   };
 
@@ -51,8 +51,9 @@ class FormPublication extends Component {
 
   close = e => {
     e.preventDefault();
+
     this.setState({ placeholderInput: 'Bugou? diga sobre.' });
-    this.props.closeInformations(e);
+    this.props.closeFormPublication(e);
   };
 
   render() {
@@ -62,6 +63,8 @@ class FormPublication extends Component {
     const { user } = access;
 
     const formPublicationClass = `form-publication ${classChange.formPublication}`;
+    const formPublicationInformationClass = classChange.informations ? classChange.informations : '';
+    const hidePlaceholderDescription = text.length > 0 ? '-hide' : '';
 
     return (
       <div>
@@ -89,8 +92,8 @@ class FormPublication extends Component {
               className={`button ${classChange.button}`}
             ><i className="fa fa-times"/></button>
           </div>
-          <div className={classChange.informations ? `form-publication-informations ${classChange.informations}` : 'form-publication-informations'}>
-            <div className={`text-description-placeholder ${text.length > 0 ? `-hide` : ``}`}>
+          <div className={`form-publication-informations ${formPublicationInformationClass}`}>
+            <div className={`text-description-placeholder ${hidePlaceholderDescription}`}>
               {placeholderText}
             </div>
             <ContentEditable

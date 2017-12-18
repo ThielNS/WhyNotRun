@@ -1,6 +1,6 @@
 import React from 'react';
-import PublicationFormContainer from "../../containers/publicationFormContainer";
-import Feed from "../../containers/feedContainer";
+import PublicationFormContainer from "../../containers/PublicationFormContainer";
+import Feed from "../../containers/FeedContainer";
 
 const Home = () => (
   <main>

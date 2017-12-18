@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactionButtonsContainer from "../../../../containers/reactionButtonsContainer";
+import ReactionButtonsContainer from "../../../../containers/ReactionButtonsContainer";
 import BarStatus from "../../../BarStatus/index";
 
 const PostReact = ({ reactions, changeAddComment, postId, postIndex }) => {
@@ -10,7 +10,7 @@ const PostReact = ({ reactions, changeAddComment, postId, postIndex }) => {
       <BarStatus agree={reactions.agree} disagree={reactions.disagree}/>
     </div>
   );
-}
+};
 
 export default PostReact;
 

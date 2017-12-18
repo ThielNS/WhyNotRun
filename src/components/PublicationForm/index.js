@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
 import './form-publication.scss';
 import FormPublication from "./FormPublication";
+import Access from "./Access/index";
 
 class PublicationForm extends Component {
 
@@ -19,7 +19,7 @@ class PublicationForm extends Component {
     }
   }
 
-  showInformations = () => {
+  openFormPublication = () => {
     this.setState ({
       classChange: {
         informations: '-show',
@@ -31,7 +31,7 @@ class PublicationForm extends Component {
     });
   };
 
-  closeInformations = e => {
+  closeFormPublication = e => {
     e.preventDefault();
     this.setState({ classChange: {} });
   };
@@ -53,21 +53,11 @@ class PublicationForm extends Component {
               access={access}
               addPost={addPost}
               classChange={classChange}
-              showInformations={this.showInformations.bind(this)}
-              closeInformations={this.closeInformations.bind(this)}
+              openFormPublication={this.openFormPublication.bind(this)}
+              closeFormPublication={this.closeFormPublication.bind(this)}
             />
           ) : (
-            <div className="row -align-center -direct-column _padding-bottom">
-              <h3 className="_margin-bottom _color-white">Participe da discução, Faça Login, ou crie uma conta!</h3>
-              <div>
-                <Link to="/register" className="button -second">
-                  <i className="fa fa-address-card-o"/> Registrar-se
-                </Link>
-                <Link to="/login" className="button -default -no-bg">
-                  <i className="fa fa-address-card-o"/> Login
-                </Link>
-              </div>
-            </div>
+            <Access/>
           ) }
         </div>
     );
