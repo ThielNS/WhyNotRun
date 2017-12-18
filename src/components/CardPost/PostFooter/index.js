@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PostReact from "./PostReact";
 import PostComments from "./PostComments";
-import AddComment from "./AddComment";
 import AddCommentContainer from "../../../containers/AddCommentContainer";
 
 class PostFooter extends Component {

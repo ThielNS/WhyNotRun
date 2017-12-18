@@ -6,7 +6,7 @@ import { logout } from "../actions/loginAction";
 class Logout extends Component {
 
   componentWillMount() {
-    const { access, logoutFunc, history } = this.props;
+    const { access, logoutFunc } = this.props;
     if(access.userToken) {
       logoutFunc ();
     }

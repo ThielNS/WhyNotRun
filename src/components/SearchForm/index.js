@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import './search.scss';
-import { Link } from "react-router-dom";
-import TagTech from "../TagTech/index";
 import ResultSearch from "./ResultSearch/index";
 
 class SearchForm extends Component {

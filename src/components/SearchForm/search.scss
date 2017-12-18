@@ -3,7 +3,7 @@
 .search {
   margin: 0 auto;
   position: relative;
-  z-index: 4;
+  z-index: 5;
 
   &-form {
     position: relative;
@@ -44,7 +44,7 @@
 
   &-result {
     position: absolute;
-    z-index: inherit;
+    z-index: 5;
     left: 0;
     top: 45px;
     border-radius: 5px;

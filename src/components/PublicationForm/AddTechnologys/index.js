@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Select } from 'antd';
-import ListTechnologys from "./ListTechnologys";
-// import 'antd/dist/antd.css';
 import './addtechnology.scss';
 
 

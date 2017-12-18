@@ -1,16 +1,18 @@
 import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 import { get, post } from '../modules/request';
 
-export const listPosts = () => (dispatch,getState) => {
-  return get('publications?page=1')
+export const listPosts = (page) => (dispatch,getState) => {
+
+  return get(`publications?page=${page}`)
     .then(data => {
       return dispatch({
         type: LIST_PUBLICATIONS,
+        page,
         data
       });
     })
-    .catch(erro => {
-      throw new Error("RequestError", { type: ERROR_PUBLICATION, message: erro.message });
+    .catch(error => {
+      throw new Error(`Erro ao fazer uma requisição`);
     });
 };
 

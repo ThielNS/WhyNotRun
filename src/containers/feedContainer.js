@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Feed from '../components/Feed';
+import InifiniteFeedScroller from '../components/InifiniteFeedScroller';
 import { listPosts } from "../actions/publicationsAction";
 
 const mapStateToProps = state => {
@@ -10,4 +10,4 @@ const mapDispatchToProps  = {
   listPosts
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps, mapDispatchToProps)(InifiniteFeedScroller);

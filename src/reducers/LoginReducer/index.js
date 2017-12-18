@@ -9,9 +9,10 @@ const login = (state = initialState, action) => {
 
       local.setItem('userToken', token);
       local.setItem('user', JSON.stringify(user));
-
-      state = initialState;
-      return state;
+      return {
+        userToken : token,
+        user
+      };
     case LOGOUT:
       localStorage.clear();
       return state = {

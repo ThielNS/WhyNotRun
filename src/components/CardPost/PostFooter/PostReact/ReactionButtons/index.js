@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { FacebookButton } from 'react-social';
+import { notification } from 'antd';
+import 'antd/lib/notification/style/index.css';
 import './reactionbuttons.scss';
 import Button from "../../../../Button/index";
 import { Link } from "react-router-dom";
@@ -12,7 +13,10 @@ class ReactionButtons extends Component {
     if(access.userToken) {
       reactions(postId, postIndex, value);
     } else {
-      alert('Para reagir é necessário fazer login!');
+      notification.open({
+        message: 'Reação',
+        description: 'Para reagir é necessário fazer login!',
+      });
     }
   };
 
@@ -50,7 +54,7 @@ class ReactionButtons extends Component {
           </button>
         </div>
         <div className="row">
-          <Button style="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
+          <Button classStyle="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
           <div
             className="fb-share-button row -align-center"
             data-href={location}

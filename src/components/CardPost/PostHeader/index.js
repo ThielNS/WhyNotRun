@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Avatar from '../../Avatar';
 import TagTech from "../../TagTech/index";
 
-const PostHeader = ({user, datePublication, technologys}) => {
+const PostHeader = ({user, datePublication, technologies}) => {
   const datePost = moment(datePublication).fromNow();
 
   return (
@@ -19,7 +19,7 @@ const PostHeader = ({user, datePublication, technologys}) => {
           </p>
         </div>
       </div>
-      <TagTech tags={technologys}/>
+      <TagTech tags={technologies}/>
     </div>
   );
 };
@@ -34,7 +34,7 @@ PostHeader.propType = {
     })
   ),
   datePublication: PropTypes.string.isRequired,
-  technologys: PropTypes.arrayOf(
+  technologies: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired
     }).isRequired

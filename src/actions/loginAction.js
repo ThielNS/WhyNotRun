@@ -1,5 +1,4 @@
 import { AUTH_LOGIN, LOGOUT } from '../reducers/LoginReducer/constants';
-import { urlLogin } from '../constants/routesApi';
 import { post } from "../modules/request";
 import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 
