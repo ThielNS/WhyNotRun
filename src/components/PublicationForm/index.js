@@ -7,49 +7,17 @@ import FormPublication from "./FormPublication";
 class PublicationForm extends Component {
 
   constructor(props) {
-
     super(props);
     this.state = {
-      title: '',
-      text: '',
-      technologies: [],
-      idUser: (localStorage.getItem('user'))? JSON.parse(localStorage.getItem('user')).id : null,
       classChange: {
         informations: '',
         inputTitle: '',
         button: '',
         formPublication: '',
         bgFormPublication: ''
-      },
-      placeholderInput: 'Bugou? diga sobre.',
-      placeholderText: 'Relate sua experiencia',
+      }
     }
   }
-
-  handleTitle = e => {
-    this.setState({ title: e.target.value });
-  };
-
-  handleText = e => {
-    this.setState({ text: e.target.value});
-  };
-
-  handleTecnologies = (listTechs) => {
-    this.setState({ technologies: listTechs });
-  };
-
-  submitPost = e => {
-    const { title, text, technologies, idUser } = this.state;
-
-    const posting = {
-      title: title,
-      text: text,
-      techies: technologies,
-      userId: idUser
-    };
-
-    this.props.addPost(posting);
-  };
 
   showInformations = () => {
     this.setState ({
@@ -59,20 +27,19 @@ class PublicationForm extends Component {
         button: '-show',
         formPublication: '-actived',
         bgFormPublication: '-show'
-      },
-      placeholderInput: 'Qual é o assunto que te deixa furioso? :/'
+      }
     });
   };
 
   closeInformations = e => {
     e.preventDefault();
-    this.setState({ classChange: {}, placeholderInput: 'Crashou? diga sobre.'});
+    this.setState({ classChange: {} });
   };
 
   render() {
 
     const { classChange } = this.state;
-    const { access } = this.props;
+    const { access, addPost } = this.props;
     const { userToken } = access;
 
     const containerStyle = classChange.informations ? {zIndex: 5} : {zIndex: 3};
@@ -83,8 +50,11 @@ class PublicationForm extends Component {
           {userToken ? (
             <FormPublication
               {...this.state}
-              {...access}
-              handleTecnologies={this.handleTecnologies.bind(this)}
+              access={access}
+              addPost={addPost}
+              classChange={classChange}
+              showInformations={this.showInformations.bind(this)}
+              closeInformations={this.closeInformations.bind(this)}
             />
           ) : (
             <div className="row -align-center -direct-column _padding-bottom">

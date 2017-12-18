@@ -13,14 +13,6 @@ class FormPublication extends Component {
       title: '',
       text: '',
       technologies: [],
-      idUser: (localStorage.getItem('user'))? JSON.parse(localStorage.getItem('user')).id : null,
-      classChange: {
-        informations: '',
-        inputTitle: '',
-        button: '',
-        formPublication: '',
-        bgFormPublication: ''
-      },
       placeholderInput: 'Bugou? diga sobre.',
       placeholderText: 'Relate sua experiencia',
     }
@@ -34,61 +26,47 @@ class FormPublication extends Component {
     this.setState({ text: e.target.value});
   };
 
-  handleTecnologies = (listTechs) => {
+  handleTechnologies = (listTechs) => {
     this.setState({ technologies: listTechs });
   };
 
+  changePlaceholder = () => {
+    this.props.showInformations();
+    this.setState({ placeholderInput: 'Título da publicação' });
+  };
+
   submitPost = e => {
-    const { title, text, technologies, idUser } = this.state;
+    const { title, text, technologies } = this.state;
+    const { user } = this.props.access;
 
     const posting = {
       title: title,
       text: text,
       techies: technologies,
-      userId: idUser
+      userId: user.id,
     };
 
     this.props.addPost(posting);
   };
 
-  showInformations = () => {
-    this.setState ({
-      classChange: {
-        informations: '-show',
-        inputTitle: '-border-radius-none',
-        button: '-show',
-        formPublication: '-actived',
-        bgFormPublication: '-show'
-      },
-      placeholderInput: 'Qual é o assunto que te deixa furioso? :/'
-    });
-  };
-
-  closeInformations = e => {
+  close = e => {
     e.preventDefault();
-    this.setState({
-      classChange: {
-        informations: '',
-        inputTitle: '',
-        button: '',
-        formPublication: '',
-        bgFormPublication: ''
-      },
-      placeholderInput: 'Crashou? diga sobre.'
-    });
+    this.setState({ placeholderInput: 'Bugou? diga sobre.' });
+    this.props.closeInformations(e);
   };
 
   render() {
 
-    const {title, text, classChange, placeholderInput, placeholderText, access, handleTecnologies} = this.props;
-    const { userToken, user } = access;
+    const { title, text, placeholderText, placeholderInput } = this.state;
+    const { classChange, access } = this.props;
+    const { user } = access;
 
     const formPublicationClass = `form-publication ${classChange.formPublication}`;
 
     return (
       <div>
         <div
-          onClick={this.closeInformations}
+          onClick={this.close}
           className={`bg-form-publication ${classChange.bgFormPublication}`}
         />
         <form autoComplete="off" action="" onSubmit={this.submitPost} className={formPublicationClass}>
@@ -102,11 +80,12 @@ class FormPublication extends Component {
               placeholder={ placeholderInput }
               className="col-sm-12"
               onChange={this.handleTitle}
-              onFocus={this.showInformations}
+              onFocus={this.changePlaceholder}
+
               value={ title }
             />
             <button
-              onClick={this.closeInformations}
+              onClick={this.close}
               className={`button ${classChange.button}`}
             ><i className="fa fa-times"/></button>
           </div>
@@ -120,7 +99,7 @@ class FormPublication extends Component {
               disabled={false}
               onChange={this.handleText}
             />
-            <AddTechnologiesContainer handleTecnologies={handleTecnologies}/>
+            <AddTechnologiesContainer handleTecnologies={this.handleTechnologies}/>
             <div className="col-sm-12 row -flex-end _padding">
               <Button classStyle="-second" title="Postar" icon="send" onClick={this.submitPost}/>
             </div>
