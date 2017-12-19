@@ -102,7 +102,7 @@ class FormPublication extends Component {
               disabled={false}
               onChange={this.handleText}
             />
-            <AddTechnologiesContainer handleTecnologies={this.handleTechnologies}/>
+            <AddTechnologiesContainer handleTechnologies={this.handleTechnologies}/>
             <div className="col-sm-12 row -flex-end _padding">
               <Button classStyle="-second" title="Postar" icon="send" onClick={this.submitPost}/>
             </div>

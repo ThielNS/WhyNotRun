@@ -7,8 +7,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  listTechs: () => {
-    dispatch(listTechs());
+  listTechs: text => {
+    dispatch(listTechs(text));
   }
 });
 

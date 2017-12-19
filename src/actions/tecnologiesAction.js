@@ -2,8 +2,8 @@ import { LIST_TECHS } from "../reducers/TechnologiesReducer/constants";
 import { get } from '../modules/request';
 
 
-export const listTechs = () => dispatch => {
-  return get('technologies')
+export const listTechs = text => dispatch => {
+  return get('technologies?text={text}')
     .then(data => (
       dispatch({
         type: LIST_TECHS,

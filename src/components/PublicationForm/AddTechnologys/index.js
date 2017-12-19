@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, Spin } from 'antd';
 import './addtechnology.scss';
 
 
 class AddTechnologys extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      seekingOut: false
+    };
+  }
 
   renderOption() {
 
@@ -16,19 +23,29 @@ class AddTechnologys extends Component {
   }
 
   componentDidMount() {
-    this.props.listTechs();
   }
+
+  searchTechies = value => {
+    const { seekingOut } = this.state;
+    this.setState({ seekingOut: !seekingOut });
+    this.props.listTechs(value);
+  };
 
   render() {
 
-    const { handleTecnologies } = this.props;
+    const { handleTechnologies } = this.props;
+    const { seekingOut } = this.state;
+    const loading = seekingOut ? <Spin size="small"/> : null;
 
     return (
       <Select
-        mode="tags"
+        mode="multiple"
         className="add-technologys"
         placeholder="Referencie alguma tecnologia"
-        onChange={handleTecnologies}
+        onChange={handleTechnologies}
+        notFoundContent={loading}
+        combobox={false}
+        onSearch={this.searchTechies}
       >
         {this.renderOption()}
       </Select>
