@@ -1,14 +1,19 @@
 import { connect } from "react-redux";
-import SearchForm from "../components/SearchForm/index";
+import { searchPublication } from "../actions/searchPublicationAction";
+import SearchForm from "../components/SearchForm";
 
 const mapStateToProps = state => {
   return {
-    resultPublication: state.searchPublicationReducer;
+    resultPublication: state.searchPublicationReducer
   }
 };
 
 const mapDispatchToProps = dispatch => {
-  listResult
+  return {
+    searchPublication: (text, page) => {
+      return dispatch(searchPublication(text, page));
+    }
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

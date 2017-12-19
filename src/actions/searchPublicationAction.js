@@ -1,14 +1,13 @@
 import { get } from '../modules/request';
+import { LIST_SEARCH } from "../reducers/SearchPublication/constants";
 
-export const search = (text, page) => dispatch => {
-  get(`publications?text=${text}&page=${page}`)
+export const searchPublication = (text, page) => dispatch => {
+  get(`publications?text={text}`)
     .then(data => {
       return dispatch({
         type: LIST_SEARCH,
         data
       })
     })
-    .catch(error => {
-      console.log
-    })
+    .catch(error => console.log)
 };
