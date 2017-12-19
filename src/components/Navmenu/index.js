@@ -20,7 +20,8 @@ class NavMenu extends Component {
         },
         {
           to: '/logout',
-          title: 'Sair'
+          title: 'Sair',
+          icon: 'sign-out',
         },
         {
           to: '/login',
@@ -57,7 +58,7 @@ class NavMenu extends Component {
               return (<Item key={index} {...item}/>);
 
           }
-          
+
           return null;
         })}
       </ul>
