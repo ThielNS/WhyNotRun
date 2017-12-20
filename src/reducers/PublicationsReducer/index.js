@@ -1,4 +1,4 @@
-import { ADD_PUBLICATION, LIST_PUBLICATIONS, ERROR_PUBLICATION, ADD_COMMENT, REACTIONS } from './constants';
+import { ADD_PUBLICATION, LIST_PUBLICATIONS, ERROR_PUBLICATION, ADD_COMMENT, REACTIONS, LIST_COMMENTS } from './constants';
 
 const publicationsReducer = (state = [], action) => {
   switch(action.type) {
@@ -41,8 +41,8 @@ const publicationsReducer = (state = [], action) => {
 
       let like = state[action.postIndex].reactions.like;
       let oldLike = like;
-      let { agree } = state[action.postIndex].reactions;
-      let { disagree } = state[action.postIndex].reactions;
+      let { agreeQuantity } = state[action.postIndex].reactions;
+      let { disagreeQuantity } = state[action.postIndex].reactions;
 
       if(like === value) {
         like = null;
@@ -55,22 +55,35 @@ const publicationsReducer = (state = [], action) => {
           item.reactions.like = like;
 
           if(value) {
-            item.reactions.agree = agree - 1;
+            item.reactions.agreeQuantity = agreeQuantity - 1;
           } else {
-            item.reactions.disagree = disagree - 1;
+            item.reactions.disagreeQuantity = disagreeQuantity - 1;
           }
 
           if(like === true) {
-            item.reactions.agree = agree + 1;
+            item.reactions.agreeQuantity = agreeQuantity + 1;
             if(oldLike === false) {
-              item.reactions.disagree = disagree - 1;
+              item.reactions.disagreeQuantity = disagreeQuantity - 1;
             }
           } else if(like === false) {
-            item.reactions.disagree = disagree + 1;
+            item.reactions.disagreeQuantity = disagreeQuantity + 1;
             if(oldLike === true) {
-              item.reactions.agree = agree - 1;
+              item.reactions.agreeQuantity = agreeQuantity - 1;
             }
           }
+        }
+        return item;
+      });
+
+    case LIST_COMMENTS:
+
+      const { data, postIndex } = action;
+
+      const moreComments = state[postIndex].comments.concat(data);
+
+      return state.map((item, index) => {
+        if(index === postIndex) {
+          item.comments = moreComments;
         }
         return item;
       });

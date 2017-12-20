@@ -9,6 +9,11 @@
   cursor: pointer;
   text-decoration: none;
 
+  &.-small {
+    padding: 5px;
+    font-size: 11px;
+  }
+
   .fa {
     margin-right: 5px;
   }

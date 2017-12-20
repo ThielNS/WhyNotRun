@@ -22,7 +22,7 @@ class ReactionButtons extends Component {
 
   render() {
 
-    const { agree, disagree, comments, changeAddComment, access } = this.props;
+    const { agreeQuantity, disagreeQuantity, comments, visibleAddComment, access } = this.props;
     let { like } = this.props;
 
     if(!access.userToken) {
@@ -38,23 +38,23 @@ class ReactionButtons extends Component {
             className={`button agree-button ${like === true ? `-active` : ``}`}
             onClick={() => this.changeReaction(true)}
           >
-            <span className="count">{agree} <i className="fa fa-thumbs-o-up"/></span>
+            <span className="count">{agreeQuantity} <i className="fa fa-thumbs-o-up"/></span>
             <span className="label">Concordam</span>
           </button>
           <button
             className={`button disagree-button ${like === false ? `-active` : ``}`}
             onClick={() => this.changeReaction(false)}
           >
-            <span className="count">{disagree} <i className="fa fa-thumbs-o-down"/></span>
+            <span className="count">{disagreeQuantity} <i className="fa fa-thumbs-o-down"/></span>
             <span className="label">Discordam</span>
           </button>
-          <button className="button comments-button" onClick={changeAddComment}>
+          <button className="button comments-button" onClick={visibleAddComment}>
             <span className="count">{comments} <i className="fa fa-comments"/></span>
             <span className="label">Comentários</span>
           </button>
         </div>
         <div className="row">
-          <Button classStyle="add-comment-button" title="Comentar" icon="comment" onClick={changeAddComment}/>
+          <Button classStyle="add-comment-button" title="Comentar" icon="comment" onClick={visibleAddComment}/>
           <div
             className="fb-share-button row -align-center"
             data-href={location}
