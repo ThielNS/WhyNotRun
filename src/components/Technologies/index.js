@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import TechnologyPodium from './podiumTechs'
-import ListTechnologies from './listTechnologies';
-import Pages from './pagination'
+import TechnologyPodium from './Podium'
+import Pages from './Pagination'
 import NavTabs from './Tabs';
-
 import './style.scss'
+
 
 class Technologies extends Component {
 
@@ -25,37 +24,23 @@ class Technologies extends Component {
             currentPage: Number(e.target.id)
         });
     }
-    componentDidMount() {
-        this.props
-            .listTechs()
-            .catch(console.log);
-    }
+
 
     render() {
 
-        const { itemsTechs } = this.props;
-        const itemsPodium = itemsTechs.slice(0, 3);
-
+        const { itemsTechs, listTechs, listTechsPerPosts, listTechsPerPoints} = this.props;
+        /*         const itemsPodium = itemsTechs.slice(0, 3);
+        */
+        
         return (
             <div className="container _padding ranking">
                 <div className="content-ranking">
                     <div>
-
                         <div className="container content-listbottom">
-                            <NavTabs />
-                            <div className="techs-podium">
-                                {itemsPodium.map((technology, index) => (
-                                    <div key={index}>
-                                        <TechnologyPodium index={index} {...technology} />
-                                    </div>
-                                ))}
-                            </div>
-                            {itemsTechs.map((technology, index) => (
-                                <div key={index}>
-                                    <ListTechnologies index={index} {...technology} />
-                                </div>
-                            ))}
+                            <NavTabs itemsTechs={itemsTechs} listTechsPerPosts={listTechsPerPosts} 
+                            listTechsPerPoints={listTechsPerPoints} listTechs={listTechs}/>
                         </div>
+
                         <div className="pagination">
                             <Pages />
                         </div>

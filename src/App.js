@@ -12,7 +12,7 @@ import AuthenticationLayout from "./layouts/Authentication";
 import ErrorLayout from "./layouts/ErrorLayout/index";
 import LandingPageLayout from "./layouts/LandingPageLayout";
 
-import LoginContainer from "./containers/loginContainer";
+import LoginContainer from "./containers/LoginContainer";
 import RegisterContainer from "./containers/registerContainer";
 import LogoutContainer from "./containers/LogoutContainer";
 import Ranking from "./pages/Ranking";
@@ -20,14 +20,13 @@ import HomePage from "./pages/Home";
 import ErrorPage from "./pages/Error/index";
 import LandingPage from "./pages/LandingPage";
 
-
 import './styles/reset.scss';
 import './styles/layout.scss';
 import './styles/_variables.scss';
 import './styles/_helpers.scss';
 import './styles/colors.scss';
 
-const store = createStore(
+const store = createStore (
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk),
