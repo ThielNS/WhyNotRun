@@ -45,7 +45,9 @@ class PostFooter extends Component {
             onClick={this.showMoreComments}
           />
         ) : null}
-        <PostComments comments={comments}/>
+        {reactions.comments > 0 ? (
+          <PostComments comments={comments} changeClassPostComments={showAddComment}/>
+        ) : null}
       </div>
     );
     const showMoreComments = postIndex %5 ===0 ? moreComments : showAddComment ? moreComments : null;

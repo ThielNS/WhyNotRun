@@ -6,10 +6,11 @@ class PostComments extends Component {
 
   render() {
 
-    const { comments } = this.props;
-
+    const { comments, changeClassPostComments } = this.props;
+    const changeStyle = changeClassPostComments ? {paddingBottom: '0px'} : null;
+    
     return (
-      <div className="post-comments">
+      <div className="post-comments" style={changeStyle}>
         <ul className="row -direct-column">
           {comments.map((comment, index) => {
             const dateComment = moment(comment.dateComment).fromNow();

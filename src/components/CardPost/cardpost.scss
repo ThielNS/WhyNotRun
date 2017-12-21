@@ -55,11 +55,11 @@
     }
 
     .post-comments {
-      padding: $space;
+      padding: $space 0;
 
       ul li {
         display: flex;
-        margin: 0;
+        margin: 0 $space;
         padding-bottom: 10px;
         margin-bottom: 10px;
         border-bottom: 1px solid #eee;
@@ -105,6 +105,7 @@
       opacity: 0;
 
       &.-show {
+        margin-top: $space;
         opacity: 1;
         height: auto;
         padding: 0 $space $space $space;
