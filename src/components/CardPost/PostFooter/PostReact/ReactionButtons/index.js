@@ -9,9 +9,9 @@ class ReactionButtons extends Component {
 
   changeReaction = (value) => {
 
-    const { reactions, postId, postIndex, access } = this.props;
+    const { reactions, postId, postIndex, access, like } = this.props;
     if(access.userToken) {
-      reactions(postId, postIndex, value);
+      reactions(postId, postIndex, like, value);
     } else {
       notification.open({
         message: 'Reação',

@@ -1,9 +1,9 @@
 import { LIST_TECHS, TECHS_PER_POSTS, TECHS_PER_POINTS } from "../reducers/TechnologiesReducer/constants";
 import { get } from '../modules/request';
 
-//Lista por ordem alfabética
-export const listTechs = () => dispatch => {
-  return get('technologies?page=1&order=name')
+
+export const listTechs = text => dispatch => {
+  return get(`technologies?text=${text}`)
     .then(data => (
       dispatch({
         type: LIST_TECHS,

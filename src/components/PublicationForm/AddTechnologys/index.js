@@ -25,7 +25,8 @@ class AddTechnologys extends Component {
   componentDidMount() {
   }
 
-  searchTechies = value => {
+  searchTechies = (value) => {
+    console.log(value)
     const { seekingOut } = this.state;
     this.setState({ seekingOut: !seekingOut });
     this.props.listTechs(value);
@@ -39,13 +40,13 @@ class AddTechnologys extends Component {
 
     return (
       <Select
-        mode="multiple"
+        mode="tags"
         className="add-technologys"
         placeholder="Referencie alguma tecnologia"
         onChange={handleTechnologies}
         notFoundContent={loading}
-        combobox={false}
-        onSearch={this.searchTechies}
+        combobox={true}
+        onSearch={e => this.searchTechies(e)}
       >
         {this.renderOption()}
       </Select>

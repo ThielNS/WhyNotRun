@@ -26,7 +26,7 @@ export const addComment = (postId, postIndex, text) => dispatch => {
 
 export const listComments = (postIndex, postId, commentId, limit) => dispatch => {
 
-  get(`comments?publicationId={publicationId}&lastCommentId={lastCommentId}&limit={limit}`)
+  get(`comments?publicationId=${postId}&lastCommentId=${commentId}&limit=${limit}`)
     .then(data => {
       return dispatch({
         type: LIST_COMMENTS,

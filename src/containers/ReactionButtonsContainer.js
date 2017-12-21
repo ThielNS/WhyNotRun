@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import ReactionButtons from "../components/CardPost/PostFooter/PostReact/ReactionButtons";
 import { reactions } from "../actions/reactionsAction";
-import { listComments } from "../actions/commentsAction";
 
 const mapStateToProps = state => {
   return {
@@ -11,11 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => (
   {
-    reactions: (postId, postIndex, value) => {
-      return dispatch(reactions(postId, postIndex, value));
-    },
-    listComments: (postIndex, postId, commentId, limit) => {
-      return dispatch(listComments(postIndex, postId, commentId, limit));
+    reactions: (postId, postIndex, lastValue, newValue) => {
+      return dispatch(reactions(postId, postIndex, lastValue, newValue));
     }
   }
 );
