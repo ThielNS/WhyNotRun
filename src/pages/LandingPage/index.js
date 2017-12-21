@@ -12,7 +12,8 @@ const LandingPage = () => {
         <div className="content-landingpage">
             <section className="presentation">
                 <div className="content-btn-register">
-                    <h1 className="presentation-content"> Falar mal de uma tecnologia nunca foi tão legal. Faça parte dessa comunidade! </h1>
+                    <h1 className="presentation-content"> Falar mal de uma tecnologia nunca foi tão legal. </h1>
+                    <div> <p className="subtitle">Faça parte dessa comunidade! </p></div>
                     <Link to='/register' className="button -second"><i  className="fa fa-address-card-o link-register"/>Registrar-se</Link>
                 </div>
             </section>

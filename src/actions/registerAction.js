@@ -2,15 +2,16 @@ import { post } from "../modules/request";
 import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 
 
-export const registerUser = (name, email, profession, password, confirmPassword) => (dispatch) => {
+export const registerUser = (name, email, password, confirmPassword, profession) => (dispatch) => {
     const bodyParams = {
         name: name,
         email: email,
-        profession: profession,
         password: password,
+        confirmPassword: confirmPassword,
+        profession: profession
     };
 
-    return post('register', bodyParams)
+    return post('users', bodyParams)
         .then(data => {            
             //return Promise.resolve();
         })

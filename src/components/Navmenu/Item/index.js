@@ -4,9 +4,20 @@ import '../../Button/button.scss';
 import Avatar from "../../Avatar/index";
 
 const ItemMenu = ({ to, title, icon, button, avatar }) => {
-  const render = avatar ?
-    <Avatar alt={title} img={icon} />
-    : <Link to={to} className={`${button ? `button -second` : ``}`}><i className={`fa fa-${icon}`} />{title}</Link>;
+
+  const avatarProfile = <Avatar alt={title} img={icon}/>;
+  const LinkMenu = (
+    <Link
+      to={to}
+      className={`${button ? `button -second` : ``}`}
+    >
+      <i className={`fa fa-${icon}`} />
+      {title}
+    </Link>
+  );
+
+  const render = avatar ? avatarProfile : LinkMenu;
+
   return (
     <li>
       {render}

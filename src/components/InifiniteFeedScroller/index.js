@@ -55,7 +55,7 @@ class InifiniteFeedScroller extends Component {
   render() {
 
     const { loading, hasMore } = this.state;
-    const { posts } = this.props;
+    const { posts, listComments } = this.props;
 
     return (
       <div className="container">
@@ -67,7 +67,7 @@ class InifiniteFeedScroller extends Component {
           hasMore={!loading && hasMore}
         >
           {posts.map((item, index) => (
-            <CardPost key={index} {...item}/>
+            <CardPost key={index} index={index} {...item} listComments={listComments}/>
           ))}
           <div className="col-sm-12 row -center _margin-top _margin-bottom">
             <Spin/>

@@ -1,9 +1,9 @@
-import { LIST_TECHS, TECHS_PER_POSTS } from "../reducers/TechnologiesReducer/constants";
+import { LIST_TECHS, TECHS_PER_POSTS, TECHS_PER_POINTS } from "../reducers/TechnologiesReducer/constants";
 import { get } from '../modules/request';
 
 //Lista por ordem alfabética
 export const listTechs = () => dispatch => {
-  return get('technologies')
+  return get('technologies?page=1&order=name')
     .then(data => (
       dispatch({
         type: LIST_TECHS,
@@ -17,7 +17,7 @@ export const listTechs = () => dispatch => {
 
 //Lista por Quantidade de publicações
 export const listTechsPerPosts = () => dispatch => {
-  return get('technologies')
+  return get('technologies?page=1&order=posts')
   .then(technologies => (
     dispatch({
       type: TECHS_PER_POSTS,
@@ -28,11 +28,11 @@ export const listTechsPerPosts = () => dispatch => {
 
 //Lista por quantidade de pontos
 export const listTechsPerPoints = () => dispatch => {
-  return get('technologies')
-  .then(technologies => (
+  return get('technologies?page=1&order=points')
+  .then(technologiesPoints => (
     dispatch({
-      type: 'TECHS_PER_POINTS',
-      technologies
+      type: TECHS_PER_POINTS,
+      technologiesPoints
     })
   ))
 }

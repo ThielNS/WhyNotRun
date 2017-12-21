@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PostReact from "./PostReact";
 import PostComments from "./PostComments";
 import AddCommentContainer from "../../../containers/AddCommentContainer";
+import Button from "../../Button";
 
 class PostFooter extends Component {
 
@@ -12,21 +13,21 @@ class PostFooter extends Component {
     };
   }
 
-  changeAddComment = () => {
-    this.setState({ showAddComment: !this.state.showAddComment});
+  visibleAddComment = () => {
+    const { showAddComment } = this.state;
+    this.setState({ showAddComment: !showAddComment});
   };
 
-  componentDidUpdate() {
+  showMoreComments = () => {
 
-    const addComment = document.getElementById(`input-${this.props.postId}`);
+    const { listComments, postId, postIndex, comments } = this.props;
+    const commentIndex = comments.length - 1;
+    const commentId = comments[commentIndex].id;
 
-    if(this.state.showAddComment) {
-      addComment.classList.add('-show');
-      addComment.lastElementChild.lastElementChild.focus();
-    } else {
-      addComment.classList.remove('-show');
-    }
-  }
+    listComments(postIndex, postId, commentId, 7);
+
+  };
+
 
   render() {
 
@@ -34,11 +35,23 @@ class PostFooter extends Component {
     const { showAddComment } = this.state;
 
     const classAddComment = showAddComment ? '-show' : '';
+    const moreComments = (
+      <div className="row -center -direct-column">
+        <Button
+          classStyle="-small"
+          title="Ver mais comentrários"
+          style={{marginBottom: '-20px'}}
+          onClick={this.showMoreComments}
+        />
+        <PostComments comments={comments}/>
+      </div>
+    );
+    const showMoreComments = postIndex %5 ===0 ? moreComments : showAddComment ? moreComments : null;
 
     return (
       <footer className="post-footer">
-        <PostReact reactions={reactions} postId={postId} postIndex={postIndex} changeAddComment={this.changeAddComment.bind(this)}/>
-        <PostComments comments={comments}/>
+        <PostReact reactions={reactions} postId={postId} postIndex={postIndex} visibleAddComment={this.visibleAddComment.bind(this)}/>
+        {showMoreComments}
         <AddCommentContainer id={`input-${postId}`} postId={postId} postIndex={postIndex} className={classAddComment}/>
       </footer>
     );

@@ -4,7 +4,7 @@ import './button.scss';
 const Button = ({title, icon, classStyle, ...actions}) => {
   return (
     <button className={classStyle ? `button ${classStyle}` : 'button'} {...actions}>
-      {icon ? (<i className={`fa fa-${icon}`}></i>) : null}
+      {icon ? (<i className={`fa fa-${icon}`}/>) : null}
       {title}
     </button>
   );

@@ -6,13 +6,13 @@ import './cardpost.scss';
 import PropTypes from 'prop-types';
 
 
-const CardPost = ({ id, title, text, datePublication, user, reactions, technologies, comments, index }) => {
+const CardPost = ({ id, title, text, datePublication, user, reactions, technologies, comments, index, listComments }) => {
   return (
     <div className="">
       <div className="post-card">
         <PostHeader user={user} datePublication={datePublication} technologies={technologies}/>
         <PostContent title={title} text={text}/>
-        <PostFooter postId={id} postIndex={index} reactions={reactions} comments={comments}/>
+        <PostFooter postId={id} postIndex={index} reactions={reactions} comments={comments} listComments={listComments}/>
       </div>
     </div>
   );
@@ -30,8 +30,8 @@ CardPost.propTypes = {
     profession: PropTypes.string.isRequired
   }).isRequired,
   reactions: PropTypes.shape({
-    agree: PropTypes.number.isRequired,
-    disagree: PropTypes.number.isRequired,
+    agreeQuantity: PropTypes.number.isRequired,
+    disagreeQuantity: PropTypes.number.isRequired,
     comments: PropTypes.number.isRequired
   }).isRequired,
   technologies: PropTypes.arrayOf(

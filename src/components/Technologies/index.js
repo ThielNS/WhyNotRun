@@ -11,9 +11,7 @@ class Technologies extends Component {
         super(props);
 
         this.state = {
-
-            currentPage: 3,
-
+            currentPage: 1,
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -29,16 +27,14 @@ class Technologies extends Component {
     render() {
 
         const { itemsTechs, listTechs, listTechsPerPosts, listTechsPerPoints} = this.props;
-        /*         const itemsPodium = itemsTechs.slice(0, 3);
-        */
         
         return (
             <div className="container _padding ranking">
                 <div className="content-ranking">
                     <div>
                         <div className="container content-listbottom">
-                            <NavTabs itemsTechs={itemsTechs} listTechsPerPosts={listTechsPerPosts} 
-                            listTechsPerPoints={listTechsPerPoints} listTechs={listTechs}/>
+                            <NavTabs itemsTechs={itemsTechs} listTechs={listTechs} listTechsPerPosts={listTechsPerPosts} 
+                            listTechsPerPoints={listTechsPerPoints} />
                         </div>
 
                         <div className="pagination">

@@ -9,8 +9,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    registerUser: (name, email, profession, password, confirmPassword) => {
-      return dispatch(registerUser(name, email, profession, password, confirmPassword));
+    registerUser: (name, email, password, confirmPassword, profession ) => {
+      return dispatch(registerUser(name, email, password, confirmPassword, profession));
     }
   };
 };

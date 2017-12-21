@@ -65,17 +65,24 @@ class SearchForm extends Component {
   }
 
   search = (e) => {
-    this.setState({ textSearch: e.target.value });
+    const { value } = e.target;
+    this.setState({ textSearch: value });
+    this.props.searchPublication(value,1);
   };
 
   changeTextSearch = () => {
     this.setState({ textSearch: '' });
   };
 
+  randPlaceholder = () => {
+    const rand = Math.floor(Math.random() * 4);
+    return `"${this.state.textPlaceholder[rand]}"`;
+  };
+
   render() {
 
-    const rand = Math.floor(Math.random() * 4);
-    const { resultSearch, textSearch } = this.state;
+    const { textSearch } = this.state;
+    const { resultPublication } = this.props;
 
       return (
       <div className="col-sm-6 row search">
@@ -84,13 +91,13 @@ class SearchForm extends Component {
           <input
             type="text"
             name="search"
-            placeholder={`"${this.state.textPlaceholder[rand]}"`}
+            placeholder={this.randPlaceholder()}
             value={this.state.textSearch}
             onChange={this.search}
             onBlur={this.changeTextSearch}
           />
         </form>
-        <ResultSearch textSearch={textSearch} resultSearch={resultSearch}/>
+        <ResultSearch textSearch={textSearch} resultSearch={resultPublication}/>
       </div>
     );
   }

@@ -13,12 +13,13 @@ import ErrorLayout from "./layouts/ErrorLayout/index";
 import LandingPageLayout from "./layouts/LandingPageLayout";
 
 import LoginContainer from "./containers/LoginContainer";
-import RegisterContainer from "./containers/registerContainer";
+import RegisterContainer from "./containers/RegisterContainer";
 import LogoutContainer from "./containers/LogoutContainer";
 import Ranking from "./pages/Ranking";
 import HomePage from "./pages/Home";
 import ErrorPage from "./pages/Error/index";
 import LandingPage from "./pages/LandingPage";
+import RegisterPictureContainer from "./containers/RegisterPictureContainer";
 
 import './styles/reset.scss';
 import './styles/layout.scss';
@@ -26,7 +27,7 @@ import './styles/_variables.scss';
 import './styles/_helpers.scss';
 import './styles/colors.scss';
 
-const store = createStore (
+const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(thunk),
@@ -39,12 +40,13 @@ class App extends Component {
         <LocaleProvider locale={ptBR}>
           <Router>
             <Switch>
-              <LandingPageLayout exact path="/landing-page" component= {LandingPage} />
+              <LandingPageLayout exact path="/landing-page" component={LandingPage} />
               <MainLayout exact path="/" component={HomePage} />
               <MainLayout exact path="/ranking" component={Ranking} />
               <AuthenticationLayout exact path="/login" component={LoginContainer} />
               <AuthenticationLayout exact path="/register" component={RegisterContainer} />
-              <Route exact path="/logout" component={LogoutContainer}/>
+              <AuthenticationLayout exact path="/registerImage" component={RegisterPictureContainer} />
+              <Route exact path="/logout" component={LogoutContainer} />
               <ErrorLayout path="*" component={ErrorPage} />
             </Switch>
           </Router>

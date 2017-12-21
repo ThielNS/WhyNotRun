@@ -11,7 +11,8 @@ class NavTabs extends Component {
 
     render() {
         const {itemsTechs, listTechsPerPosts, listTechsPerPoints, listTechs} = this.props;
-
+        console.log(itemsTechs);
+        
         return (
             <Tabs defaultActiveKey="1" onChange={this.callback}>
                 <TabPane tab="Tecnologias" key="1"><TechnologiesName itemsTechs={itemsTechs} listTechs={listTechs}/></TabPane>

@@ -20,7 +20,8 @@ class NavMenu extends Component {
         },
         {
           to: '/logout',
-          title: 'Sair'
+          title: 'Sair',
+          icon: 'sign-out',
         },
         {
           to: '/login',
@@ -45,19 +46,23 @@ class NavMenu extends Component {
     return (
       <ul className="nav-menu">
         {items.map((item, index) => {
+
           if (!userToken) {
+
             if(item.to !== '/logout')
               return (<Item key={index} {...item}/>);
+
           } else {
+
             if (item.to !== '/login' && item.to !== '/register')
               return (<Item key={index} {...item}/>);
+
           }
           return null;
         })}
       </ul>
     )
   }
-
 }
 
 export default NavMenu;

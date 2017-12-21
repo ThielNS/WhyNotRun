@@ -15,10 +15,18 @@
         background-size: cover;
         background-position: center top;
         
-        h1 {
-            font-size: 20px; 
+        .subtitle {
             color: white;
-            
+            font-size: 20px;
+            padding-top: 10px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 35px; 
+            color: white;     
+            width: 800px;      
+            font-weight: bold; 
         }
 
         .content-btn-register {
@@ -41,8 +49,16 @@
 
     .publication {
         background-color: $grey-color-lighter;
-        h3 {
+        h2 {
             font-weight: bold;
+            font-size: 35px;
+
+        }
+        p {
+            font-size: 25px;
+            width: 600px;
+            text-align: center;
+            padding-top: 20px;
         }
         .publication-content {
             display: flex;
@@ -67,6 +83,16 @@
         padding-top: 6%;
         h2, p {
         color: white;
+        }
+        h2 {
+            font-size: 35px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 25px;
+            width: 600px;
+            text-align: center;
+            padding-top: 20px;
         }
 
         img {

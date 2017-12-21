@@ -20,14 +20,14 @@ const ResultSearch = ({ textSearch, resultSearch }) => {
 
             if (
               (item.title.toUpperCase().indexOf(textSearchUpper) > -1) ||
-              (checkAvailability(item.tags, textSearchUpper))
+              (checkAvailability(item.technologies, textSearchUpper))
             ) {
               return(
                 <li key={index}>
                   <Link to="/" className="row -align-center -space-between col-sm-12 ">
                     <div className="search-result-title">{item.title}</div>
                     <div className="row -align-center">
-                      <TagTech tags={item.tags}/>
+                      <TagTech tags={item.technologies}/>
                     </div>
                   </Link>
                 </li>
