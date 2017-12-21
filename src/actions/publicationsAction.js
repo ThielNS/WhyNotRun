@@ -1,8 +1,7 @@
-import { LIST_PUBLICATIONS, ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
+import { LIST_PUBLICATIONS, ERROR_PUBLICATION, ADD_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 import { get, post } from '../modules/request';
 
 export const listPosts = (page) => (dispatch,getState) => {
-
   return get(`publications?page=${page}`)
     .then(data => {
       return dispatch({
@@ -18,7 +17,12 @@ export const listPosts = (page) => (dispatch,getState) => {
 
 export const addPost = bodyParameters => dispatch => {
   return post('publications', bodyParameters)
-    .then()
+    .then(data => {
+      return dispatch({
+        type: ADD_PUBLICATION,
+        data
+      });
+    })
     .catch(error => {
       throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
     });

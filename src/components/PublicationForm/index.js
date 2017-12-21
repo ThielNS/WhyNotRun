@@ -39,7 +39,7 @@ class PublicationForm extends Component {
   render() {
 
     const { classChange } = this.state;
-    const { access, addPost } = this.props;
+    const { access, addPost, listPosts } = this.props;
     const { userToken } = access;
 
     const containerStyle = classChange.informations ? {zIndex: 5} : {zIndex: 3};
@@ -52,6 +52,7 @@ class PublicationForm extends Component {
               {...this.state}
               access={access}
               addPost={addPost}
+              listPosts={listPosts}
               classChange={classChange}
               openFormPublication={this.openFormPublication.bind(this)}
               closeFormPublication={this.closeFormPublication.bind(this)}
@@ -65,7 +66,8 @@ class PublicationForm extends Component {
 }
 
 PublicationForm.propTypes = {
-  addPost: PropTypes.func.isRequired
+  addPost: PropTypes.func.isRequired,
+  listPosts: PropTypes.func.isRequired
 };
 
 export default PublicationForm;

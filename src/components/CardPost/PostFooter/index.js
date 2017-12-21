@@ -21,9 +21,9 @@ class PostFooter extends Component {
   showMoreComments = () => {
 
     const { listComments, postId, postIndex, comments } = this.props;
+
     const commentIndex = comments.length - 1;
     const commentId = comments[commentIndex].id;
-
     listComments(postIndex, postId, commentId, 7);
 
   };
@@ -37,12 +37,14 @@ class PostFooter extends Component {
     const classAddComment = showAddComment ? '-show' : '';
     const moreComments = (
       <div className="row -center -direct-column">
-        <Button
-          classStyle="-small"
-          title="Ver mais comentrários"
-          style={{marginBottom: '-20px'}}
-          onClick={this.showMoreComments}
-        />
+        {reactions.comments >= 3 ? (
+          <Button
+            classStyle="-small"
+            title="Ver mais comentrários"
+            style={{marginBottom: '-20px'}}
+            onClick={this.showMoreComments}
+          />
+        ) : null}
         <PostComments comments={comments}/>
       </div>
     );

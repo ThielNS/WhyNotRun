@@ -4,16 +4,7 @@ const publicationsReducer = (state = [], action) => {
   switch(action.type) {
     case ADD_PUBLICATION:
 
-      const newPost = {
-        id: state.length + 1,
-        title: action.title,
-        text: action.text,
-        idTech: action.idTech,
-        idUser: action.idUser,
-        comments: [],
-      };
-
-      return state.concat(newPost);
+      return [...action.data, ...state];
 
     case LIST_PUBLICATIONS:
 

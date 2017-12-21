@@ -43,26 +43,50 @@ class FormPublication extends Component {
     });
   };
 
-  submitPost = e => {
+  validFilds = () => {
+
     const { title, text, technologies } = this.state;
-    const { user } = this.props.access;
 
     if (!title || !text) {
-      e.preventDefault();
       this.message('Preencha todos os campos');
+      return;
     } else if (technologies.length === 0) {
-      e.preventDefault();
       this.message('Selecione pelo menos uma tecnologia');
+      return;
+    } else {
+      return true;
+    }
+  };
+
+  submitPost = e => {
+
+    const { title, text, technologies } = this.state;
+    const { access, addPost, listPosts } = this.props;
+    const { user } = access;
+
+    if (this.validFilds()) {
+
+      const data = {
+        title: title,
+        text: text,
+        techies: technologies,
+        userId: user.id,
+      };
+
+      addPost(data)
+        .then(() => {
+          listPosts(1)
+            .then(data => {
+              console.log(data);
+            });
+        });
     }
 
-    const posting = {
-      title: title,
-      text: text,
-      techies: technologies,
-      userId: user.id,
-    };
-
-    this.props.addPost(posting);
+    this.setState({
+      title: '',
+      text: '',
+      technologies: [],
+    });
   };
 
   close = e => {
@@ -70,6 +94,11 @@ class FormPublication extends Component {
 
     this.setState({ placeholderInput: 'Bugou? diga sobre.' });
     this.props.closeFormPublication(e);
+  };
+
+  submitClose = e => {
+    this.submitPost(e);
+    this.close(e);
   };
 
   render() {
@@ -88,7 +117,7 @@ class FormPublication extends Component {
           onClick={this.close}
           className={`bg-form-publication ${classChange.bgFormPublication}`}
         />
-        <form autoComplete="off" action="" onSubmit={this.submitPost} className={formPublicationClass}>
+        <form autoComplete="off" action="" className={formPublicationClass}>
           <div
             className={`input-title ${classChange.inputTitle}`}
           >
@@ -120,7 +149,7 @@ class FormPublication extends Component {
             />
             <AddTechnologiesContainer handleTechnologies={this.handleTechnologies.bind(this)}/>
             <div className="col-sm-12 row -flex-end _padding">
-              <Button classStyle="-second" title="Postar" icon="send" onClick={this.submitPost}/>
+              <Button classStyle="-second" title="Postar" icon="send" onClick={this.submitClose}/>
             </div>
           </div>
         </form>
