@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import ReactionButtons from "../components/CardPost/PostFooter/PostReact/ReactionButtons";
 import { reactions } from "../actions/reactionsAction";
-import { listComments } from "../actions/commentsAction";
 
 const mapStateToProps = state => {
   return {

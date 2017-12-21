@@ -9,5 +9,6 @@ const technologiesReducer = (state = [], action) => {
         default:
             return state
     }
-}
+};
+
 export default technologiesReducer;

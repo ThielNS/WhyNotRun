@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContentEditable from 'react-contenteditable';
+import { notification } from 'antd'
 import Button from "../../Button";
 import Avatar from "../../Avatar";
 import AddTechnologiesContainer from '../../../containers/AddTechnologiesContainer';
@@ -35,9 +36,24 @@ class FormPublication extends Component {
     this.setState({ placeholderInput: 'Título da publicação' });
   };
 
+  message = text => {
+    notification.open({
+      message: 'Publicação',
+      description: text,
+    });
+  };
+
   submitPost = e => {
     const { title, text, technologies } = this.state;
     const { user } = this.props.access;
+
+    if (!title || !text) {
+      e.preventDefault();
+      this.message('Preencha todos os campos');
+    } else if (technologies.length === 0) {
+      e.preventDefault();
+      this.message('Selecione pelo menos uma tecnologia');
+    }
 
     const posting = {
       title: title,
@@ -102,7 +118,7 @@ class FormPublication extends Component {
               disabled={false}
               onChange={this.handleText}
             />
-            <AddTechnologiesContainer handleTechnologies={this.handleTechnologies}/>
+            <AddTechnologiesContainer handleTechnologies={this.handleTechnologies.bind(this)}/>
             <div className="col-sm-12 row -flex-end _padding">
               <Button classStyle="-second" title="Postar" icon="send" onClick={this.submitPost}/>
             </div>

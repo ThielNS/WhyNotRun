@@ -37,24 +37,16 @@ const publicationsReducer = (state = [], action) => {
 
     case REACTIONS:
 
-      const { value } = action;
+      const { newValue, lastValue, like } = action;
 
-      let like = state[action.postIndex].reactions.like;
-      let oldLike = like;
       let { agreeQuantity } = state[action.postIndex].reactions;
       let { disagreeQuantity } = state[action.postIndex].reactions;
-
-      if(like === value) {
-        like = null;
-      } else {
-        like = value;
-      }
 
       return state.map((item, index) => {
         if(index === action.postIndex) {
           item.reactions.like = like;
 
-          if(value) {
+          if(newValue) {
             item.reactions.agreeQuantity = agreeQuantity - 1;
           } else {
             item.reactions.disagreeQuantity = disagreeQuantity - 1;
@@ -62,12 +54,12 @@ const publicationsReducer = (state = [], action) => {
 
           if(like === true) {
             item.reactions.agreeQuantity = agreeQuantity + 1;
-            if(oldLike === false) {
+            if(lastValue === false) {
               item.reactions.disagreeQuantity = disagreeQuantity - 1;
             }
           } else if(like === false) {
             item.reactions.disagreeQuantity = disagreeQuantity + 1;
-            if(oldLike === true) {
+            if(lastValue === true) {
               item.reactions.agreeQuantity = agreeQuantity - 1;
             }
           }

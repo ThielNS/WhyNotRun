@@ -3,7 +3,7 @@ import { get } from '../modules/request';
 
 
 export const listTechs = text => dispatch => {
-  return get('technologies?text={text}')
+  return get(`technologies?text=${text}`)
     .then(data => (
       dispatch({
         type: LIST_TECHS,

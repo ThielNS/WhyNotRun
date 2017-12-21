@@ -19,7 +19,9 @@ export const reactions = (postId, postIndex, lastValue, newValue) => dispatch =>
 
   dispatch({
     type: REACTIONS,
-    value: newValue,
+    newValue,
+    lastValue,
+    like,
     postIndex,
     postId,
   });
