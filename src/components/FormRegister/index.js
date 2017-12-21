@@ -11,7 +11,7 @@ class FormRegister extends Component {
       email: '',
       profession: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,20 +26,21 @@ class FormRegister extends Component {
 
     e.preventDefault();
 
-    const { name, email, password, profession, confirmPassword } = this.state;
+    const { name, email, password, confirmPassword, profession } = this.state;
 
     if (password === confirmPassword) {
-      this.props.registerUser(name, email, profession, password, confirmPassword)
-        .then(() => {
-          const { history } = this.props;
+      this.props.registerUser(name, email, password, confirmPassword, profession)
+        .then(data => {
+          console.log(data);
+          // const { history } = this.props;
 
-          history.push('/');
+          // history.push('/registerImage');
         })
         .catch((error) => {
           console.log(error);
         })
     } else {
-      alert('Senhas não correspondem.');
+      console.log('Senhas não correspondem.');
     }
 
   }
@@ -69,11 +70,12 @@ class FormRegister extends Component {
       confirmPassword: e.target.value
     })
   }
+
   componentDidMount() {
     const user = localStorage.getItem('user');
     if (user) {
       const { push } = this.props.history;
-      push('/login');
+      push('/registerImage');
     }
   }
 
@@ -90,7 +92,7 @@ class FormRegister extends Component {
           <input type="password" name="password" placeholder="Senha" onChange={this.handlePassword} />
           <input type="password" name="repeatPassword" placeholder="Repetir Senha" onChange={this.handleConfirmPass} />
           <div className="options-register">
-            <Button classStyle="-second col-sm-5" title="Registrar-se" icon="" />
+            <Button classStyle="-second col-sm-5" title="Próximo" icon="" />
             <Link to="/login" className="back-signin">Já tenho conta.</Link>
           </div>
         </form>

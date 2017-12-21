@@ -26,7 +26,6 @@ class AddTechnologys extends Component {
   }
 
   searchTechies = (value) => {
-    console.log(value)
     const { seekingOut } = this.state;
     this.setState({ seekingOut: !seekingOut });
     this.props.listTechs(value);

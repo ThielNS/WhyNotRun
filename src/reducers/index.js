@@ -4,6 +4,7 @@ import loginReducer from "./LoginReducer";
 import technologiesReducer from "./TechnologiesReducer";
 import registerReducer from "./RegisterReducer";
 import searchPublicationReducer from "./SearchPublication";
+import registerPicture from "./RegisterPicture";
 
 
 const reducerApp = combineReducers({
@@ -12,6 +13,7 @@ const reducerApp = combineReducers({
   technologiesReducer,
   registerReducer,
   searchPublicationReducer,
+  registerPicture
 });
 
 export default reducerApp

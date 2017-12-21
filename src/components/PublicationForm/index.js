@@ -44,7 +44,6 @@ class PublicationForm extends Component {
 
     const containerStyle = classChange.informations ? {zIndex: 5} : {zIndex: 3};
 
-
     return (
         <div className="container _margin-top _relative" style={containerStyle}>
           {userToken ? (

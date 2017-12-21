@@ -22,7 +22,7 @@
 }
 .ant-tabs-nav, .ant-tabs-nav-animated{
     font-size: 16px;
-    margin-left: 25px;
+    margin-left: 123px;
 }
 .ant-tabs-tab-active, .ant-tabs-tab{
     margin-right: 20px;
@@ -30,4 +30,10 @@
 .ant-tabs-nav-scroll {
     margin-left: -25px; 
 }
-
+.ant-tabs-nav, .ant-tabs-nav-animated {
+    font-size: 16px;
+     margin-left: 20px; 
+}
+.ant-tabs-nav-scroll {
+     margin-left: 0px; 
+}

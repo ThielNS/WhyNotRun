@@ -76,9 +76,6 @@ class FormPublication extends Component {
       addPost(data)
         .then(() => {
           listPosts(1)
-            .then(data => {
-              console.log(data);
-            });
         });
     }
 

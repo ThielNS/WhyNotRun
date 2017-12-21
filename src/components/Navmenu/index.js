@@ -58,7 +58,6 @@ class NavMenu extends Component {
               return (<Item key={index} {...item}/>);
 
           }
-
           return null;
         })}
       </ul>
