@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { notification } from 'antd';
 import CommentForm from './CommentForm';
 
 class AddComment extends Component {
@@ -11,6 +12,13 @@ class AddComment extends Component {
     }
   }
 
+  message = () => {
+    notification.open({
+      message: 'Erro ao comentar!',
+      description: 'Informe um texto a ser enviado.',
+    });
+  };
+
   changeText = e => {
     this.setState({ text: e.target.value });
   };
@@ -19,10 +27,15 @@ class AddComment extends Component {
     e.preventDefault();
 
     const { addComment } = this.props;
+    const { text } = this.state;
 
-    addComment(idPost, postIndex, this.state.text);
+    if (!text) {
+      this.message();
+    } else {
+      addComment(idPost, postIndex, this.state.text);
+      this.setState({ text: '' });
+    }
 
-    this.setState({ text: '' });
   }
 
   renderAccess = () => {
@@ -38,6 +51,7 @@ class AddComment extends Component {
 
     const { id, className, access } = this.props;
     const { userToken } = access;
+    const focus = !!className;
 
     return (
       <div className={`add-comment ${className}`} id={id}>
@@ -45,6 +59,7 @@ class AddComment extends Component {
           <CommentForm
             {...this.props}
             {...this.state}
+            focus={focus}
             onSubmit={this.submitComment.bind(this)}
             onChange={this.changeText.bind(this)}
           />

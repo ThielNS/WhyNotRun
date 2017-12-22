@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Avatar from "../../../../Avatar";
 
-const CommetForm = ({access, postId, postIndex, text, onSubmit, onChange}) => {
+class CommentForm extends Component {
 
-  const { user } = access;
+  componentDidUpdate() {
+    const { focus } = this.props;
 
-  return (
-    <form className='add-comment-form' onSubmit={e => onSubmit(e, postId, postIndex)}>
-      <Avatar img={user.picture}/>
-      <input
-        type="text"
-        placeholder="Participe da discussão."
-        onChange={onChange}
-        value={text}
-      />
-    </form>
-  );
-};
+    if (focus)
+      this.textInput.focus();
+  }
 
-export default CommetForm;
+  render() {
+
+    const {access, postId, postIndex, text, onSubmit, onChange} = this.props;
+    const { user } = access;
+
+    return (
+      <form
+        className='add-comment-form'
+        onSubmit={e => onSubmit(e, postId, postIndex)}
+      >
+        <Avatar img={user.picture}/>
+        <input
+          type="text"
+          ref={input => { this.textInput = input}}
+          placeholder="Participe da discussão."
+          onChange={onChange}
+          value={text}
+        />
+      </form>
+    );
+  }
+}
+
+export default CommentForm;

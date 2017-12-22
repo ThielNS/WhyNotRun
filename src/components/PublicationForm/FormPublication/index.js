@@ -49,10 +49,10 @@ class FormPublication extends Component {
 
     if (!title || !text) {
       this.message('Preencha todos os campos');
-      return;
+      return false;
     } else if (technologies.length === 0) {
       this.message('Selecione pelo menos uma tecnologia');
-      return;
+      return false;
     } else {
       return true;
     }
