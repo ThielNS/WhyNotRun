@@ -2,7 +2,8 @@ import { post } from "../modules/request";
 import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 
 
-export const registerUser = (name, email, password, confirmPassword, profession) => (dispatch) => {
+export const registerUser = (name, email, password, confirmPassword, profession) => dispatch => {
+
     const bodyParams = {
         name: name,
         email: email,
@@ -12,11 +13,8 @@ export const registerUser = (name, email, password, confirmPassword, profession)
     };
 
     return post('users', bodyParams)
-        .then(data => {            
-            //return Promise.resolve();
-        })
+        .then(data => data)
         .catch(error => {
-            //return Promise.reject(error)
             throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
         })
 };

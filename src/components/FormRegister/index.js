@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Button from "../Button/index";
 import { Link } from "react-router-dom";
+import { notification } from 'antd';
+import Button from "../Button/index";
 
 class FormRegister extends Component {
   constructor(props) {
@@ -9,10 +10,10 @@ class FormRegister extends Component {
     this.state = {
       name: '',
       email: '',
-      profession: '',
       password: '',
       confirmPassword: '',
-    }
+      profession: '',
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleName = this.handleName.bind(this);
@@ -27,49 +28,58 @@ class FormRegister extends Component {
     e.preventDefault();
 
     const { name, email, password, confirmPassword, profession } = this.state;
+    const { registerUser, loginAuthentication } = this.props;
 
     if (password === confirmPassword) {
-      this.props.registerUser(name, email, password, confirmPassword, profession)
-        .then(data => {
-          console.log(data);
-          // const { history } = this.props;
-
-          // history.push('/registerImage');
+      registerUser(name, email, password, confirmPassword, profession)
+        .then(() => {
+          loginAuthentication(email, password)
+            .then(() => {
+              const { history } = this.props;
+              history.push('/registerImage');
+            })
         })
         .catch((error) => {
           console.log(error);
         })
     } else {
-      console.log('Senhas não correspondem.');
-    }
+      notification.open({
+        message: 'Erro ao Registrar',
+        description: 'Senhas não correspondem.'
+      });
 
-  }
+      this.setState({
+        password: '',
+        confirmPassword: ''
+      })
+    }
+  };
 
   handleName = e => {
     this.setState({
       name: e.target.value
     })
-  }
+  };
   handleEmail = e => {
     this.setState({
       email: e.target.value
     })
-  }
+  };
   handlePassword = e => {
     this.setState({
       password: e.target.value
     })
-  }
+  };
   handleProfession = e => {
     this.setState({
       profession: e.target.value
     })
-  }
+  };
   handleConfirmPass = e => {
     this.setState({
       confirmPassword: e.target.value
     })
-  }
+  };
 
   componentDidMount() {
     const user = localStorage.getItem('user');
@@ -80,17 +90,56 @@ class FormRegister extends Component {
   }
 
   render() {
+
+    const { name, email, password, confirmPassword, profession } = this.state;
+
     return (
       <div>
         <header className="access-header">
           <h2>Participe do WhyNotRun</h2>
         </header>
-        <form action="" method="post" className="access-form" onSubmit={this.handleSubmit}>
-          <input type="text" name="name" placeholder="Nome Completo" onChange={this.handleName} />
-          <input type="email" name="email" placeholder="E-mail" onChange={this.handleEmail} />
-          <input type="text" name="work" placeholder="Profissão" onChange={this.handleProfession} />
-          <input type="password" name="password" placeholder="Senha" onChange={this.handlePassword} />
-          <input type="password" name="repeatPassword" placeholder="Repetir Senha" onChange={this.handleConfirmPass} />
+        <form
+          action=""
+          method="post"
+          className="access-form"
+          onSubmit={this.handleSubmit}
+          autoComplete="off"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Nome Completo"
+            onChange={this.handleName}
+            value={name}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            onChange={this.handleEmail}
+            value={email}
+          />
+          <input
+            type="text"
+            name="work"
+            placeholder="Profissão"
+            onChange={this.handleProfession}
+            value={profession}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            onChange={this.handlePassword}
+            value={password}
+          />
+          <input
+            type="password"
+            name="repeatPassword"
+            placeholder="Repetir Senha"
+            onChange={this.handleConfirmPass}
+            value={confirmPassword}
+          />
           <div className="options-register">
             <Button classStyle="-second col-sm-5" title="Próximo" icon="" />
             <Link to="/login" className="back-signin">Já tenho conta.</Link>

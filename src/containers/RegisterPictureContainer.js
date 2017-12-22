@@ -3,13 +3,13 @@ import RegisterProfileImage from "../components/FormRegister/RegisterProfileImag
 import registerPicture from "../actions/registerPictureProfile";
 
 const mapStateToProps = state => {
-    return { picture: state.registerPicture }
+    return { access: state.loginReducer }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        registerPicture: (picture) => {
-            return dispatch(registerPicture());
+        registerPicture: (picture, userId) => {
+            return dispatch(registerPicture(picture, userId));
         }
     };
 };

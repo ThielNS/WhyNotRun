@@ -1,22 +1,22 @@
 import { patch } from "../modules/request";
 import { ERROR_PUBLICATION } from "../reducers/PublicationsReducer/constants";
 
-const registerPicture = (picture) => (dispatch) => {
-    const formData = new FormData();
-    formData.append('picture', picture);
+const registerPicture = (picture, userId) => dispatch => {
+    
+    let formData = new FormData();
+    formData.set('picture', picture);
 
-    console.log(formData);
     const bodyParams = {
-        
         formData
     };
 
-    return patch('users/{id}/picture', bodyParams)
+    return patch(`users/${userId}/picture`, bodyParams)
         .then(data => {
+            console.log(data);
         }) 
         .catch(error => {
             throw new Error('RequestError', { type: ERROR_PUBLICATION, message: error.message });
         })
-}
+};
 
 export default registerPicture;

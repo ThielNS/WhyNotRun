@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Button from "../../Button"
 import { Link } from "react-router-dom";
+import { notification } from 'antd';
+import Button from "../../Button"
 
 import "./registerProfileImage.scss";
 
@@ -10,43 +11,39 @@ class RegisterProfileImage extends Component {
         super(props);
 
         this.state = {
-            picture:null
-        }
+            picture: null
+        };
+
         this.onChangePicture = this.onChangePicture.bind(this);
         this.handleSubmitPicture = this.handleSubmitPicture.bind(this);
     }
 
     onChangePicture = e => {
-        debugger;
         this.setState ({
             picture: e.target.files[0]
           })
-    }
-
-    componentDidMount() {
-        const picture = localStorage.getItem('picture');
-        if (picture) {
-            const { push } = this.props.history;
-            push('/');
-        }
-    }
+    };
 
     handleSubmitPicture = e => {
         e.preventDefault();
         const { picture } = this.state;
+        const { registerPicture, access } = this.props;
+        const { id } = access.user;
         
-        this.props.registerPicture(picture)
+        registerPicture(picture, id)
             .then(() => {
-                const { history } = this.props;
-                history.push('/');
+              const { history } = this.props;
+              history.push('/');
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+              notification.open({
+                message: 'Erro no upload',
+                description: 'Houve algum erro ao registrar a imagem, tente novamente.'
+              })
             })
-    }
+    };
 
     render() {
-
         return (
             <div>
                 <p>Escolha uma imagem para o seu perfil!</p>
@@ -54,7 +51,7 @@ class RegisterProfileImage extends Component {
                     <input type="file" name="picture" className="input-file" onChange={this.onChangePicture} />
                     <div className="flex-buttons">
                         <Button classStyle="-second col-sm-3 register-image" title="Salvar" />
-                        <Link className="link-no-image" to="/register"> Pular </Link>
+                        <Link className="link-no-image" to="/"> Pular </Link>
                     </div>
                 </form>
             </div>
