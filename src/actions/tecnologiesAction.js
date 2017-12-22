@@ -1,9 +1,21 @@
 import { LIST_TECHS, TECHS_PER_POSTS, TECHS_PER_POINTS } from "../reducers/TechnologiesReducer/constants";
 import { get } from '../modules/request';
 
+export const searchTechs = text => dispatch => {
+  return get(`technologies?text=${text}`)
+    .then(data => (
+      dispatch({
+        type: LIST_TECHS,
+        data
+      })
+    ))
+    .catch(error => {
+      // throw new Error("RequestError", { type: ERROR_TECH, message: error.message });
+    });
+};
 
 export const listTechs = text => dispatch => {
-  return get(`technologies?text=${text}`)
+  return get(`technologies?page=1&order=name`)
     .then(data => (
       dispatch({
         type: LIST_TECHS,

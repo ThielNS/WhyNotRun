@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { listTechs } from "../actions/tecnologiesAction";
+import { searchTechs } from "../actions/tecnologiesAction";
 import AddTechnologys from '../components/PublicationForm/AddTechnologys';
 
 const mapStateToProps = state => {
@@ -7,8 +7,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  listTechs: text => {
-    dispatch(listTechs(text));
+  searchTechs: text => {
+    dispatch(searchTechs(text));
   }
 });
 
