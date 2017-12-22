@@ -2,10 +2,10 @@ import React from 'react';
 import { Pagination } from 'antd';
 import './style.scss';
 
-const Pages = () => {
+const Pages = ({ currentPage, changePage }) => {
     return (
-        <Pagination defaultCurrent = {1} total={50}/>
+        <Pagination defaultCurrent={currentPage} total={50} onChange={changePage}/>
     )
-}
+};
 
 export default Pages;

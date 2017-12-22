@@ -4,12 +4,6 @@ import ListTechnologies from "../Item";
 
 class Technologies extends Component {
 
-    componentDidMount() {
-        this.props
-            .listTechsPerPosts()
-            .catch(console.log);
-    }
-
     render() {
 
         const { itemsTechs } = this.props;

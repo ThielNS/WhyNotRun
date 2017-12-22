@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from "../Button/index";
 import { Link, Redirect } from "react-router-dom";
+import { notification } from 'antd';
+import Button from "../Button/index";
 
 
 class FormLogin extends Component {
@@ -26,7 +27,10 @@ class FormLogin extends Component {
       history.push('/');
     })
     .catch(() => {
-      console.log('Erro ao Fazer login');
+      notification.error({
+        message: 'Erro ao fazer login',
+        description: 'Houve algum erro inesperado, tente novamente.'
+      })
     });
   };
 

@@ -14,8 +14,8 @@ export const searchTechs = text => dispatch => {
     });
 };
 
-export const listTechs = text => dispatch => {
-  return get(`technologies?page=1&order=name`)
+export const listTechs = page => dispatch => {
+  return get(`technologies?page=${page}&order=name`)
     .then(data => (
       dispatch({
         type: LIST_TECHS,
@@ -28,8 +28,8 @@ export const listTechs = text => dispatch => {
 };
 
 //Lista por Quantidade de publicações
-export const listTechsPerPosts = () => dispatch => {
-  return get('technologies?page=1&order=posts')
+export const listTechsPerPosts = page => dispatch => {
+  return get(`technologies?page=${page}&order=posts`)
   .then(technologies => (
     dispatch({
       type: TECHS_PER_POSTS,
@@ -39,8 +39,8 @@ export const listTechsPerPosts = () => dispatch => {
 }
 
 //Lista por quantidade de pontos
-export const listTechsPerPoints = () => dispatch => {
-  return get('technologies?page=1&order=points')
+export const listTechsPerPoints = page => dispatch => {
+  return get(`technologies?page=${page}&order=points`)
   .then(technologiesPoints => (
     dispatch({
       type: TECHS_PER_POINTS,

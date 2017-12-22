@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import React, { Component } from 'react';
 import "./Podium/podiumTechs.scss";
 import Pages from './pagination'
@@ -23,22 +24,57 @@ class Technologies extends Component {
         });
     }
 
+    changePage = value => {
+        debugger
+        this.setState({
+          currentPage: value
+        });
+    };
+
+  showTechs = value => {
+
+    const { listTechsPerPosts, listTechsPerPoints, listTechs } = this.props;
+    const { currentPage } = this.state;
+    const tabKey = parseInt(value);
+
+    if (tabKey === 1) {
+      listTechs(currentPage);
+    } else if (tabKey === 2) {
+      listTechsPerPosts(currentPage);
+    } else if(tabKey === 3) {
+      listTechsPerPoints(currentPage);
+    } else {
+      listTechs(currentPage);
+    }
+  };
+
+  componentWillMount() {
+    this.showTechs();
+  }
+
 
     render() {
 
-        const { itemsTechs, listTechs, listTechsPerPosts, listTechsPerPoints} = this.props;
+        const { itemsTechs} = this.props;
+        const { currentPage } =  this.state;
         
         return (
             <div className="container _padding ranking">
                 <div className="content-ranking">
                     <div>
                         <div className="container content-listbottom">
-                            <NavTabs itemsTechs={itemsTechs} listTechs={listTechs} listTechsPerPosts={listTechsPerPosts} 
-                            listTechsPerPoints={listTechsPerPoints} />
+                            <NavTabs
+                              currentPage={currentPage}
+                              itemsTechs={itemsTechs}
+                              showTechs={this.showTechs.bind(this)}
+                            />
                         </div>
 
                         <div className="pagination">
-                            <Pages />
+                            <Pages
+                              currentPage={currentPage}
+                              changePage={this.changePage}
+                            />
                         </div>
                     </div>
                 </div>

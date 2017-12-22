@@ -7,14 +7,14 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    listTechs: () => {
-        return dispatch(listTechs());
+    listTechs: page => {
+        return dispatch(listTechs(page));
     },
-    listTechsPerPosts: () => {
-        return dispatch(listTechsPerPosts());
+    listTechsPerPosts: page => {
+        return dispatch(listTechsPerPosts(page));
     },
-    listTechsPerPoints: () => {
-        return dispatch(listTechsPerPoints());
+    listTechsPerPoints: page => {
+        return dispatch(listTechsPerPoints(page));
     }
 });
 

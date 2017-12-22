@@ -43,6 +43,13 @@ class RegisterProfileImage extends Component {
             })
     };
 
+    componentDidMount() {
+      const { access, history } = this.props;
+      if(!access.user){
+        history.push('/')
+      }
+    }
+
     render() {
         return (
             <div>

@@ -3,13 +3,7 @@ import { Item } from "./Item";
 
 class TechnologiesName extends Component {
 
-    componentDidMount() {
-        this.props.listTechs()
-            .catch(console.log);
-    }
-
     render() {
-
         const { itemsTechs } = this.props;
         return (
             <div>

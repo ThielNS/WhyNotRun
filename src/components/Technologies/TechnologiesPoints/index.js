@@ -4,11 +4,6 @@ import ListTechnologies from "../Item";
 
 class TechnologiesPoints extends Component {
   
-    componentDidMount () {
-        this.props.listTechsPerPoints()
-        .catch(console.log);
-    }
-  
     render () {
 
         const { itemsTechs } = this.props;
