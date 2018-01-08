@@ -1,35 +1,74 @@
 import React, { Component } from 'react';
+import { Table } from 'antd';
 import TechnologyPodium from "../Podium";
-import ListTechnologies from "../Item";
+import "../pagination/style.scss"
+
 
 class TechnologiesPoints extends Component {
-  
-    render () {
+
+    render() {
 
         const { itemsTechs } = this.props;
-        const podium = itemsTechs.slice(0, 3);
+        const itemsPodium = itemsTechs.slice(0, 3);
+
+        const columns = [
+            {
+                key: 'position',
+                title: 'Posição',
+                dataIndex: 'indexKey',
+            },
+            {
+                key: 'name',
+                title: 'Name',
+                dataIndex: 'name',
+                rowKey: record => record.dataIndex,
+
+            }, {
+                key: 'posts',
+                title: 'Posts',
+                dataIndex: 'posts',
+                rowKey: record => record.dataIndex,
+
+            }, {
+                key: 'points',
+                title: 'Pontos',
+                dataIndex: 'points',
+                rowKey: record => record.dataIndex,
+
+            }];
+
+        let newColumns = columns.map((data, index) => {
+            data.indexKey = index;
+            return data;
+        })
+
+        let newDatas = itemsTechs.map(
+            (technology, index) => {
+                technology.indexKey = index + 1 + 'º';
+                // data add a new property
+                return technology;
+            }
+        );
+        const listTechnologies = newDatas.slice(3);
+
 
         return (
             <div>
                 <div className="techs-podium">
-                    {podium.map((technology, index) => (
+                    {itemsPodium.map((technology, index) => (
                         <div key={index}>
                             <TechnologyPodium index={index} {...technology} />
                         </div>
                     ))}
                 </div>
+                <div className="container points" key={listTechnologies.id}>
+                    <Table index={listTechnologies.id} columns={newColumns} dataSource={listTechnologies} size="middle"
+                        rowKey={record => record.indexKey}
 
-                <div className="menu-ranking">
-                    <i className="menu-position">Posição</i>
-                    <i className="menu-tech">Tecnologia</i>
-                    <i className="menu-posts">Posts</i>
-                    <i className="menu-points">Pontos</i>
+                    />
+
                 </div>
-                {itemsTechs.map((technology, index) => (
-                    <div key={index}>
-                        <ListTechnologies index={index} {...technology} />
-                    </div>
-                ))}
+
             </div>
         )
     }

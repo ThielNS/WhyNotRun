@@ -1,24 +1,40 @@
 import React, { Component } from "react";
-import { Item } from "./Item";
+import { Table } from 'antd';
+
+import "../pagination/style.scss"
+
 
 class TechnologiesName extends Component {
 
     render() {
         const { itemsTechs } = this.props;
-        return (
-            <div>
 
-                <div className="menu-ranking">
-                    <i className="menu-position">Posição</i>
-                    <i className="menu-tech">Tecnologia</i>
-                    <i className="menu-posts">Posts</i>
-                    <i className="menu-points">Pontos</i>
-                </div>
-                {itemsTechs.map((technology, index) => (
-                    <div key={index}>
-                        <Item index={index} {...technology} />
-                    </div>
-                ))}
+        const columns = [{
+            key: 'name',
+            title: 'Name',
+            dataIndex: 'name',
+        }, {
+            key: 'posts',
+            title: 'Posts',
+            dataIndex: 'posts',
+        }, {
+            key: 'points',
+            title: 'Pontos',
+            dataIndex: 'points',
+        }];
+
+        let newColumns = columns.map((data, index) => {
+            data.indexKey = index;
+            return data;
+        })
+
+        return (
+            <div className="container" key="table-body">
+                <Table columns={newColumns}
+                    dataSource={itemsTechs}
+                    size="middle"
+                    rowKey={record => record.key}
+                />
             </div>
         )
     }
