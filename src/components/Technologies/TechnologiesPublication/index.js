@@ -14,12 +14,12 @@ class Technologies extends Component {
                 const columns = [
                     {
                         key: 'position',
-                        title: 'Position',
+                        title: 'Posição',
                         dataIndex: 'indexKey'
                     },
                     {
                         key: 'name',
-                        title: 'Name',
+                        title: 'Nome',
                         dataIndex: 'name',
                     }, {
                         key: 'posts',

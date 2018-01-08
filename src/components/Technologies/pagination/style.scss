@@ -14,21 +14,12 @@
         background-color: white;
     }
 }
-li.ant-pagination-item {
-    margin-top: 30px;
-    padding: 2px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,.5);
-    border: none;
-    color: white;
-}
-.content-ranking li {
-    padding: 0px;
-}
-li.ant-pagination-item {
-    padding: 2px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    color: white;
+.ant-pagination.mini .ant-pagination-item {
+    border: 0;
+    margin: 0;
+    min-width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 5px;
+    margin-top: 15px;
 }

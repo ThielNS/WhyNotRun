@@ -19,7 +19,7 @@ class TechnologiesPoints extends Component {
             },
             {
                 key: 'name',
-                title: 'Name',
+                title: 'Nome',
                 dataIndex: 'name',
                 rowKey: record => record.dataIndex,
 

@@ -33,7 +33,8 @@ class TechnologiesName extends Component {
                 <Table columns={newColumns}
                     dataSource={itemsTechs}
                     size="middle"
-                    rowKey={record => record.key}
+                    rowKey={record => record.name}
+                    
                 />
             </div>
         )
