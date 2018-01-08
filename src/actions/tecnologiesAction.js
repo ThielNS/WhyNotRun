@@ -25,6 +25,7 @@ export const listTechs = page => dispatch => {
     .catch(error => {
       // throw new Error("RequestError", { type: ERROR_TECH, message: error.message });
     });
+
 };
 
 //Lista por Quantidade de publicações

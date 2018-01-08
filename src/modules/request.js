@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:55816";
-//const API_URL = "https://private-93e4a-whynotrun1.apiary-mock.com";
+ // const API_URL = "http://localhost:55816";
+const API_URL = "https://private-93e4a-whynotrun1.apiary-mock.com";
 
 export const get = (url) =>{
   return request(url, {
@@ -21,19 +21,24 @@ export const patch = (url, data) => {
   });
 };
 
-export const request = (url, options) => {
-
-  options = {
-    ...options,
-    headers: new Headers(),
-  };
-
+export const request = (url, { contentType = 'application/json', ...customOptions }) => {
   let userToken = localStorage.getItem('userToken');
-
   userToken = userToken ? userToken : null;
 
-  options.headers.append('Authorization', userToken);
-  options.headers.append('Content-Type', 'application/json');
+
+  const headers = {
+    Authorization: userToken,
+  };
+
+  if (contentType) {
+    headers['Content-type'] = contentType;
+  }
+
+  const options = {
+    ...customOptions,
+    headers,
+  };
+
 
   return fetch(`${API_URL}/${url}`, options)
     .then(response => {

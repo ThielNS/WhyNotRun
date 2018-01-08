@@ -13,53 +13,6 @@ class SearchForm extends Component {
         'JavaScript',
         'PHP = 2 Ovos + 3 Galinhas',
       ],
-      resultSearch: [
-        {
-          title: 'Redux é uma complexidade desnecessaura',
-          tags: [
-            {
-              name: 'React JS',
-            },
-            {
-              name: 'react-redux',
-            },
-          ],
-        },
-        {
-          title: 'Django é uma framework?',
-          tags: [
-            {
-              name: 'Python',
-            },
-            {
-              name: 'Django',
-            },
-            {
-              name: 'Framework',
-            },
-          ],
-        },
-        {
-          title: 'Por que o Material Design não tem acessibilidade?',
-          tags: [
-            {
-              name: 'JavaScript',
-            },
-            {
-              name: 'Angular JS',
-            },
-            {
-              name: 'JS',
-            },
-            {
-              name: 'JS',
-            },
-            {
-              name: 'JS',
-            },
-          ],
-        },
-      ],
       textSearch: '',
     }
   }

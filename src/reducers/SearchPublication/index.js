@@ -4,7 +4,7 @@ const search = (state = [], action) => {
   switch (action.type) {
     case LIST_SEARCH:
 
-      return action.data;
+      return action.data.publications;
 
     default:
 

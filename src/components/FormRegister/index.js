@@ -36,7 +36,10 @@ class FormRegister extends Component {
           loginAuthentication(email, password)
             .then(() => {
               const { history } = this.props;
-              history.push('/registerImage');
+              history.push({
+                pathname: '/registerImage',
+                state: { email: email, password: password }
+              });
             })
         })
         .catch((error) => {

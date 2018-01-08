@@ -27,13 +27,19 @@ class RegisterProfileImage extends Component {
     handleSubmitPicture = e => {
         e.preventDefault();
         const { picture } = this.state;
-        const { registerPicture, access } = this.props;
+        const { registerPicture, loginAuthentication, access } = this.props;
         const { id } = access.user;
         
         registerPicture(picture, id)
             .then(() => {
+
               const { history } = this.props;
-              history.push('/');
+              const { state } = history.location;
+
+              loginAuthentication(state.email, state.password)
+                .then(() => {
+                  history.push('/');
+                })
             })
             .catch(() => {
               notification.open({
