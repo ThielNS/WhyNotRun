@@ -49,14 +49,14 @@ class NavMenu extends Component {
 
           if (!userToken) {
 
-            if(item.to !== '/logout')
-              return (<Item key={index} {...item}/>);
+            if (item.to !== '/logout')
+              return (<Item key={index} {...item} />);
 
           } else {
 
             if (item.to !== '/login' && item.to !== '/register')
-              return (<Item key={index} {...item}/>);
-
+              return (<Item key={index} {...item} />);
+              
           }
           return null;
         })}
