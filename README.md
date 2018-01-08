@@ -1,5 +1,5 @@
 <h1 align="center" style="background-color: #eee;">
-    <img src="./public/logo.png"/><br>
+    <img src="./assets/screen1.png"/><br>
     WhyNotRun
 </h1>
 
